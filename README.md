@@ -1,2 +1,2 @@
 # martian-tools
-repository for project 2 - martial survival tool store
+repository for project 2 - Martian survival tool store
