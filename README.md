@@ -36,3 +36,6 @@ repository for project 2 - Martian survival tool store
 * As a <user> I want to {be notified (or not) when items in my Wishlist/groups are on sale}
 * As a <user> I want to {be able to leave comments on items that I have purchased, and see others comments}
 * As a <user> I want to {be able to ask questions about items}
+
+## Markdown cheat sheet:
+https://www.markdownguide.org/basic-syntax/
