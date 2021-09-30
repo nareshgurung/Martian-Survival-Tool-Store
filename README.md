@@ -37,6 +37,10 @@ An Online Store for selling products & supplies for people on Earth who are prep
 * As a {user} I want to {be able to ask questions about items}
 * As a {user} I want to {be able to get emergency shipments if I am already on mars}
 
+## Stretch Goals:
+* let vendors put their stuff on sale
+* add more categories and items to each category
+
 ## Useful Links:
   Markdown cheat sheet - https://www.markdownguide.org/basic-syntax/  
   User stories examples - https://www.mountaingoatsoftware.com/agile/user-stories  
