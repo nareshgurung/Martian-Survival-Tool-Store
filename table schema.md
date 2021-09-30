@@ -1,10 +1,10 @@
-## Tables for Store:
+## tables for store:
 #### users
-> user_id (Primary key)  
+> user_id (primary key)  
 > user_role(varchar 20 unique)  
 > user_email (varchar 50 unique)  
 > user_fname (varchar 30 not null)  
-> user_midInnitial (varchar 5 not null)  
+> user_midinnitial (varchar 5 not null)  
 > user_lname (varchar 30 not null)  
 > user_street (varchar 20 not null)  
 > user_zip (number)  
@@ -13,38 +13,38 @@
 > user_username(varchar 15 unique not null)  
 > user_password (varchar 20)  
 
-#### Group
-> Group_id (primary key, auto_increment)  
-> Group_name  
+#### group
+> group_id (primary key, auto_increment)  
+> group_name  
 > user_id (foreign key)  
 
 
 #### group_contents (many to many)
-> Group_id (foreign key)  
-> Product_id (foreign key)  
+> group_id (foreign key)  
+> product_id (foreign key)  
 
-#### Products
-> Product_id (primary key, auto_increment)  
-> Product_name  
-> Category_id (foreign key)  
-> Product_price  
-> Product_quantity  
-> User_id (vendor)  
+#### products
+> product_id (primary key, auto_increment)  
+> product_name  
+> category_id (foreign key)  
+> product_price  
+> product_quantity  
+> user_id (vendor)  
 > product_url  
 
-#### Categories
-> Category_id (primary key)  
-> Category_name  
+#### categories
+> category_id (primary key)  
+> category_name  
 
-#### Comments
-> Comment_id (primary key)  
-> Product_id (foreign key)  
-> User_id (foreign key)  
-> Comment  
+#### comments
+> comment_id (primary key)  
+> product_id (foreign key)  
+> user_id (foreign key)  
+> comment  
 
-#### QA
-> QA_id (primary key)  
-> Product_id (foreign key)  
-> User_id (foreign key)  
-> Qa_question  
+#### qa
+> qa_id (primary key)  
+> product_id (foreign key)  
+> user_id (foreign key)  
+> qa_question  
 > qa_answer  
