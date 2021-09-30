@@ -39,5 +39,6 @@ An Online Store for selling products & supplies for people on Earth who are prep
 
 ## Useful Links:
   Markdown cheat sheet - https://www.markdownguide.org/basic-syntax/  
-  User stories examples - https://www.mountaingoatsoftware.com/agile/user-stories
+  User stories examples - https://www.mountaingoatsoftware.com/agile/user-stories  
+  Tour of Heroes - https://angular.io/tutorial
   
