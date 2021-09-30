@@ -37,5 +37,7 @@ repository for project 2 - Martian survival tool store
 * As a <user> I want to {be able to leave comments on items that I have purchased, and see others comments}
 * As a <user> I want to {be able to ask questions about items}
 
-## Markdown cheat sheet:
-https://www.markdownguide.org/basic-syntax/
+## Useful Links:
+  Markdown cheat sheet - https://www.markdownguide.org/basic-syntax/  
+  User stories examples - https://www.mountaingoatsoftware.com/agile/user-stories
+  
