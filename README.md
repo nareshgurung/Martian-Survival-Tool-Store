@@ -1,6 +1,5 @@
-# martian-tools
-repository for project 2 - Martian survival tool store
-
+# High-Level Description:
+An Online Store for selling products & supplies for people on Earth who are preparing to live on Mars. This store will stock items for both the well entrenched and those just starting out. The app will feature a complete shopping flow, user account for keeping their stuff/editing and (maybe) a vendor account for updating inventory when it gets low.
 
 
 
