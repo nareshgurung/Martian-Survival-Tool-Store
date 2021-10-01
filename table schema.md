@@ -67,79 +67,79 @@
 > 	CONSTRAINT table_pk PRIMARY KEY (user_id)  
 > );
 
-> CREATE TABLE groups (
-> 	group_id int(10) PRIMARY KEY AUTO_INCREMENT,
-> 	group_name varchar(30) NOT NULL,
-> 	user_id int(10),
-> 	CONSTRAINT `fk_user`
-> 		FOREIGN KEY (user_id) REFERENCES users (user_id)
-> 		ON DELETE CASCADE
-> 		ON UPDATE CASCADE
+> CREATE TABLE groups (  
+> 	group_id int(10) PRIMARY KEY AUTO_INCREMENT,  
+> 	group_name varchar(30) NOT NULL,  
+> 	user_id int(10),  
+> 	CONSTRAINT `fk_user`  
+> 		FOREIGN KEY (user_id) REFERENCES users (user_id)  
+> 		ON DELETE CASCADE  
+> 		ON UPDATE CASCADE  
 > 	);
 
-> CREATE TABLE group_contents (
-> 	group_id int(10),
-> 	product_id int(100),
-> 	CONSTRAINT `fk_group_id_group_contents`
-> 		FOREIGN KEY (product_id) REFERENCES products (product_id)
-> 		ON DELETE CASCADE
-> 		ON UPDATE CASCADE,
-> 	CONSTRAINT `fk_product_id_group_contents`
-> 		FOREIGN KEY (group_id) REFERENCES groups (group_id)
-> 		ON DELETE CASCADE
-> 		ON UPDATE CASCADE
+> CREATE TABLE group_contents (  
+> 	group_id int(10),  
+> 	product_id int(100),  
+> 	CONSTRAINT `fk_group_id_group_contents`  
+> 		FOREIGN KEY (product_id) REFERENCES products (product_id)  
+> 		ON DELETE CASCADE  
+> 		ON UPDATE CASCADE,  
+> 	CONSTRAINT `fk_product_id_group_contents`  
+> 		FOREIGN KEY (group_id) REFERENCES groups (group_id)  
+> 		ON DELETE CASCADE  
+> 		ON UPDATE CASCADE  
 > );
 
-> CREATE TABLE products (
-> 	product_id int(100) PRIMARY KEY AUTO_INCREMENT,
-> 	product_name varchar(30) NOT NULL,
-> 	product_price double(20,2) NOT NULL,
-> 	product_quantity int(10),
-> 	user_id int(10),
-> 	category_id int(11),
-> 	CONSTRAINT `fk_user_prod`
-> 		FOREIGN KEY (user_id) REFERENCES users (user_id)
-> 		ON DELETE CASCADE
-> 		ON UPDATE CASCADE,
-> 	CONSTRAINT `fk_catid`
-> 		FOREIGN KEY (category_id) REFERENCES categories (category_id)
-> 		ON DELETE CASCADE
-> 		ON UPDATE CASCADE
+> CREATE TABLE products (  
+> 	product_id int(100) PRIMARY KEY AUTO_INCREMENT,  
+> 	product_name varchar(30) NOT NULL,  
+> 	product_price double(20,2) NOT NULL,  
+> 	product_quantity int(10),  
+> 	user_id int(10),  
+> 	category_id int(11),  
+> 	CONSTRAINT `fk_user_prod`  
+> 		FOREIGN KEY (user_id) REFERENCES users (user_id)  
+> 		ON DELETE CASCADE  
+> 		ON UPDATE CASCADE,  
+> 	CONSTRAINT `fk_catid`  
+> 		FOREIGN KEY (category_id) REFERENCES categories (category_id)  
+> 		ON DELETE CASCADE  
+> 		ON UPDATE CASCADE  
 > );
 
-> CREATE TABLE categories (
-> 	category_id int AUTO_INCREMENT,
-> 	category_name varchar(30),
-> 	CONSTRAINT table_pk PRIMARY KEY (category_id)
+> CREATE TABLE categories (  
+> 	category_id int AUTO_INCREMENT,  
+> 	category_name varchar(30),  
+> 	CONSTRAINT table_pk PRIMARY KEY (category_id)  
 > 	);
 	
-> CREATE TABLE comments (
-> 	comment_id int(10) primary key auto_increment,
-> 	product_id int(100) not null,
-> 	user_id int(10) not null,
-> 	comment varchar(300),
-> 	CONSTRAINT `fk_product_id_comments`
-> 		foreign key (product_id) REFerences products (product_id)
-> 		ON DELETE CASCADE
-> 		ON UPDATE CASCADE,
-> 	CONSTRAINT `fk_user_id_comments`
-> 		FOREIGN KEY (user_id) REFERENCES users (user_id)
-> 		ON DELETE CASCADE
-> 		ON UPDATE CASCADE
+> CREATE TABLE comments (  
+> 	comment_id int(10) primary key auto_increment,  
+> 	product_id int(100) not null,  
+> 	user_id int(10) not null,  
+> 	comment varchar(300),  
+> 	CONSTRAINT `fk_product_id_comments`  
+> 		foreign key (product_id) REFerences products (product_id)  
+> 		ON DELETE CASCADE  
+> 		ON UPDATE CASCADE,  
+> 	CONSTRAINT `fk_user_id_comments`  
+> 		FOREIGN KEY (user_id) REFERENCES users (user_id)  
+> 		ON DELETE CASCADE  
+> 		ON UPDATE CASCADE  
 > );
 
-> CREATE TABLE qa ( 
-> 	qa_id int(10) primary key auto_increment,
-> 	qa_question varchar(300) not null,
-> 	qa_answer varchar(300),
-> 	product_id int(100) not null,
-> 	user_id int(10) not null,
-> 	CONSTRAINT `fk_user_id_qa`
-> 		FOREIGN KEY (user_id) REFERENCES users (user_id)
-> 		ON DELETE CASCADE
-> 		ON UPDATE CASCADE,
-> 	CONSTRAINT `fk_product_id_qa`
-> 		FOREIGN KEY (product_id) REFERENCES products (product_id)
-> 		ON DELETE CASCADE
-> 		ON UPDATE CASCADE
+> CREATE TABLE qa (  
+> 	qa_id int(10) primary key auto_increment,  
+> 	qa_question varchar(300) not null,  
+> 	qa_answer varchar(300),  
+> 	product_id int(100) not null,  
+> 	user_id int(10) not null,  
+> 	CONSTRAINT `fk_user_id_qa`  
+> 		FOREIGN KEY (user_id) REFERENCES users (user_id)  
+> 		ON DELETE CASCADE  
+> 		ON UPDATE CASCADE,  
+> 	CONSTRAINT `fk_product_id_qa`  
+> 		FOREIGN KEY (product_id) REFERENCES products (product_id)  
+> 		ON DELETE CASCADE  
+> 		ON UPDATE CASCADE  
 > );
