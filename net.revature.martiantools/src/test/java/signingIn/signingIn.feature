@@ -38,7 +38,7 @@ Feature: Login for MartianTools
     And the user inputs an incorrect <password>
     And clicks on the login button
     Then the user is redirected back to the current page
-    And the sign in option is replaced by a menu to check their account
+    And the sign in option is still there but has some red text saying that the username/password was wrong
     
     | username | password      |
     | norman   | wrongPassword |
