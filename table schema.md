@@ -50,7 +50,7 @@
 > user_id (foreign key)  
 
 
-#### SQL commands used for building the database
+### SQL commands used for building the database
 > CREATE TABLE users (  
 > 	user_id int(10) AUTO_INCREMENT,  
 > 	user_role int(10) NOT NULL,  
