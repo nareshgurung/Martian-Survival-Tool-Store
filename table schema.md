@@ -1,17 +1,33 @@
 ## tables for store:
 #### users
 > user_id (primary key)  
-> user_role(varchar 20 unique)  
-> user_email (varchar 50 unique)  
+> user_role(int 10)  
+> user_email (unique)  
 > user_fname (varchar 30 not null)  
-> user_midinnitial (varchar 5 not null)  
+> user_midinnitial (varchar 1)  
 > user_lname (varchar 30 not null)  
-> user_street (varchar 20 not null)  
+> user_street (varchar)  
 > user_zip (number)  
 > user_city (varchar 30)  
-> user_state (varchar 10)  
+> user_state (varchar 2)  
 > user_username(varchar 15 unique not null)  
-> user_password (varchar 20)  
+> user_password (varchar 20 not null)  
+
+> CREATE TABLE users (  
+> 	user_id int(10) AUTO_INCREMENT,  
+> 	user_role int(10) NOT NULL,  
+> 	user_email varchar(60) NOT NULL UNIQUE,  
+> 	user_fname varchar(30) not null,  
+> 	user_midinnitial varchar(1),  
+> 	user_lname varchar(30),  
+> 	user_street varchar(30),  
+> 	user_zip int(5),  
+> 	user_city varchar(30),  
+> 	user_state varchar(2),  
+> 	user_username varchar(15) not null unique,  
+> 	user_password varchar(20) not null,  
+> 	CONSTRAINT table_pk PRIMARY KEY (user_id)  
+> );
 
 #### group
 > group_id (primary key, auto_increment)  
