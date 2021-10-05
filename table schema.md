@@ -103,6 +103,7 @@
 > 	product_name varchar(30) NOT NULL,  
 > 	product_price double(20,2) NOT NULL,  
 > 	product_quantity int(10),  
+> 	product_url varchar(30),
 > 	user_id int(10)NOT NULL,  
 > 	category_id int(11) NOT NULL,  
 > 	CONSTRAINT `fk_user_prod`  
