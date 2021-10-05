@@ -18,4 +18,21 @@
 #Sample Feature Definition Template
 Feature: Products pages for MartianTools
 
-# Temporary placeholder here for Feature
+	Given a user is viewing a Product page for a category in the Main Content View
+	And intiates a purchase
+
+	Scenario: Selecting a purchase quantity
+		When the user selects a purchase quantity
+		Then the purchase quantity is displayed
+
+	Scenario: Not selecting a purchase quantity
+		When the user does not select a purchase quantity
+		Then the default purchase quantity amount one is purchase quantity
+
+	Scenario: user clicks add to cart button
+		When the user clicks the add to cart button
+		Then the view redirects to shopping cart 
+
+	Scenario: user clicks buy now button
+		When the user clicks the buy now button
+		Then the view redirects to check out
