@@ -26,6 +26,7 @@
 #### products
 > product_id (primary key, auto_increment)  
 > product_name  
+> product_description
 > product_price  
 > product_quantity  
 > product_url  
@@ -101,6 +102,7 @@
 > CREATE TABLE products (  
 > 	product_id int(100) PRIMARY KEY AUTO_INCREMENT,  
 > 	product_name varchar(30) NOT NULL,  
+> 	product_description varchar(300) NOT NULL,
 > 	product_price double(20,2) NOT NULL,  
 > 	product_quantity int(10),  
 > 	product_url varchar(30),
