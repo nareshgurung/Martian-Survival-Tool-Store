@@ -21,7 +21,7 @@ public class UsersRepository {
 		Transaction tx = null;
 		Query<Users> uList = null;
 		try {
-			Session ses=HibernateUtil.getSession();
+			Session ses = HibernateUtil.getSession();
 			tx = ses.beginTransaction();
 			uList = ses.createQuery("from Users", Users.class);
 			tx.commit();
