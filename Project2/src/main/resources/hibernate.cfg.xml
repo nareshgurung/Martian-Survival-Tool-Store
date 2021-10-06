@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+	<session-factory>
+		
+		<!-- This is the connection information -->
+		<property name="hibernate.connection.username">Naresh</property>
+		<property name="hibernate.connection.password">nareshPassword</property>
+		<property name="hibernate.connection.url">jdbc:mariadb://database-1.c0dfrhw8olgo.us-east-2.rds.amazonaws.com:3306/project-2</property>
+		<property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
+		
+		<property name="hibernate.connection.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.format_sql">true</property>
+		
+		<property name="hibernate.connection.pool_size">10</property>
+		
+		<!-- <proverty name="hibernate.current_session_context_class">thread</proerty> -->
+		<property name="hibernate.hbm2ddl.auto">validate</property>
+		
+		
+		
+
+	<!-- We will map our classes down here -->
+		<mapping class="net.revature.Categories"/>
+		<mapping class="net.revature.Comments"/>
+		<mapping class="net.revature.GroupContents"/>
+		<mapping class="net.revature.Groups"/>
+		<mapping class="net.revature.Products"/>
+		<mapping class="net.revature.Qa"/>
+		<mapping class="net.revature.Users"/>
+	</session-factory>
+
+</hibernate-configuration>
