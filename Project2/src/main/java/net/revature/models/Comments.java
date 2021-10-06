@@ -18,10 +18,10 @@ public class Comments {
 	@Column(name="comment_id")
 	private int comment_id;
 	
-	@Column(name="product_id")
+	@Column(name="product_id", nullable=false)
 	private int product_id;
 	
-	@Column(name="user_id")
+	@Column(name="user_id", nullable=false)
 	private int user_id;
 	
 	@Column(name="comment")

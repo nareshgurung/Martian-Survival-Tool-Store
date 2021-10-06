@@ -18,16 +18,16 @@ public class Qa {
 	@Column(name="qa_id")
 	private int qa_id;
 	
-	@Column(name="qa_question")
+	@Column(name="qa_question", nullable=false)
 	private String qa_question;
 	
 	@Column(name="qa_answer")
 	private String qa_answer;
 	
-	@Column(name="product_id")
+	@Column(name="product_id", nullable=false)
 	private int product_id;
 	
-	@Column(name="user_id")
+	@Column(name="user_id", nullable=false)
 	private int user_id;
 	public Qa() {
 		super();

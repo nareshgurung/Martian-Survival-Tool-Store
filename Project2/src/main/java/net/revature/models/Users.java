@@ -18,13 +18,13 @@ public class Users {
 	@Column(name = "user_id")
 	private int user_id;
 	
-	@Column(name ="user_role")
+	@Column(name ="user_role", nullable=false)
 	private int user_role;
 	
-	@Column(name="user_email")
+	@Column(name="user_email", nullable=false, unique=true)
 	private String user_email;
 	
-	@Column(name = "user_fname")
+	@Column(name = "user_fname", nullable=false)
 	private String user_fname;
 	
 	@Column(name="user_midinnitial")
@@ -45,10 +45,10 @@ public class Users {
 	@Column(name="user_state")
 	private String user_state;
 	
-	@Column(name="user_username")
+	@Column(name="user_username", nullable=false, unique=true)
 	private String user_username;
 	
-	@Column(name="user_password")
+	@Column(name="user_password", nullable=false)
 	private String user_password;
 	
 	public Users() {

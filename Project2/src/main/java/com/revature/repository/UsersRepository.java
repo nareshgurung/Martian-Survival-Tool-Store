@@ -16,6 +16,8 @@ public class UsersRepository {
 		
 	}
 	public List<Users> getAllUsers() {
+
+		
 		Transaction tx = null;
 		Query<Users> uList = null;
 		try {

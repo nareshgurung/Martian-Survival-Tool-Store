@@ -24,13 +24,13 @@
 		
 
 	<!-- We will map our classes down here -->
-		<mapping class="net.revature.Categories"/>
-		<mapping class="net.revature.Comments"/>
-		<mapping class="net.revature.GroupContents"/>
-		<mapping class="net.revature.Groups"/>
-		<mapping class="net.revature.Products"/>
-		<mapping class="net.revature.Qa"/>
-		<mapping class="net.revature.Users"/>
+		<mapping class="net.revature.models.Categories"/>
+		<mapping class="net.revature.models.Comments"/>
+		<mapping class="net.revature.models.GroupContents"/>
+		<mapping class="net.revature.models.Groups"/>
+		<mapping class="net.revature.models.Products"/>
+		<mapping class="net.revature.models.Qa"/>
+		<mapping class="net.revature.models.Users"/>
 	</session-factory>
 
 </hibernate-configuration>

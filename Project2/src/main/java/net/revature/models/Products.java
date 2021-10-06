@@ -17,10 +17,10 @@ public class Products {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int product_id;
 	
-	@Column(name="product_name")
+	@Column(name="product_name", nullable=false)
 	private String product_name;
 	
-	@Column(name="product_price")
+	@Column(name="product_price", nullable=false)
 	private double product_price;
 	
 	@Column(name="product_quantity")
