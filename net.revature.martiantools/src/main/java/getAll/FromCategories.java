@@ -7,7 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import net.revature.models.Categories;
-import util.HibernateSessionFactory;
+import net.revature.util.HibernateSessionFactory;
 
 public class FromCategories {
 	public static List<Categories> getAll(){
