@@ -115,8 +115,8 @@
 > 		ON UPDATE CASCADE,  
 > 	CONSTRAINT `fk_catid`  
 > 		FOREIGN KEY (category_id) REFERENCES categories (category_id)  
-v		ON DELETE CASCADE  
-v		ON UPDATE CASCADE  
+>		ON DELETE CASCADE  
+>		ON UPDATE CASCADE  
 > );  
 
 > CREATE TABLE categories (  
