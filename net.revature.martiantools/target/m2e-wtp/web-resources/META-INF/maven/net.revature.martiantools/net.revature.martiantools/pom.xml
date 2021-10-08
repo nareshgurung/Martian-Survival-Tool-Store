@@ -15,29 +15,12 @@
 	</properties>
 
 	<dependencies>
-<<<<<<< HEAD
-=======
-
-		<dependency>
-			<groupId>io.javalin</groupId>
-			<artifactId>javalin</artifactId>
-			<version>3.13.11</version>
-		</dependency>
-
-	<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-simple</artifactId>
-    <version>1.7.30</version>
-</dependency>
-
->>>>>>> main
 		<!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
 		<dependency>
 			<groupId>org.mariadb.jdbc</groupId>
 			<artifactId>mariadb-java-client</artifactId>
 			<version>2.7.4</version>
 		</dependency>
-<<<<<<< HEAD
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>
@@ -60,20 +43,13 @@
 			<artifactId>json</artifactId>
 			<version>20210307</version>
 		</dependency>
-=======
-
-		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
->>>>>>> main
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>5.5.7.Final</version>
 		</dependency>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> main
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>

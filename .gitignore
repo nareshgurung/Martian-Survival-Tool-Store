@@ -1,3 +1,4 @@
 /.metadata/
 HibernateSessionFactory.java
 .DS_Store
+*.properties
