@@ -87,6 +87,7 @@
 > 	);  
 
 > CREATE TABLE group_contents (  
+> 	group_contents_id int(10) PRIMARY KEY AUTO_INCREMENT,
 > 	group_id int(10) NOT NULL,  
 > 	product_id int(100) NOT NULL,  
 > 	CONSTRAINT `fk_group_id_group_contents`  
@@ -114,8 +115,8 @@
 > 		ON UPDATE CASCADE,  
 > 	CONSTRAINT `fk_catid`  
 > 		FOREIGN KEY (category_id) REFERENCES categories (category_id)  
-v		ON DELETE CASCADE  
-v		ON UPDATE CASCADE  
+>		ON DELETE CASCADE  
+>		ON UPDATE CASCADE  
 > );  
 
 > CREATE TABLE categories (  
