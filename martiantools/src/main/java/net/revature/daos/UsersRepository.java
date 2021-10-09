@@ -11,8 +11,7 @@ import org.springframework.stereotype.Repository;
 import net.revature.models.Users;
 
 @Repository("usersRepository")
-
-public class FromUsers {
+public class UsersRepository {
 	
 	
 	
@@ -20,14 +19,12 @@ public class FromUsers {
 	private EntityManager entityManager;
 	
 	public List<Users> getAll(){
-		
 			return entityManager.createQuery("FROM Users", Users.class).getResultList();
 	}
 	
-	public Users getByUsername(String username) {
-		
-		TypedQuery<Users> query = this.entityManager.createQuery("From Users where user_username=:username", Users.class);
-		query.setParameter("username", username);
+	public Users getByUserID(String id) {
+		TypedQuery<Users> query = this.entityManager.createQuery("From Users where user_id=:id", Users.class);
+		query.setParameter("username", id);
 		return query.getSingleResult();
 		
 	}

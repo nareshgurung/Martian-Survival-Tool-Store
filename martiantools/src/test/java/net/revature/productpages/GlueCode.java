@@ -1,6 +1,5 @@
 package net.revature.productpages;
 
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class GlueCode {

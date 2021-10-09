@@ -5,16 +5,16 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import net.revature.daos.FromUsers;
+import net.revature.daos.UsersRepository;
 import net.revature.models.Users;
 
 @Service("uService")
 public class UserService {
 
-	private FromUsers usersRepository;
+	private UsersRepository usersRepository;
 	
 	@Autowired
-	public UserService(FromUsers usersRepository) {
+	public UserService(UsersRepository usersRepository) {
 
 		this.usersRepository=usersRepository;
 		System.out.println("service works");
@@ -25,6 +25,6 @@ public class UserService {
 	}
 	
 	public Users getByUsername(String username) {
-		return this.usersRepository.getByUsername(username);
+		return this.usersRepository.getByUserID(username);
 	}
 }
