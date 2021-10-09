@@ -36,4 +36,5 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/spring-orm/5.3.10/spring-orm-5.3.10.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/spring-jdbc/5.3.10/spring-jdbc-5.3.10.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/spring-tx/5.3.10/spring-tx-5.3.10.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="PLUGIN" id="org.eclipse.jst.ws.annotations.core" enabled="false" runInBatchMode="false"/>
 </factorypath>
