@@ -12,23 +12,21 @@ import net.revature.models.Categories;
 
 @Repository("categoryRepository")
 public class CategoryRepository {
+
+	
 	
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	public List<Categories> findAll(){
+	public List<Categories> getAll(){
 		return entityManager.createQuery("FROM Categories", Categories.class).getResultList();
-	}
+}
 	
-	public void save(Categories cat) {
-		this.entityManager.persist(cat);
-	}
-	
-	public Categories findByName(String id) {
-		TypedQuery<Categories> query = 
-				this.entityManager.createQuery("FROM Categories where category_id = :id", Categories.class);
-		query.setParameter("name", id);
+	public Categories getByCategoryID(String id) {
+		TypedQuery<Categories> query = this.entityManager.createQuery("From Categories where category_id=:id", Categories.class);
+		query.setParameter("id", id);
 		return query.getSingleResult();
+		
 	}
 
 

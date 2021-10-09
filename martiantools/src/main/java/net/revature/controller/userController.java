@@ -17,7 +17,7 @@ import net.revature.models.Users;
 import net.revature.service.UserService;
 
 @CrossOrigin(origins = "http://localhost:4200")
-@RestController("recipeController")
+@RestController("usersController")
 @RequestMapping("/users")
 public class userController {
 
