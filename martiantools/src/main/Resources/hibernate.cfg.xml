@@ -52,5 +52,11 @@ Hibernate models inside of this tag.-->
 		
 		<!-- We have to tell Hibernate which models are annotated because it doesn't autodetect annotations. -->
 		<mapping class="net.revature.models.Categories"/>
+		<mapping class="net.revature.models.Comments"/>
+		<mapping class="net.revature.models.Group_contents"/>
+		<mapping class="net.revature.models.Groups"/>
+		<mapping class="net.revature.models.Products"/>
+		<mapping class="net.revature.models.Qa"/>
+		<mapping class="net.revature.models.Users"/>
 	</session-factory>
 </hibernate-configuration>
