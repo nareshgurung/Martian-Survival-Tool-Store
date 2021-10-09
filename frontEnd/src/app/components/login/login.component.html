@@ -1,0 +1,16 @@
+<p>login works!</p>
+<h2>Employee Login</h2>
+<p>Required information is marked with an asterisk(*)</p>
+<form>
+    <div>
+        <label for="*username">Username:</label>
+        <input type="text" id=username name="username" [(ngModel)]="username" required>
+    </div><br>
+    <div>
+        <label for="*password">Password: </label>
+        <input type="text" id=username name="password" [(ngModel)]="password"required>
+    </div>
+    <div>
+        <input type="submit" value="login" (click)="checkLogin()">
+    </div>
+</form>
