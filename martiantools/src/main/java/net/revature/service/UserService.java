@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import net.revature.getAll.FromUsers;
+import net.revature.daos.FromUsers;
 import net.revature.models.Users;
 
 @Service("uService")
