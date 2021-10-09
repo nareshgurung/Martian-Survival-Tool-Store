@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import net.revature.models.Users;
 import net.revature.service.UserService;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController("recipeController")
 @RequestMapping("/users")
 public class userController {
@@ -34,7 +36,7 @@ public class userController {
 	}
 	
 	@PostMapping(path="/login/{username}/{password}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Users login(@PathVariable String username, @PathVariable String password) {
+	public void login(@PathVariable String username, @PathVariable String password) {
 		
 		Users unameFromClient = this.uService.getByUsername(username);
 			String unameFromDB = unameFromClient.getUser_username();
@@ -47,6 +49,6 @@ public class userController {
 				System.out.println("Bad credentials");
 			}
 			
-			return unameFromClient;
+//			return unameFromClient;
 	}
 }
