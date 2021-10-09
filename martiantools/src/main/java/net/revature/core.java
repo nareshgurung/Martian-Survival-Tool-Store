@@ -1,19 +1,17 @@
 package net.revature;
 
-import java.util.Iterator;
-import java.util.List;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import net.revature.models.Categories;
-import net.revature.service.AllFromATable;
+import net.revature.service.CategoryService;
 
 public class core {
 	public static void main(String[] args) {
-
-		List<Categories> cats = new AllFromATable().fromCategories();
 		
-		for(Iterator<Categories> iterator = cats.iterator(); iterator.hasNext();) {
-			Categories cat = iterator.next();
-			System.out.println(cat.toString());
-		}
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+		CategoryService catService = context.getBean("categoryService", CategoryService.class);
+		
+		System.out.println(catService.findAll());
 	}
 }
