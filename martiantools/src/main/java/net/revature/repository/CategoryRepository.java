@@ -29,7 +29,6 @@ public class CategoryRepository {
 				this.entityManager.createQuery("FROM Categories where category_id = :id", Categories.class);
 		query.setParameter("name", id);
 		return query.getSingleResult();
-		
 	}
 
 
