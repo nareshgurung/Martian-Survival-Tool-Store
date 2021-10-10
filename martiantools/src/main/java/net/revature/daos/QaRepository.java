@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import net.revature.models.Qa;
 
-@Repository("groupContentsRepository")
+@Repository("qaRepository")
 public class QaRepository {
 
 	@PersistenceContext
