@@ -22,9 +22,9 @@ public class UsersRepository {
 			return entityManager.createQuery("FROM Users", Users.class).getResultList();
 	}
 	
-	public Users getByUserID(String id) {
-		TypedQuery<Users> query = this.entityManager.createQuery("From Users where user_id=:id", Users.class);
-		query.setParameter("username", id);
+	public Users getByUserName(String username) {
+		TypedQuery<Users> query = this.entityManager.createQuery("From Users where user_username=:username", Users.class);
+		query.setParameter("username", username);
 		return query.getSingleResult();
 		
 	}

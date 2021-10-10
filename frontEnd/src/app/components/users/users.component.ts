@@ -10,12 +10,12 @@ import { LoginService } from 'src/app/service/login.service';
 export class UsersComponent implements OnInit {
 
   constructor(private alertService: LoginService) { 
-    const allUsers = alertService.getAll();
+    // const allUsers = alertService.getAll();
     
   }
 
   ngOnInit(): void {
-    this.alertService.getAll().subscribe(user => console.log(user))
+    // this.alertService.getAll().subscribe(user => console.log(user))
   }
 
   @Input()
