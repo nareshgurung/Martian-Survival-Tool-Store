@@ -1,0 +1,14 @@
+#navbarlist {
+    overflow: hidden;
+    border-radius: 1px 1px 15px 15px;
+    background-color: limegreen;
+}
+
+#navbarlist a {
+    float: left;
+    display: block;
+    text-align: justify;
+    padding: 20px;
+    text-decoration: none;
+    color: black;
+}
