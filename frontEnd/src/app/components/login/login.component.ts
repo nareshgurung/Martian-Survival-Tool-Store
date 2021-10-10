@@ -1,3 +1,5 @@
+import { HttpClient } from '@angular/common/http';
+import { ThisReceiver, ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/service/login.service';
 
@@ -11,23 +13,25 @@ export class LoginComponent implements OnInit {
     username:string="";
     password:string="";
     invalidLogin = false;
-  constructor(private loginService: LoginService) { }
+  constructor(private loginServ:LoginService) { }
 
   ngOnInit(): void {
-   
+
   }
 
 
+  checkLogin(){    
+    this.loginServ.login(this.username, this.password).subscribe();
 
-  checkLogin(){
-    if(this.loginService.login(this.username, this.password)){
-        this.invalidLogin = false;
-        console.log("welcome");
-    }
-    else{
-      this.invalidLogin = true;
-      console.log("no");
-    }
+    
+    // if(this.loginService.login(this.username, this.password)){
+    //     this.invalidLogin = false;
+    //     console.log("welcome");
+    // }
+    // else{
+    //   this.invalidLogin = true;
+    //   console.log("no");
+    // }
   }
 
 

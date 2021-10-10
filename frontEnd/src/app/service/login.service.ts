@@ -1,36 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Users } from '../models/Users';
-import { environment } from 'src/environments/environment';
+import {Login } from './login';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
+
+    loginUrl="http://localhost:8080/SpringCore/users/login";
+
   constructor(private httpClient:HttpClient) { }
 
-  getAll():Observable<Users[]>{
+
+ 
+
+  login(username:string, password:string):Observable<any>{
     
-    return this.httpClient.get(environment.getAll) as Observable<Users[]>;
-
-
+    return this.httpClient.post(`http://localhost:8080/SpringCore/users/login/${username}/${password}`, []);
+  
   }
-
-  login(username:string, password:string){
-    if(username === "javainuse" && password === "password"){
-      // sessionStorage.setItem("username", username)
-      return true;
-    }else{
-      return false;
-    }
-  }
-  // isUserLoggedIn(){
-  //   let user = sessionStorage.getItem('username')
-  //   console.log(!(user === null))
-  //   return !(user === null)
-  // }
+  
 }
 
 

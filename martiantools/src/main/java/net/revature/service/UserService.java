@@ -25,6 +25,6 @@ public class UserService {
 	}
 	
 	public Users getByUsername(String username) {
-		return this.usersRepository.getByUserID(username);
+		return this.usersRepository.getByUserName(username);
 	}
 }
