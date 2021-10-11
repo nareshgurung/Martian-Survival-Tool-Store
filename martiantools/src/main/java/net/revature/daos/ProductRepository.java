@@ -16,7 +16,7 @@ public class ProductRepository {
 	private EntityManager entityManager;
 	
 	public List<Products> getAll(){
-		return entityManager.createQuery("FROM Categories", Products.class).getResultList();
+		return entityManager.createQuery("FROM Products", Products.class).getResultList();
 	}
 
 }
