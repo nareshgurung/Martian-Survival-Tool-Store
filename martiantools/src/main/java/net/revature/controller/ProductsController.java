@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,7 +33,7 @@ public class ProductsController {
 		return new ResponseEntity<List<Products>>(this.pService.findAll(), HttpStatus.OK);
 	}
 	
-	@PostMapping(path="/all/{catID}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path="/all/{catID}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Products>> login(@PathVariable String catID) {
 		return new ResponseEntity<List<Products>>(this.pService.findById(catID), HttpStatus.OK); 
 	}
