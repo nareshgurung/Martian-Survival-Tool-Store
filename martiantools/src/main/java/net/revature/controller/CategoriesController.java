@@ -8,6 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,12 +22,12 @@ import net.revature.service.CategoryService;
 public class CategoriesController {
 
 	private CategoryService cService;
-	
+
 	@Autowired
 	public CategoriesController(CategoryService catService){
 		this.cService=catService;
 	}
-	
+
 	@GetMapping(path="/all", produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Categories>> getAll(){
 		return new ResponseEntity<List<Categories>>(this.cService.findAll(), HttpStatus.OK);

@@ -19,4 +19,10 @@ public class ProductRepository {
 		return entityManager.createQuery("FROM Products", Products.class).getResultList();
 	}
 
+	public List<Products> getByCategoryID(String id) {
+		List<Products> list;
+		list = this.entityManager.createQuery("From Products where category_id=" + id, Products.class).getResultList();
+		return list;
+	}
+
 }
