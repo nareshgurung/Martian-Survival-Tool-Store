@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: 'categories',component: CategoriesComponent},
   {path: '',redirectTo: '/login', pathMatch: 'full'},
   {path: 'login',component: LoginComponent},
-  {path: 'dashboard', component: UserDashboardComponent}
+  {path: 'dashboard', component: UserDashboardComponent},
   {path: 'products/all/:id', component: ProductsbycategoryComponent}
 ];
 
