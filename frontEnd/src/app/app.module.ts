@@ -10,7 +10,6 @@ import { UsersComponent } from './components/users/users.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
-import { MainFormComponent } from './components/main-form/main-form.component';
 import { ProductsbycategoryComponent } from './components/productsbycategory/productsbycategory.component';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { ProductsbycategoryComponent } from './components/productsbycategory/pro
     CategoriesComponent,
     NavbarComponent,
     UserDashboardComponent,
-    MainFormComponent
     ProductsbycategoryComponent
   ],
   imports: [
