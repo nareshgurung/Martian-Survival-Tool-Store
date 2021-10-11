@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Card } from '../category-card/card';
-import { CardService } from '../category-card/card.service';
+import { Card } from '../../service/category-card/card';
+import { CardService } from '../../service/category-card/card.service';
 
 @Component({
   selector: 'app-categories',
