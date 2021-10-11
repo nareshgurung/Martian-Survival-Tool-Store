@@ -1,7 +1,7 @@
 #navbarlist {
     overflow: hidden;
     border-radius: 1px 1px 15px 15px;
-    background-color: limegreen;
+    background-image: linear-gradient(to left, #feada6 0%, #f5efef 100%);
 }
 
 #navbarlist a {
