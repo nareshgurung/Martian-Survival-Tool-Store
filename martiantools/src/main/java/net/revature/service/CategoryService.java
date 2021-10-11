@@ -15,16 +15,11 @@ public class CategoryService {
 
 	@Autowired
 	public CategoryService(CategoryRepository categoryRepository) {
-		
 		this.categoryRepository = categoryRepository;
 		System.out.println("categories works");
 	}
 	
 	public List<Categories> findAll(){
 		return this.categoryRepository.getAll();
-	}
-
-	public Categories getByUsername(String id) {
-		return this.categoryRepository.getByCategoryID(id);
 	}
 }
