@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: hsl(7, 100%, 62%);
+  line-height: 1.5;
+}
+a:hover {
+  text-decoration: underline;
+  color: #555;
+}
