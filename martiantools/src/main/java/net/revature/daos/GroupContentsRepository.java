@@ -18,5 +18,12 @@ public class GroupContentsRepository {
 	public List<Group_contents> getAll(){
 		return entityManager.createQuery("FROM Group_contents", Group_contents.class).getResultList();
 	}
+	
+	public List<Group_contents> getByGroupID(String groupID) {
+		List<Group_contents> list;
+		list = this.entityManager.createQuery("From Group_contents where group_id=" + groupID, Group_contents.class).getResultList();
+		System.out.println(list);
+		return list;
+	}
 
 }

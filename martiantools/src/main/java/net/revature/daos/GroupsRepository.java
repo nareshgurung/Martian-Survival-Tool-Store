@@ -19,4 +19,10 @@ public class GroupsRepository {
 		return entityManager.createQuery("FROM Groups", Groups.class).getResultList();
 	}
 
+	public List<Groups> getByUserID(String userID) {
+		List<Groups> list;
+		list = this.entityManager.createQuery("From Groups where user_id=" + userID, Groups.class).getResultList();
+		return list;
+	}
+
 }

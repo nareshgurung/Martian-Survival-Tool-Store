@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Comment } from '../../service/comments/comment';
+import { Comment } from '../../models/comment';
 import { CommentsService } from '../../service/comments/comments.service';
 
 @Component({

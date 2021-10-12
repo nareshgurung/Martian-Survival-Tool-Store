@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Card } from '../../service/category-card/card';
+import { Card } from '../../models/card';
 import { CardService } from '../../service/category-card/card.service';
 
 @Component({
