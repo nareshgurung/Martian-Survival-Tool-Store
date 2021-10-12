@@ -1,0 +1,6 @@
+<h2>Comments</h2>
+<div>
+	<div *ngFor="let comment of comments" id="{{comment.comment_id}}">
+		<a routerLink="/">{{comment.comment}}</a>
+	</div>
+</div>
