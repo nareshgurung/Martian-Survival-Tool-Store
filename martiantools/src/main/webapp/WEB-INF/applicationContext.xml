@@ -42,7 +42,7 @@ within this file. Recall that a Spring Bean has its lifecycle managed by the IOC
 		<property name="jpaProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MariaDBDialect</prop>
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.hbm2ddl.auto">validate</prop>
 			</props>
 		</property>
 	</bean>
