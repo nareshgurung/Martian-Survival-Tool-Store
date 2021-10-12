@@ -21,7 +21,6 @@ public class UserService {
 	public UserService(UsersRepository usersRepository) {
 
 		this.usersRepository=usersRepository;
-		System.out.println("service works");
 	}
 	
 	public List<Users> getAllUsers(){
@@ -32,7 +31,6 @@ public class UserService {
 		return this.usersRepository.getByUserName(username);
 	}
 	public void save(Users obj) {
-		System.out.println("savingservice work");
 		this.usersRepository.save(obj);
 	}
 }
