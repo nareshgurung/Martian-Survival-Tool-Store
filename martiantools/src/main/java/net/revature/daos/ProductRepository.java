@@ -16,7 +16,13 @@ public class ProductRepository {
 	private EntityManager entityManager;
 	
 	public List<Products> getAll(){
-		return entityManager.createQuery("FROM Categories", Products.class).getResultList();
+		return entityManager.createQuery("FROM Products", Products.class).getResultList();
+	}
+
+	public List<Products> getByCategoryID(String id) {
+		List<Products> list;
+		list = this.entityManager.createQuery("From Products where category_id=" + id, Products.class).getResultList();
+		return list;
 	}
 
 }
