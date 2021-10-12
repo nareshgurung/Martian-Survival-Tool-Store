@@ -20,7 +20,7 @@ import { ProductsbycategoryComponent } from './components/productsbycategory/pro
     UsersComponent,
     CategoriesComponent,
     NavbarComponent,
-    SignupComponent
+    SignupComponent,
     UserDashboardComponent,
     ProductsbycategoryComponent
   ],
