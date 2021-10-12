@@ -2,11 +2,15 @@ package net.revature.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import net.revature.daos.UsersRepository;
 import net.revature.models.Users;
+
+@Transactional
 
 @Service("uService")
 public class UserService {
@@ -26,5 +30,9 @@ public class UserService {
 	
 	public Users getByUsername(String username) {
 		return this.usersRepository.getByUserName(username);
+	}
+	public void save(Users obj) {
+		System.out.println("savingservice work");
+		this.usersRepository.save(obj);
 	}
 }

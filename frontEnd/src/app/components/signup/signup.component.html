@@ -1,0 +1,49 @@
+
+    <form>
+        <br>
+        <div>
+            <label for="*role">Role:</label>
+            <input type="number" id=role name="role"[(ngModel)]="user.user_role" required>            
+        </div><br>
+        <div>
+            <label for="*email">Email: </label>
+            <input type="email" id=email name="email" [(ngModel)]="user.user_email"required>
+        </div><br>
+        <div>
+            <label for="*fname">First Name:</label>
+            <input type="text" id=fname name="fname" [(ngModel)]="user.user_fname" required>
+        </div><br>
+        <div>
+            <label for="*midInnitial">Mid Innitial: </label>
+            <input type="text" id=Midinnitial name="Midinnitial" [(ngModel)]="user.user_midinnitial" required>
+        </div><br>
+        <div>
+            <label for="*lname">Last Name:</label>
+            <input type="text" id=lname name="lname" [(ngModel)]="user.user_lname" required>
+        </div><br>
+        <div>
+            <label for="*street">Street Address: </label>
+            <input type="text" id=street name="street" [(ngModel)]="user.user_street" required>
+        </div><br>
+        <div>
+            <label for="*zip">ZipCode:</label>
+            <input type="number" id="zip" name="zip" [(ngModel)]="user.user_zip" required>
+        </div><br>
+        <div>
+            <label for="*city">City:</label>
+            <input type="text" id="city" name="city" [(ngModel)]="user.user_city" required>
+        </div><br>
+        <div>
+            <label for="*state">State:</label>
+            <input type="text" id="state" name="state" [(ngModel)]="user.user_state" required>
+        </div><br>
+        <div>
+            <label for="*username">Username:</label>
+            <input type="text" id=username name="username" [(ngModel)]="user.user_username" required>
+        </div><br>
+        <div>
+            <label for="*password">Password: </label>
+            <input type="text" id=password name="password" [(ngModel)]="user.user_password" required>
+        </div><br>
+        <input type="submit" value="signup" (click)="signup()">
+    </form>
