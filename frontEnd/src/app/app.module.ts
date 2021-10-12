@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { ProductsbycategoryComponent } from './components/productsbycategory/productsbycategory.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductsbycategoryComponent } from './components/productsbycategory/pro
     NavbarComponent,
     SignupComponent,
     UserDashboardComponent,
-    ProductsbycategoryComponent
+    ProductsbycategoryComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,
