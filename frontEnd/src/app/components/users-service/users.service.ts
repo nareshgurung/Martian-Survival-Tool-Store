@@ -9,8 +9,6 @@ import { environment } from 'src/environments/environment';
 })
 export class UsersService {
   
-
-
   constructor(private httpClient:HttpClient) { }
 
   getAll():Observable<Users[]>{

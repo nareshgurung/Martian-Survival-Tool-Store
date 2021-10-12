@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { UsersComponent } from './components/users/users.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { ProductsbycategoryComponent } from './components/productsbycategory/productsbycategory.component';
 
@@ -19,6 +20,7 @@ import { ProductsbycategoryComponent } from './components/productsbycategory/pro
     UsersComponent,
     CategoriesComponent,
     NavbarComponent,
+    SignupComponent,
     UserDashboardComponent,
     ProductsbycategoryComponent
   ],

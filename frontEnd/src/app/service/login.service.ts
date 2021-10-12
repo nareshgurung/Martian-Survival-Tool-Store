@@ -9,7 +9,7 @@ import {Login } from './login';
 export class LoginService {
 
 
-    loginUrl="http://localhost:8080/SpringCore/users/login";
+    // loginUrl="http://localhost:8080/SpringCore/users/login";
 
   constructor(private httpClient:HttpClient) { }
 

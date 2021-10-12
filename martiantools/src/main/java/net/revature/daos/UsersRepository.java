@@ -5,11 +5,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
 import net.revature.models.Users;
 
+@Transactional
 @Repository("usersRepository")
 public class UsersRepository {
 	
@@ -28,6 +30,10 @@ public class UsersRepository {
 		return query.getSingleResult();
 		
 	}
-
+	public void save(Users obj) {
+		
+		this.entityManager.persist(obj);
+	}
+	
 	
 }
