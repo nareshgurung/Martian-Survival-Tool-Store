@@ -28,13 +28,11 @@ public class userController {
 
 	@Autowired
 	public userController(UserService usersService){
-		System.out.println("controller constructor");
 		this.uService=usersService;
 	}
 
 	@GetMapping(path="/all", produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Users>> getAll(){
-		System.out.println("controller works");
 		return new ResponseEntity<List<Users>>(this.uService.getAllUsers(), HttpStatus.OK);
 	}
 
@@ -53,22 +51,9 @@ public class userController {
 				System.out.println("Bad credentials");
 			}
 			
-////			return unameFromClient;
-//		String unameFromDB = unameFromClient.getUser_username();
-//		String passwordFromDB = unameFromClient.getUser_password();
-//
-//		if((unameFromDB.equals(username)) && (passwordFromDB.equals(password))) {
-//			System.out.println("your are logged in");
-//
-//		}else {
-//			System.out.println("Bad credentials");
-//		}
-//
-//		//			return unameFromClient;
 	}
 	@PostMapping(path="/signup", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public void saveUsers(@RequestBody Users user) {
-		System.out.println(user);
 		this.uService.save(user);
 	}
 }
