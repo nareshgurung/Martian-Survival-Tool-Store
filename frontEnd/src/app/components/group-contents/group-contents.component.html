@@ -1,7 +1,8 @@
 <p>group-contents works!</p>
 
 <div class="group_contentsList">
-    <div *ngFor="let card of genericCard" id="div_{{card.id}}">
-        <a routerLink="/group_contents/{{card.id}}/{{card.id}}" id="a_{{card.id}}">{{card.name}}</a>
+    <div *ngFor="let gc of groupContents" id="div_{{gc.product_name}}">
+        Product: {{gc.product_name}}<br>
+        Amount: {{gc.group_contents_amount}}
     </div>
 </div>

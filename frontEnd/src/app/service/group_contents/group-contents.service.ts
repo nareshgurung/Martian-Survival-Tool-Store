@@ -2,8 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import {catchError, map, tap} from 'rxjs/operators';
-import { GenericCard } from 'src/app/models/card';
+import { Card } from 'src/app/models/card';
 import { Groups } from 'src/app/models/groups';
+import { GroupContents } from 'src/app/models/group_contents';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +16,10 @@ export class GroupContentsService {
   constructor(private http: HttpClient) { }
 
 
-  getGroupedItemsForUser(userID: number, groupID: number): Observable<GenericCard[]>{
-    return this.http.get<GenericCard[]>(this.url + userID + "/" + groupID)
+  getGroupedItemsForUser(userID: number, groupID: number): Observable<GroupContents[]>{
+    return this.http.get<GroupContents[]>(this.url + userID + "/" + groupID)
     .pipe(
-      catchError(this.handleError<GenericCard[]>('getCards', [])));
+      catchError(this.handleError<GroupContents[]>('getCards', [])));
   }
 
     /**
