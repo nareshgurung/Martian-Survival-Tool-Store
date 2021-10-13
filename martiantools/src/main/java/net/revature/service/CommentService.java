@@ -24,4 +24,5 @@ public class CommentService {
 	public void saveComment(Comments obj) {
 		this.commentRepository.saveComment(obj);
 	}
+	
 }

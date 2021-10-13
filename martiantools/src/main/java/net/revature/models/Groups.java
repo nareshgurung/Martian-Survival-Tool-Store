@@ -33,6 +33,11 @@ public class Groups {
 		this.group_name = group_name;
 		this.user_id = user_id;
 	}
+	public Groups(String group_name, int user_id) {
+		super();
+		this.group_name = group_name;
+		this.user_id = user_id;
+	}
 	public int getGroup_id() {
 		return group_id;
 	}
