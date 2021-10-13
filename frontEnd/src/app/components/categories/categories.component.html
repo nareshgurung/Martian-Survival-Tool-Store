@@ -1,6 +1,6 @@
 <h2>Categories</h2>
 <div class="categoryCards">
-    <div *ngFor="let card of cards" id="{{card.category_name}}">
-        <a routerLink="/products/all/{{card.category_id}}">{{card.category_name}}</a>
+    <div *ngFor="let card of cards" id="div_{{card.category_id}}">
+        <a routerLink="/products/all/{{card.category_id}}" id="a_{{card.category_id}}">{{card.category_name}}</a>
     </div>
 </div>

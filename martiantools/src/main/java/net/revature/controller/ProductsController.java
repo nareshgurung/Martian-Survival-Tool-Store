@@ -37,7 +37,4 @@ public class ProductsController {
 	public ResponseEntity<List<Products>> login(@PathVariable String catID) {
 		return new ResponseEntity<List<Products>>(this.pService.findById(catID), HttpStatus.OK); 
 	}
-
-
-	
 }

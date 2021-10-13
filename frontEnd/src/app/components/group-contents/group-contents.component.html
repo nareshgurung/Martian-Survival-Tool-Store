@@ -1,0 +1,8 @@
+<p>group-contents works!</p>
+
+<div class="group_contentsList">
+    <div *ngFor="let gc of groupContents" id="div_{{gc.product_name}}">
+        Product: {{gc.product_name}}<br>
+        Amount: {{gc.group_contents_amount}}
+    </div>
+</div>

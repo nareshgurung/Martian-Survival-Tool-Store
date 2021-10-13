@@ -13,6 +13,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { ProductsbycategoryComponent } from './components/productsbycategory/productsbycategory.component';
 import { CommentsComponent } from './components/comments/comments.component';
+import { GroupsComponent } from './components/groups/groups.component';
+import { GroupContentsComponent } from './components/group-contents/group-contents.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { CommentsComponent } from './components/comments/comments.component';
     UserDashboardComponent,
     ProductsbycategoryComponent,
     CommentsComponent,
+    GroupsComponent,
+    GroupContentsComponent,
   ],
   imports: [
     BrowserModule,

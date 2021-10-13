@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Card } from '../../service/category-card/card';
+import { Card } from '../../models/card';
 import { CardService } from '../../service/category-card/card.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { CardService } from '../../service/category-card/card.service';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
- cards: Card[] = [];
+  cards: Card[] = [];
 
   constructor(private cardService: CardService) { }
 
@@ -18,6 +18,8 @@ export class CategoriesComponent implements OnInit {
 
   getCategories(): void {
     this.cardService.getCards().subscribe(cards => this.cards = cards);
+    // this.cardService.getCards().subscribe();
+    console.log("this.genericCard[]:" + this.cards);
   }
 
 }

@@ -5,14 +5,18 @@ import { LoginComponent } from './components/login/login.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { ProductsbycategoryComponent } from './components/productsbycategory/productsbycategory.component';
 import { CommentsComponent } from './components/comments/comments.component';
+import { GroupsComponent } from './components/groups/groups.component';
+import { GroupContentsComponent } from './components/group-contents/group-contents.component';
 
 const routes: Routes = [
   {path: 'categories',component: CategoriesComponent},
-  {path: '',redirectTo: '/login', pathMatch: 'full'},
+  {path: '',redirectTo: '/categories', pathMatch: 'full'},
   {path: 'login',component: LoginComponent},
   {path: 'dashboard', component: UserDashboardComponent},
   {path: 'products/all/:id', component: ProductsbycategoryComponent},
   {path: 'comments', component: CommentsComponent},
+  {path: 'groups/:userID', component: GroupsComponent},
+  {path: 'group_contents/:userID/:groupID', component: GroupContentsComponent}
 ];
 
 @NgModule({

@@ -26,4 +26,10 @@ public class GroupsRepository {
 		this.entityManager.persist(obj);
 	}
 
+	public List<Groups> getByUserID(String userID) {
+		List<Groups> list;
+		list = this.entityManager.createQuery("From Groups where user_id=" + userID, Groups.class).getResultList();
+		return list;
+	}
+
 }
