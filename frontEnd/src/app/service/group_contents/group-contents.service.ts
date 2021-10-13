@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import {catchError, map, tap} from 'rxjs/operators';
 import { Card } from 'src/app/models/card';
@@ -13,7 +14,7 @@ export class GroupContentsService {
 	private url = 'http://localhost:8080/SpringCore/group_contents/';
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router:Router) { }
 
 
   getGroupedItemsForUser(userID: number, groupID: number): Observable<GroupContents[]>{
@@ -32,7 +33,7 @@ export class GroupContentsService {
 		return (error: any): Observable<T> => {
 
 			console.error("CommentsService > ERROR: ", error);
-
+      this.router.navigateByUrl('error');
 			return of(result as T);
 		};
 	}

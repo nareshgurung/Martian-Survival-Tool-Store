@@ -9,9 +9,6 @@ import { SignupService } from './signup.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
-  
-
   constructor(private signUpServ:SignupService) { }
 
 

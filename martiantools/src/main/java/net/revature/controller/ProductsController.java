@@ -34,7 +34,12 @@ public class ProductsController {
 	}
 	
 	@GetMapping(path="/all/{catID}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Products>> login(@PathVariable String catID) {
+	public ResponseEntity<List<Products>> getListByID(@PathVariable String catID) {
 		return new ResponseEntity<List<Products>>(this.pService.findById(catID), HttpStatus.OK); 
+	}
+
+	@GetMapping(path="/id/{catID}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<Products>> getProductByID(@PathVariable String catID) {
+		return new ResponseEntity<List<Products>>(this.pService.findOneById(catID), HttpStatus.OK); 
 	}
 }

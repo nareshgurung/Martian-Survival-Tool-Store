@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Card } from '../../models/card';
 import {catchError, map, tap} from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import {catchError, map, tap} from 'rxjs/operators';
 export class CardService {
 private url = 'http://localhost:8080/SpringCore/categories/all';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router:Router) { }
 
   getCards(): Observable<Card[]> {
     console.log("this.url:" + this.url)
@@ -32,6 +33,7 @@ private handleError<T>(operation = 'operation', result?: T) {
     console.error(error); // log to console instead
 
     // Let the app keep running by returning an empty result.
+    this.router.navigateByUrl('error');
     return of(result as T);
   };
 }
