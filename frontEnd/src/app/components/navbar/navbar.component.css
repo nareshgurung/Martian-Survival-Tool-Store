@@ -1,14 +1,49 @@
-#navbarlist {
-    overflow: hidden;
-    border-radius: 1px 1px 15px 15px;
-    background-image: linear-gradient(to left, #feada6 0%, #f5efef 100%);
+
+/* Button */
+.button, button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #c1440e;
+  color: white;
+  border: none;
 }
 
-#navbarlist a {
-    float: left;
-    display: block;
-    text-align: justify;
-    padding: 20px;
-    text-decoration: none;
-    color: black;
+.button:hover, button:hover {
+  opacity: 0.8;
+  font-weight: normal;
 }
+
+.button:disabled, button:disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
+
+.cart-button {
+  background-color: white;
+  color: #c1440e;
+
+}
+
+.cart-button i.material-icons {
+  color: #c1440e;
+  padding-right: 4px;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  line-height: 1.5;
+  cursor: pointer;
+  size: 18px;
+}
+a:hover {
+  text-decoration: none;
+  color:brown;
+}
+

@@ -1,28 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Product } from '../../models/product';
+import { Product } from 'src/app/models/product';
 import {catchError, map, tap} from 'rxjs/operators';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
-  private url = 'http://localhost:8080/SpringCore/products/';
+  private url = 'http://localhost:8080/SpringCore/products/all/';
 
-  constructor(private http: HttpClient, private router:Router) { }
+  constructor(private http: HttpClient) { }
 
   getProducts(id: number): Observable<Product[]>{
-    return this.http.get<Product[]>(`${this.url}all/${id}`)
-    .pipe(
-      catchError(this.handleError<Product[]>('getCards', [])));
-  }
-
-  getProductByID(id: number): Observable<Product[]>{
-    return this.http.get<Product[]>(`${this.url}id/${id}`)
-    .pipe(
-      catchError(this.handleError<Product[]>('getCards', [])));
+    return this.http.get<Product[]>(this.url + id)
   }
 
   /**
@@ -38,9 +29,7 @@ private handleError<T>(operation = 'operation', result?: T) {
     console.error(error); // log to console instead
 
     // Let the app keep running by returning an empty result.
-    this.router.navigateByUrl('error');
     return of(result as T);
   };
 }
 }
- 

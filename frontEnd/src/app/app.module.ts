@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 
@@ -17,6 +17,7 @@ import { GroupsComponent } from './components/groups/groups.component';
 import { GroupContentsComponent } from './components/group-contents/group-contents.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -33,11 +34,13 @@ import { ProductPageComponent } from './components/product-page/product-page.com
     GroupContentsComponent,
     ErrorMessageComponent,
     ProductPageComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],
