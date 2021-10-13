@@ -15,6 +15,7 @@ import { ProductsbycategoryComponent } from './components/productsbycategory/pro
 import { CommentsComponent } from './components/comments/comments.component';
 import { GroupsComponent } from './components/groups/groups.component';
 import { GroupContentsComponent } from './components/group-contents/group-contents.component';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { GroupContentsComponent } from './components/group-contents/group-conten
     CommentsComponent,
     GroupsComponent,
     GroupContentsComponent,
+    ErrorMessageComponent,
   ],
   imports: [
     BrowserModule,

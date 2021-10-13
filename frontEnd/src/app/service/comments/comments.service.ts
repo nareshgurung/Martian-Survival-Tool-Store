@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Comment } from '../../models/comment';
 import {catchError, map, tap} from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
 	providedIn: 'root'
@@ -10,7 +11,7 @@ import {catchError, map, tap} from 'rxjs/operators';
 export class CommentsService {
 	private url = 'http://localhost:8080/SpringCore/comments/all';
 
-	constructor(private http: HttpClient) { }
+	constructor(private http: HttpClient, private router:Router) { }
 
 	getAllComments(): Observable<Comment[]> {
     console.log("CommentsService > getAllComments +++++++++++++++++++++");
@@ -25,6 +26,7 @@ export class CommentsService {
 
 			console.error("CommentsService > ERROR: ", error);
 
+			this.router.navigateByUrl('error');
 			return of(result as T);
 		};
 	}

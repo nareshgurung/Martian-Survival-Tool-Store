@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import {catchError, map, tap} from 'rxjs/operators';
 import { Groups } from 'src/app/models/groups';
@@ -10,7 +11,7 @@ import { Groups } from 'src/app/models/groups';
 export class GroupsService {
 	private url = 'http://localhost:8080/SpringCore/groups/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   getGroupsForUser(userID: number): Observable<Groups[]> {
     return this.http.get<Groups[]>(this.url + userID)
@@ -29,6 +30,7 @@ export class GroupsService {
 
 			console.error("CommentsService > ERROR: ", error);
 
+      this.router.navigateByUrl('error');
 			return of(result as T);
 		};
 	}
