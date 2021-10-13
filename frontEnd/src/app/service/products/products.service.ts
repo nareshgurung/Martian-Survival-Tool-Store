@@ -9,15 +9,20 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ProductsService {
-  private url = 'http://localhost:8080/SpringCore/products/all/';
+  private url = 'http://localhost:8080/SpringCore/products/';
 
   constructor(private http: HttpClient, private router:Router) { }
 
   getProducts(id: number): Observable<Product[]>{
-    return this.http.get<Product[]>(this.url + id)
+    return this.http.get<Product[]>(`${this.url}all/${id}`)
     .pipe(
       catchError(this.handleError<Product[]>('getCards', [])));
+  }
 
+  getProductByID(id: number): Observable<Product[]>{
+    return this.http.get<Product[]>(`${this.url}id/${id}`)
+    .pipe(
+      catchError(this.handleError<Product[]>('getCards', [])));
   }
 
   /**
