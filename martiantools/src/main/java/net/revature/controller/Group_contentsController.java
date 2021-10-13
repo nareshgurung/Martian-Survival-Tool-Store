@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import net.revature.models.Group_contents;
+import net.revature.models.GroupContentsAsProducts;
 import net.revature.service.Group_contentsService;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -27,8 +27,8 @@ public class Group_contentsController {
 	}
 	
 	@GetMapping(path="/{userID}/{groupID}", produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Group_contents>> getAll(@PathVariable String userID, @PathVariable String groupID){
-		return new ResponseEntity<List<Group_contents>>(this.gcService.findUserGroupByUserIDAndGroupID(groupID, userID), HttpStatus.OK);
+	public ResponseEntity<List<GroupContentsAsProducts>> getAll(@PathVariable String userID, @PathVariable String groupID){
+		return new ResponseEntity<List<GroupContentsAsProducts>>(this.gcService.findUserGroupByUserIDAndGroupID(groupID, userID), HttpStatus.OK);
 	}
 
 	

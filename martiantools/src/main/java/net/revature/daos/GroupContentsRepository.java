@@ -19,10 +19,9 @@ public class GroupContentsRepository {
 		return entityManager.createQuery("FROM Group_contents", Group_contents.class).getResultList();
 	}
 	
-	public List<Group_contents> getByGroupID(String groupID) {
-		List<Group_contents> list;
-		list = this.entityManager.createQuery("From Group_contents where group_id=" + groupID, Group_contents.class).getResultList();
-		System.out.println(list);
+	public List<Object[]> getByGroupID(String groupID) {
+		List<Object[]> list;
+		list = this.entityManager.createQuery("SELECT p.product_name,gc.group_contents_amount FROM Group_contents as gc , Products as p WHERE gc.product_id=p.product_id", Object[].class).getResultList();
 		return list;
 	}
 
