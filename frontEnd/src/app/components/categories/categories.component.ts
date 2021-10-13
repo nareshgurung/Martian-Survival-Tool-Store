@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Card } from '../../models/card';
+import { GenericCard } from '../../models/card';
 import { CardService } from '../../service/category-card/card.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { CardService } from '../../service/category-card/card.service';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
- cards: Card[] = [];
+ cards: GenericCard[] = [];
 
   constructor(private cardService: CardService) { }
 

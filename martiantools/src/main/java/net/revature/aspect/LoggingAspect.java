@@ -1,13 +1,9 @@
 package net.revature.aspect;
 
-
-
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -28,7 +24,6 @@ public class LoggingAspect {
 	@Before(value="serviceLog()")
 	public void logBeforeService(JoinPoint jp) {
 		LOGGER.info("this final method with my userservice");
-		
 	}
 	
 	@After(value="serviceLog()")
@@ -45,25 +40,6 @@ public class LoggingAspect {
 	public void logAfterServiceException(JoinPoint jp, Exception thrownException) {
 		LOGGER.info("afterthrowing advice: " + thrownException);
 	}
-	
-//	// not a good pracise to use this around annotation.
-//	@Around("serviceLog()") 
-//	public Object logArroundAdivce(ProceedingJoinPoint pjp) {
-//		
-//		Object returnedObject = null;
-//		LOGGER.info("Arround Advice: the ");
-//		
-//		 try {
-//			returnedObject = pjp.proceed();
-//		} catch (Throwable e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		 
-//		 return returnedObject;
-//		
-//	}
-	
 }
 
 

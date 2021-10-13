@@ -12,7 +12,7 @@ export class GroupsService {
 
   constructor(private http: HttpClient) { }
 
-  getGroupsForUser(userID: string): Observable<Groups[]> {
+  getGroupsForUser(userID: number): Observable<Groups[]> {
     return this.http.get<Groups[]>(this.url + userID)
     .pipe(
       catchError(this.handleError<Groups[]>('getCards', [])));

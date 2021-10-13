@@ -2,7 +2,7 @@
 <configuration debug="true">
 <!-- Configuration for logging to a file. -->
 	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
-		<file>logs/spring.log</file>
+		<file>C:/Users/Norman/Desktop/temp/logs/spring.log</file>
 		<append>true</append>
 		<encoder>
 			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>

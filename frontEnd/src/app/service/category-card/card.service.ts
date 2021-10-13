@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Card } from '../../models/card';
+import { GenericCard } from '../../models/card';
 import {catchError, map, tap} from 'rxjs/operators';
 
 @Injectable({
@@ -12,10 +12,10 @@ private url = 'http://localhost:8080/SpringCore/categories/all';
 
   constructor(private http: HttpClient) { }
 
-  getCards(): Observable<Card[]> {
-    return this.http.get<Card[]>(this.url)
+  getCards(): Observable<GenericCard[]> {
+    return this.http.get<GenericCard[]>(this.url)
     .pipe(
-      catchError(this.handleError<Card[]>('getCards', [])));
+      catchError(this.handleError<GenericCard[]>('getCards', [])));
   }
 
 /**
