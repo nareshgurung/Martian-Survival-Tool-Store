@@ -14,13 +14,13 @@ export class ProductPageComponent implements OnInit {
   constructor(private rout: ActivatedRoute, private prodService: ProductsService) { }
 
   ngOnInit(): void {
-    // this.getProductByID();
+    this.getProductByID();
   }
 
-  // getProductByID(): void {
-  //   const id = Number(this.rout.snapshot.paramMap.get('id'));
-  //   this.prodService.getProductByID(id).subscribe((products: Product[]) => this.products = products);
-  // }
+  getProductByID(): void {
+    const id = Number(this.rout.snapshot.paramMap.get('id'));
+    this.prodService.getProductsByID(id).subscribe((products: Product[]) => this.products = products);
+  }
 
 
 }

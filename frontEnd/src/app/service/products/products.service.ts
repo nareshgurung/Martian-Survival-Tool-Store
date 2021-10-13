@@ -8,12 +8,16 @@ import {catchError, map, tap} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductsService {
-  private url = 'http://localhost:8080/SpringCore/products/all/';
+  private url = 'http://localhost:8080/SpringCore/products/';
 
   constructor(private http: HttpClient) { }
 
   getProducts(id: number): Observable<Product[]>{
-    return this.http.get<Product[]>(this.url + id)
+    return this.http.get<Product[]>(this.url + "all/" + id)
+  }
+
+  getProductsByID(productID: number): Observable<Product[]>{
+    return this.http.get<Product[]>(this.url + "id/" + productID)
   }
 
   /**
