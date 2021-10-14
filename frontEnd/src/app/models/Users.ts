@@ -1,4 +1,5 @@
 export class Users{
+  valid: any;
     constructor(public user_id:number, public user_role:number, public user_email:string, public user_fname:string, public user_midinnitial:string,
         public user_lname:string, public user_street:string, public user_zip:number, public user_city:string, public user_state:string,
         public user_username:string, public user_password:string) {

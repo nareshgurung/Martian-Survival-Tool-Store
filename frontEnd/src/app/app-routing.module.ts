@@ -7,6 +7,7 @@ import { ProductsbycategoryComponent } from './components/productsbycategory/pro
 import { CommentsComponent } from './components/comments/comments.component';
 import { GroupsComponent } from './components/groups/groups.component';
 import { GroupContentsComponent } from './components/group-contents/group-contents.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
   {path: 'categories',component: CategoriesComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'products/all/:id', component: ProductsbycategoryComponent},
   {path: 'comments', component: CommentsComponent},
   {path: 'groups/:userID', component: GroupsComponent},
-  {path: 'group_contents/:userID/:groupID', component: GroupContentsComponent}
+  {path: 'group_contents/:userID/:groupID', component: GroupContentsComponent},
+  {path: 'signup', component: SignupComponent}
 ];
 
 @NgModule({

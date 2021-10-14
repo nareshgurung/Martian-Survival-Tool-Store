@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { ThrowStmt } from '@angular/compiler';
 import { Injectable } from '@angular/core';
+import { Users } from 'src/app/models/Users';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class SignupService {
   constructor(private http:HttpClient) { }
 
   signupSetup(newUser:object){
-    return  this.http.post(this.signUpUser, newUser);
+    return  this.http.post<Users>(this.signUpUser, newUser);
     
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ResolvedReflectiveFactory } from '@angular/core';
 import { Users } from 'src/app/models/Users';
 import { SignupService } from './signup.service';
 
@@ -10,7 +10,8 @@ import { SignupService } from './signup.service';
 })
 export class SignupComponent implements OnInit {
 
-  
+  error:string="";
+  signedup= false;
 
   constructor(private signUpServ:SignupService) { }
 
@@ -26,7 +27,16 @@ export class SignupComponent implements OnInit {
                       this.user.user_lname, this.user.user_street, this.user.user_zip, this.user.user_city, this.user.user_state, 
                         this.user.user_username, this.user.user_password);
 
-  this.signUpServ.signupSetup(newUser).subscribe();
+
+  this.signUpServ.signupSetup(newUser).subscribe(resData=>{
+    if(resData == null){
+      this.error = "you are succesfully signed up now click on login button to login.";
+      this.signedup=true;
+    }
+  }, error =>{
+    this.error = "Something is wrong! Try again"
+    this.signedup=false;
+  });
   }
 
 }

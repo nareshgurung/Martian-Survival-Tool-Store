@@ -1,8 +1,11 @@
 <div id="navbarlist">
     <a routerLink="categories">Categories</a>
-    <a routerLink="login">Log In</a>
-    <a routerLink="signup">Signup</a>
+    <a routerLink="login" *ngIf="!isLoggedin">Log In</a>
+    <a routerLink="signup" *ngIf="!isLoggedin">Signup</a>
     <a routerLink="dashboard">Dashboard</a>
     <a routerLink="comments">Comments</a>
     <a routerLink="groups/13">View Groups (user 13 only)</a>
+    <a *ngIf="isLoggedin">Welcome {{fname}}</a>
+    <a class="logout" *ngIf="isLoggedin">
+         <input type="submit" value="logout" (click)="onlogout()"></a>
 </div>
