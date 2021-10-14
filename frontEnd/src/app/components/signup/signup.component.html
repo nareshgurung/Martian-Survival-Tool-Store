@@ -1,5 +1,9 @@
 
-    <form>
+<div>
+    <div *ngIf="error">
+        <p class="error">{{error}}</p>
+    </div>
+    <form #signupFrom = "ngForm" *ngIf="!signedup">
         <br>
         <div>
             <label for="*role">Role:</label>
@@ -45,5 +49,6 @@
             <label for="*password">Password: </label>
             <input type="text" id=password name="password" [(ngModel)]="user.user_password" required>
         </div><br>
-        <input type="submit" value="signup" (click)="signup()">
+        <input type="submit" value="signup" (click)="signup()" [disabled]="!signupFrom.valid">
     </form>
+</div>

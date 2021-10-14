@@ -1,10 +1,13 @@
+
 <!-- <div id="navbarlist"> -->
     <a id="a_navbar_gategories" routerLink="categories">Categories</a>
-    <a id="a_navbar_login" routerLink="login">Log In</a>
+    <a id="a_navbar_login" routerLink="login" *ngIf="!isLoggedin">Log In</a>
     <a id="a_navbar_dashboard" routerLink="dashboard">Dashboard</a>
-    <a routerLink="/signup">Signup</a>
+    <a routerLink="/signup" *ngIf="!isLoggedin">Signup</a>
     <a routerLink="comments">Comments</a>
     <a routerLink="groups/13">View Groups (user 13 only)</a>
     <a routerLink="/cart" class="button cart-button"><i class="material-icons">shopping_cart</i></a>
+    <a *ngIf="isLoggedin">Welcome {{fname}}</a>
+    <a class="logout" *ngIf="isLoggedin">
+         <input type="submit" value="logout" (click)="onlogout()"></a>
 <!-- </div> -->
-
