@@ -30,4 +30,11 @@ public class ProductService {
 		}
 		return this.productRepository.getByCategoryID(id);
 	}
+
+	public List<Products> findOneById(String catID) {
+		if(!CheckWrongData.canParseAsInteger(catID)) {
+			return null;
+		}
+		return this.productRepository.getByProductID(catID);
+	}
 }

@@ -1,80 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
 
+:root {
+  --dark-orange: #c1440e;
+  --medium-orange: #e77d11;
+  --light-orange: #fda600;
+  --brown:#451804;
+  --gray: #f0e7e7;
+
+}
 
 *, ::before, ::after {
   box-sizing: border-box;
+
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
 }
 
 a {
   display: inline-block;
   text-decoration: none;
-  color: hsl(7, 100%, 62%);
+  color: var(--medium-orange);
   line-height: 1.5;
+  cursor: pointer;
 }
 a:hover {
-  text-decoration: underline;
-  color: #555;
+  text-decoration: none;
+  color: var(--brown);
 }
 
 ul {
   list-style-type: none;
 }
 
-/* add to card button */
-.add_btn {
-  background-color: hsl(7, 100%, 62%);
-  color: white;
-  padding: .5rem .75rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+/* temp img control */
+
+img {
+  width: 100%;
+  max-width: 200px;
+}
+
+/* nav Bar */
+
+app-navbar {
+  width: 100%;
+  height: 68px;
+  background-color: var(--medium-orange);
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+app-navbar h1 {
+  color: var(--gray);
+  margin: 0;
+}
+
+/* Input */
+
+input {
+  border-radius: 2px;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #BDBDBD;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 4px;
   display: block;
-  margin: 0 auto;
-  font-family: inherit;
-  font-size: .9rem;
+  text-transform: uppercase;
 }
 
-
-/* responsive util classes */
-.container {
-  border-radius: 5px;
-  background-color: #f8f8f8;
-  padding: 20px;
-}
-
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-.col-50 {
-  float: left;
-  width: 50%;
-  margin-top: 6px;
-}
-
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}

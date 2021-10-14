@@ -8,17 +8,24 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { GroupsComponent } from './components/groups/groups.component';
 import { GroupContentsComponent } from './components/group-contents/group-contents.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
+import { ProductPageComponent } from './components/product-page/product-page.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   {path: 'categories',component: CategoriesComponent},
-  {path: '',redirectTo: '/categories', pathMatch: 'full'},
+  {path: '',redirectTo: '/login', pathMatch: 'full'},
   {path: 'login',component: LoginComponent},
   {path: 'dashboard', component: UserDashboardComponent},
+  { path: 'cart', component: CartComponent },
+
   {path: 'products/all/:id', component: ProductsbycategoryComponent},
   {path: 'comments', component: CommentsComponent},
   {path: 'groups/:userID', component: GroupsComponent},
   {path: 'group_contents/:userID/:groupID', component: GroupContentsComponent},
-  {path: 'signup', component: SignupComponent}
+  {path: 'signup', component: SignupComponent},
+  {path: 'error', component: ErrorMessageComponent},
+  {path: 'products/id/:id', component: ProductPageComponent}
 ];
 
 @NgModule({

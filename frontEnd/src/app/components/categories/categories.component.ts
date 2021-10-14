@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Card } from '../../models/card';
 import { CardService } from '../../service/category-card/card.service';
 
@@ -10,7 +11,7 @@ import { CardService } from '../../service/category-card/card.service';
 export class CategoriesComponent implements OnInit {
   cards: Card[] = [];
 
-  constructor(private cardService: CardService) { }
+  constructor(private cardService: CardService, private router: Router) { }
 
   ngOnInit(): void {
     this.getCategories();
@@ -18,8 +19,11 @@ export class CategoriesComponent implements OnInit {
 
   getCategories(): void {
     this.cardService.getCards().subscribe(cards => this.cards = cards);
-    // this.cardService.getCards().subscribe();
-    console.log("this.genericCard[]:" + this.cards);
+    if(this.cards){
+      
+    } else {
+      this.router.navigateByUrl('../error');
+    }
   }
 
 }

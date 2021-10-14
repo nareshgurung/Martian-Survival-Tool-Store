@@ -1,22 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Product } from '../../models/product';
+import { Product } from 'src/app/models/product';
 import {catchError, map, tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
-  private url = 'http://localhost:8080/SpringCore/products/all/';
+  private url = 'http://localhost:8080/SpringCore/products/';
 
   constructor(private http: HttpClient) { }
 
   getProducts(id: number): Observable<Product[]>{
-    return this.http.get<Product[]>(this.url + id)
-    .pipe(
-      catchError(this.handleError<Product[]>('getCards', [])));
+    return this.http.get<Product[]>(this.url + "all/" + id)
+  }
 
+  getProductsByID(productID: number): Observable<Product[]>{
+    return this.http.get<Product[]>(this.url + "id/" + productID)
   }
 
   /**
@@ -36,4 +37,3 @@ private handleError<T>(operation = 'operation', result?: T) {
   };
 }
 }
- 
