@@ -1,5 +1,17 @@
 
-/* Button */
+#navbarlist {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+}
+
+li {
+  margin-right: 2rem;
+}
+
+/* button */
 .button, button {
   display: inline-flex;
   align-items: center;
@@ -10,6 +22,7 @@
   background-color: #c1440e;
   color: white;
   border: none;
+  margin: 0 !important;
 }
 
 .button:hover, button:hover {
@@ -50,3 +63,14 @@ a:hover {
   color:brown;
 }
 
+@media screen and (max-width:768px) {
+  #navbarlist {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  li {
+    margin-top: .7rem;
+  }
+}

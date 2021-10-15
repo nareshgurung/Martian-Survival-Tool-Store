@@ -1,15 +1,16 @@
-<div id="productsListMasterDiv" *ngFor="let prod of products">
-    <!-- <h2>{{prod.product_name}}</h2><br>
-    Description: {{prod.product_description}}<br>
-    Price: ${{prod.product_price}}<br>
-    How many are left: {{prod.product_quantity}}<br> -->
-    <a routerLink="/products/id/{{prod.product_id}}">{{prod.product_name}}<br>
-    <img id="img_{{prod.product_id}}" src="{{prod.product_url}}"></a><br>
-    <!-- this area is just there for breaking up the page a little. should be changed before final production -->
-    <pre>
-.-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-
-/ / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \
--'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   
-    </pre>
-    <!-- this area is just there for breaking up the page a little. should be changed before final production -->
+<div id="container-fluid">
+  <div class="row">
+
+  <div class="col-xs-12 col-sm-6 col-md-3"  *ngFor="let prod of products">
+    <a routerLink="/products/id/{{prod.product_id}}">
+      <h3>{{prod.product_name}}</h3>
+      <img id="img_{{prod.product_id}}" src="{{prod.product_url}}"></a>
+
+    <p>Description: {{prod.product_description}}</p>
+    <p>Price: {{prod.product_price | currency }}</p>
+    <p>Units left: {{prod.product_quantity}}</p>
+
+    <button id="button_addtoCart_{{prod.product_id}}" value="addToCart">Add to Cart</button>
+  </div>
+  </div>
 </div>

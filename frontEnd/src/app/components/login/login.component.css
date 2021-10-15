@@ -1,3 +1,10 @@
+
+h2 {
+  margin-top: 3rem;
+  font-weight: bold;
+
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -5,4 +12,13 @@
 .loginError{
   background-color: red;
   color:white;
+}
+
+.button {
+  cursor: pointer;
+  display: inline-block;
+  margin: 1.5rem auto;
+  background-color: #e77d11;
+  color: #eee;
+  font-weight: bold;
 }
