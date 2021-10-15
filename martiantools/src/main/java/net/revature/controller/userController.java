@@ -33,21 +33,7 @@ public class userController {
 
 	@PostMapping(path="/login/{username}/{password}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Users login(@PathVariable String username, @PathVariable String password) {
-
-		Users unameFromClient = this.uService.getByUsername(username);
-			String unameFromDB = unameFromClient.getUser_username();
-			String passwordFromDB = unameFromClient.getUser_password();
-			
-			if((unameFromDB.equals(username)) && (passwordFromDB.equals(password))) {
-				System.out.println("your are logged in");
-				return unameFromClient;
-				
-				
-			}else {
-				System.out.println("Bad credentials");
-				return null;
-			}
-			
+		return this.uService.getUserWithUsernameAndPassword(username, password);
 	}
 	@PostMapping(path="/signup", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public void saveUsers(@RequestBody Users user) {

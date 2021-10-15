@@ -31,11 +31,14 @@ public class UserService {
 		return this.usersRepository.getAll();
 	}
 	
-	public Users getByUsername(String username) {
+	public Users getUserWithUsernameAndPassword(String username, String password) {
 		Users usr = this.usersRepository.getByUserName(username);
-		usr.setUser_username("");
-		usr.setUser_password("");
-		return usr;
+		
+		if((usr.getUser_username().equals(username)) && (usr.getUser_password().equals(password))) {
+			return usr;
+		}else {
+			return null;
+		}
 	}
 	public void save(Users obj) {
 		System.out.println(obj);
