@@ -39,6 +39,9 @@ An Online Store for selling products & supplies for people on Earth who are prep
 * let vendors put their stuff on sale
 * add more categories and items to each category
 
+## Angular Build
+  10/15/2021 Video
+
 ## Useful Links:
   Markdown cheat sheet - https://www.markdownguide.org/basic-syntax/  
   User stories examples - https://www.mountaingoatsoftware.com/agile/user-stories  
