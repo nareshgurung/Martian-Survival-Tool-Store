@@ -31,11 +31,6 @@ public class userController {
 		this.uService=usersService;
 	}
 
-	@GetMapping(path="/all", produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Users>> getAll(){
-		return new ResponseEntity<List<Users>>(this.uService.getAllUsers(), HttpStatus.OK);
-	}
-
 	@PostMapping(path="/login/{username}/{password}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Users login(@PathVariable String username, @PathVariable String password) {
 

@@ -6,6 +6,7 @@ import { throwError } from 'rxjs';
 import {Login } from './login';
 
 export interface LoginResponse{
+  user_id:number;
   user_fname:string;
   user_lname:string;
   user_username:string;
@@ -37,8 +38,8 @@ export class LoginService {
       return throwError(errorMessage);   
    }
    ), tap(respo=>{
-     const usr = new Login(respo.user_fname, respo.user_lname,
-                  respo.user_username, respo.user_password)
+     const usr = new Login(respo.user_id, respo.user_fname, respo.user_lname,
+                  username, password)
       this.user.next(usr);
    }));
   }
