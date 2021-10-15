@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { ProductsService } from 'src/app/service/products/products.service';
+import { CartService } from 'src/app/service/cart.service';
 
 @Component({
   selector: 'app-product-page',
@@ -11,7 +12,8 @@ import { ProductsService } from 'src/app/service/products/products.service';
 export class ProductPageComponent implements OnInit {
   products: Product[] = [];
 
-  constructor(private rout: ActivatedRoute, private prodService: ProductsService) { }
+  constructor(private rout: ActivatedRoute, private prodService: ProductsService,
+    private cartService: CartService) { }
 
   ngOnInit(): void {
     this.getProductByID();
@@ -20,6 +22,11 @@ export class ProductPageComponent implements OnInit {
   getProductByID(): void {
     const id = Number(this.rout.snapshot.paramMap.get('id'));
     this.prodService.getProductsByID(id).subscribe((products: Product[]) => this.products = products);
+  }
+
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
+    window.alert('Your product has been added to the cart!');
   }
 
 
