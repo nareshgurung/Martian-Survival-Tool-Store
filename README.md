@@ -38,6 +38,10 @@ An Online Store for selling products & supplies for people on Earth who are prep
 ## Stretch Goals:
 * let vendors put their stuff on sale
 * add more categories and items to each category
+* Make shipping prices dynamic based on users location 
+
+## Angular Build
+  10/15/2021 Video
 
 ## Useful Links:
   Markdown cheat sheet - https://www.markdownguide.org/basic-syntax/  

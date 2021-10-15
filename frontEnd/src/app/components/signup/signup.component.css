@@ -1,4 +1,29 @@
-.error{background-color: red;
-        color:white
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
 }
-        
+
+h3 {
+  margin: 3rem;
+  font-weight: bold;
+}
+
+.signup_btn {
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 0;
+  background-color: #e77d11;
+  color: #eee;
+  font-weight: bold;
+}
+
+.signup_btn:hover {
+  background-color: #fda600;
+}
+
+.error{
+  background-color: red;
+  color:white
+}
