@@ -32,7 +32,10 @@ public class UserService {
 	}
 	
 	public Users getByUsername(String username) {
-		return this.usersRepository.getByUserName(username);
+		Users usr = this.usersRepository.getByUserName(username);
+		usr.setUser_username("");
+		usr.setUser_password("");
+		return usr;
 	}
 	public void save(Users obj) {
 		System.out.println(obj);
