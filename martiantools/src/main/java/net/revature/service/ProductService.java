@@ -17,7 +17,6 @@ public class ProductService {
 	@Autowired
 	public ProductService(ProductRepository productRepository) {
 		this.productRepository = productRepository;
-		System.out.println("hello from productService!");
 	}
 	
 	public List<Products> findAll(){
