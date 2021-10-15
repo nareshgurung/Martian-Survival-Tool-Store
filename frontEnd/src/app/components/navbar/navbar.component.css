@@ -1,76 +1,77 @@
-
-#navbarlist {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: space-between;
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: #e77d11;
+	position: relative;
 }
 
-li {
-  margin-right: 2rem;
+.logo {
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.6rem;
+	padding: .9rem;
 }
 
-/* button */
-.button, button {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 16px;
-  border-radius: 2px;
-  font-size: 14px;
-  cursor: pointer;
-  background-color: #c1440e;
-  color: white;
-  border: none;
-  margin: 0 !important;
+.navLink ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
 }
 
-.button:hover, button:hover {
-  opacity: 0.8;
-  font-weight: normal;
+.navLink ul li {
+	list-style: none;
 }
 
-.button:disabled, button:disabled {
-  opacity: 0.5;
-  cursor: auto;
+.navLink ul li a {
+	text-decoration: none;
+	margin: 1.1rem;
+	padding: .3rem;
+	color: #fff;
+	font-size: 1.2rem;
 }
 
-
-.cart-button {
-  background-color: white;
-  color: #c1440e;
-
-}
-.logout{
-    margin-left: 30%;
-}
-
-.cart-button i.material-icons {
-  color: #c1440e;
-  padding-right: 4px;
+.navToggler {
+	width: 35px;
+	height: 30px;
+	display: none;
+	position: absolute;
+	right: .94rem;
+	margin-top: 10px;
 }
 
-a {
-  display: inline-block;
-  text-decoration: none;
-  color: white;
-  line-height: 1.5;
-  cursor: pointer;
-  size: 18px;
-}
-a:hover {
-  text-decoration: none;
-  color:brown;
+.navToggler div {
+  background-color: #fff;
+	width: 100%;
+	height: 5px;
+	margin: 5px;
+	cursor: pointer;
 }
 
-@media screen and (max-width:768px) {
-  #navbarlist {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  li {
-    margin-top: .7rem;
-  }
+@media(max-width: 760px) {
+	.navLink {
+		width: 100%;
+		display: none;
+	}
+	.navToggler {
+		display: block;
+	}
+	.navbar {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.navLink ul {
+		width: 100%;
+		flex-direction: column;
+	}
+	.navLink ul li {
+		text-align: center;
+		padding: .9rem 0;
+	}
+	.navLink.active {
+		display: flex;
+	}
+	.navLink ul li:hover {
+		background: #666666;
+	}
 }
