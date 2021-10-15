@@ -18,6 +18,7 @@ import { GroupContentsComponent } from './components/group-contents/group-conten
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { CartComponent } from './components/cart/cart.component';
+import { ShippingComponent } from './components/shipping/shipping.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { CartComponent } from './components/cart/cart.component';
     ErrorMessageComponent,
     ProductPageComponent,
     CartComponent,
+    ShippingComponent,
   ],
   imports: [
     BrowserModule,

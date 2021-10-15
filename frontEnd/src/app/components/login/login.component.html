@@ -8,17 +8,17 @@
     </div>
 <form>
     <div>
-        <label for="*username">Username: </label>
+        <label for="*username">Username * </label>
         <input type="text" id=username name="username" [(ngModel)]="username" required>
     </div><br>
     <div>
-        <label for="*password">Password: </label>
+        <label for="*password">Password * </label>
         <input type="text" id=username name="password" [(ngModel)]="password"required>
     </div>
     <div>
-        <input type="submit" value="login" (click)="checkLogin()">
+        <input class="button" type="submit" value="Login" (click)="checkLogin()">
     </div>
-    <i><a routerLink="../signup">create an account</a></i>
+    <i>or <a routerLink="../signup">Create an Account</a></i>
 </form>
 
 
