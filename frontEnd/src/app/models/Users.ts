@@ -1,3 +1,5 @@
+import { Login } from "../service/login";
+
 export class Users{
   valid: any;
     constructor(public user_id:number, public user_role:number, public user_email:string, public user_fname:string, public user_midinnitial:string,
@@ -54,4 +56,5 @@ getUserUsername():string{
 getUserPassword():string{
     return this.user_password;
 }
+
 }
