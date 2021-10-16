@@ -1,5 +1,4 @@
 <div class="container">
-  <h2>Product Page</h2>
 
 <div id="product" *ngFor="let prod of products">
     <h2>{{prod.product_name}}</h2>
@@ -10,10 +9,16 @@
 
     <img id="img_{{prod.product_id}}" src="{{prod.product_url}}">
 
-    <button (click)="addToCart(prod)" id="button_addtoCart_{{prod.product_id}}" value="addToCart">Add to Cart</button>
+    <button class="btn btn-warning" (click)="addToCart(prod)" id="button_addtoCart_{{prod.product_id}}" value="addToCart">Add to Cart</button>
 
-    <button id="button_addtoWishlist_{{prod.product_id}}" value="addToWishlist">Add to Wishlist</button>
+    <button class="btn btn-warning" id="button_addtoWishlist_{{prod.product_id}}" value="addToWishlist">Add to Wishlist</button>
 
-    <button id="button_addtoGroup_{{prod.product_id}}" value="addToGroup">Add to other Group</button>
+    <button class="btn btn-warning" id="button_addtoGroup_{{prod.product_id}}" value="addToGroup">Add to other Group</button>
 </div>
+
 </div>
+
+<div class="container-fluid">
+  <h3>What Other Customers are Saying</h3>
+</div>
+
