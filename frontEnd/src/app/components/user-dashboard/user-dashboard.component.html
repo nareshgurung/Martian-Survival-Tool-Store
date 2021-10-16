@@ -6,9 +6,10 @@
   <div class="sidebar">
       <nav>
         <ul>
-          <li>edit information</li>
-          <li>view wishlist</li>
-          <li>view groups</li>
+          <li><a id="a_dashboard_Setting" routerLink="/settings">Settings</a></li>
+          <li><a id="a_dashboard_wishlist" routerLink="/group_contents/{{userID}}/{{wishlist}}">View Wishlist</a></li>
+          <li><a id="a_dashboard_groups" routerLink="/groups/{{userID}}">View Groups</a></li>
+          <li>Create/Delete Groups</li>
         </ul>
       </nav>
   </div>

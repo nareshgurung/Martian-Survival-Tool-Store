@@ -24,5 +24,4 @@ public class GroupContentsRepository {
 		list = this.entityManager.createQuery("SELECT p.product_name,gc.group_contents_amount FROM Group_contents as gc , Products as p WHERE gc.product_id=p.product_id", Object[].class).getResultList();
 		return list;
 	}
-
 }

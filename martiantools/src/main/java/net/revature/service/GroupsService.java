@@ -20,4 +20,8 @@ public class GroupsService {
 	public List<Groups> findByUserID(String userID){
 		return this.groupsRepository.getByUserID(userID);
 	}
+	public Integer findUsersWishlist(String userID) {
+		Groups wishlistID = groupsRepository.getWishlistFromUserID(userID);
+		return wishlistID.getGroup_id();
+	}
 }

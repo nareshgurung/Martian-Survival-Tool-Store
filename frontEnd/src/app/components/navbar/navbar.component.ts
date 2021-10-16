@@ -21,10 +21,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
     .subscribe(
       (event: NavigationEvent) => {
         if(event instanceof NavigationStart) {
-          console.log("event:" + event)
-          console.log("static fname:" + NavbarComponent.userInfo.user_fname)
-          console.log("static lname:" + NavbarComponent.userInfo.user_lname)
-          console.log("static id:" + NavbarComponent.userInfo.user_id)
           this.update();
         }
       });
@@ -32,10 +28,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   update(){
-    if(NavbarComponent.userInfo.user_id>0) {
+    this.fname = NavbarComponent.userInfo.user_fname;
+    if(NavbarComponent.userInfo.user_id>0)
       this.isLoggedin=true;
-      this.fname = NavbarComponent.userInfo.user_fname;
-    }
+    else
+      this.isLoggedin=false;
   }
 
   

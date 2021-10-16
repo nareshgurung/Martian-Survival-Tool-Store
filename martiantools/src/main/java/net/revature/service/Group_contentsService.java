@@ -12,13 +12,13 @@ import net.revature.models.GroupContentsAsProducts;
 @Service("gcService")
 public class Group_contentsService {
 	private GroupContentsRepository groupContentsRepository;
-
+	
 	@Autowired
 	public Group_contentsService(GroupContentsRepository groupContentsRepository) {
 		super();
 		this.groupContentsRepository = groupContentsRepository;
 	}
-	
+
 	public List<GroupContentsAsProducts> findUserGroupByUserIDAndGroupID(String groupID, String userID) {
 		//TODO: add in user checking so that you cant just change your groupID in the URL and see/edit someone elses groups
 		
