@@ -29,11 +29,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
 	}
 
 	ngAfterViewInit() {
-		const navbarToggler = document.getElementsByClassName("navToggler")[0];
-		let link = document.getElementsByClassName("navLink")[0];
-		navbarToggler.addEventListener('click', () => {
-			link.classList.toggle('active');
-		});
+		const navbarToggler = document.querySelector<HTMLElement>("#menuToggleID");
+		const menuLinks = document.getElementsByClassName("navMenuMM")[0];
+		if (navbarToggler) {
+			navbarToggler.addEventListener('click', () => {
+				navbarToggler.classList.toggle('is-active');
+				menuLinks.classList.toggle('active');
+			});
+		}
 	}
 
 	onlogout(){
