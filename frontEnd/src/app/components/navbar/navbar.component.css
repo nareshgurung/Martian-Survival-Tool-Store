@@ -5,6 +5,7 @@
 }
 
 .navContainerMM {
+  z-index: 9999;
 	width: 100%;
 	background: #e77d11;
 }
@@ -29,7 +30,7 @@
 .navMenuMM {
 	margin-left: auto;
 	display: grid;
-	grid-template-columns: repeat(5, auto);
+	grid-template-columns: repeat(4, auto);
 	grid-gap: 15px;
 	list-style: none;
 	text-align: center;
