@@ -25,6 +25,12 @@ export class GroupsService {
       catchError(this.handleError<number>('getCards')));
   }
 
+  addGroup(userID: number, groupName: string): Observable<boolean> {
+    return this.http.post<boolean>(`${this.url}addNewGroup/${userID}/${groupName}`, null)
+    .pipe(
+      catchError(this.handleError<boolean>('getCards')));
+  }
+
     /**
  * Handle Http operation that failed.
  * Let the app continue.

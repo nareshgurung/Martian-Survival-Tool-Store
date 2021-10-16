@@ -27,8 +27,21 @@ export class EditGroupsComponent implements OnInit {
   }
 
   promptGroupName():void {
-    let newGroupName = window.prompt("Please enter a name for the new group");
+    const newGroupName:string = "" + window.prompt("Please enter a name for the new group");
+    let wasCreated: boolean = false;
     
+    // this.groupContentsService.getGroupedItemsForUser(userID, groupID).subscribe(groupContents => this.groupContents = groupContents);
+    this.groupService.addGroup(NavbarComponent.userInfo.user_id, newGroupName).subscribe(signedBool => {
+      wasCreated = signedBool;
+    });
+    if(!wasCreated){
+      window.alert("Group " +newGroupName+ " was created");
+      this.router.navigateByUrl('/error').then(
+        () => this.router.navigateByUrl('/editgroups')
+      );
+    } else {
+      window.alert("Group " +newGroupName+ " was not created. It may have the same name as a group you already have.");
+    }
   }
 
 }
