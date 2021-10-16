@@ -14,6 +14,7 @@ export class UserSettingsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.setRole();
   }
 
   setRole(){
@@ -22,6 +23,11 @@ export class UserSettingsComponent implements OnInit {
     } else {
       this.role = "Valued Supplier";
     }
+  }
+
+  update(whatNeedsToBeUpdated:string):void {
+    let newValue:string = "" + window.prompt("New Value");
+    
   }
 
 }

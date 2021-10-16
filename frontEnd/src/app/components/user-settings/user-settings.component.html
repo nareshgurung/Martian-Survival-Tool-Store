@@ -3,7 +3,7 @@
         <label for="*role">Role: {{this.role}}</label>
     </div>
     <div>
-        <label for="*email">Email: {{user.user_email}}</label>
+        <label for="*email">Email: {{user.user_email}}</label><i><a (click)="update('email')">update</a></i>
     </div>
     <div>
         <label for="*fname">First Name: {{user.user_fname}}</label>
