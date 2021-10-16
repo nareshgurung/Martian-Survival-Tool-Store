@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
     authObs.subscribe(
       resData=>{
         if(resData != null){
+          NavbarComponent.userInfo = resData;
           this.router.navigate(['/dashboard'])
         }else if(resData == null){
           this.error="Invalid Credentials"
