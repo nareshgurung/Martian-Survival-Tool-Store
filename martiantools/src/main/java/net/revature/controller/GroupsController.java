@@ -30,4 +30,14 @@ public class GroupsController {
 	public ResponseEntity<List<Groups>> getAll(@PathVariable String userID){
 		return new ResponseEntity<List<Groups>>(this.gService.findByUserID(userID), HttpStatus.OK);
 	}
+	
+	@GetMapping(path="/wishlist/{userID}", produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Integer> getWishlistID(@PathVariable int userID){
+		if(userID<0) {
+			System.out.println("GroupsRepository_getWishlistFromUserID: it was less than 0");
+			return null;
+		}
+		return new ResponseEntity<Integer>(this.gService.findUsersWishlist(userID), HttpStatus.OK);
+	}
+
 }

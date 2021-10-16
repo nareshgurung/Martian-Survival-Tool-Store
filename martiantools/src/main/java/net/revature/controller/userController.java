@@ -1,14 +1,9 @@
 package net.revature.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,28 +26,9 @@ public class userController {
 		this.uService=usersService;
 	}
 
-	@GetMapping(path="/all", produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Users>> getAll(){
-		return new ResponseEntity<List<Users>>(this.uService.getAllUsers(), HttpStatus.OK);
-	}
-
 	@PostMapping(path="/login/{username}/{password}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Users login(@PathVariable String username, @PathVariable String password) {
-
-		Users unameFromClient = this.uService.getByUsername(username);
-			String unameFromDB = unameFromClient.getUser_username();
-			String passwordFromDB = unameFromClient.getUser_password();
-			
-			if((unameFromDB.equals(username)) && (passwordFromDB.equals(password))) {
-				System.out.println("your are logged in");
-				return unameFromClient;
-				
-				
-			}else {
-				System.out.println("Bad credentials");
-				return null;
-			}
-			
+		return this.uService.getUserWithUsernameAndPassword(username, password);
 	}
 	@PostMapping(path="/signup", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public void saveUsers(@RequestBody Users user) {

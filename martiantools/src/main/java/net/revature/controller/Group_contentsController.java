@@ -27,9 +27,7 @@ public class Group_contentsController {
 	}
 	
 	@GetMapping(path="/{userID}/{groupID}", produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<GroupContentsAsProducts>> getAll(@PathVariable String userID, @PathVariable String groupID){
+	public ResponseEntity<List<GroupContentsAsProducts>> getSpecificGroup(@PathVariable String userID, @PathVariable String groupID){
 		return new ResponseEntity<List<GroupContentsAsProducts>>(this.gcService.findUserGroupByUserIDAndGroupID(groupID, userID), HttpStatus.OK);
 	}
-
-	
 }

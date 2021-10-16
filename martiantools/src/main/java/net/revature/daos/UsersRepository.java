@@ -27,11 +27,11 @@ public class UsersRepository {
 	public Users getByUserName(String username) {
 		TypedQuery<Users> query = this.entityManager.createQuery("From Users where user_username=:username", Users.class);
 		query.setParameter("username", username);
-		return query.getSingleResult();
+		Users user = query.getSingleResult();
+		return user;
 		
 	}
 	public void save(Users obj) {
-		
 		this.entityManager.persist(obj);
 	}
 

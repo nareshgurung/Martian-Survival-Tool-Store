@@ -6,16 +6,18 @@
   <div class="sidebar">
       <nav>
         <ul>
-          <li>edit information</li>
-          <li>view wishlist</li>
-          <li>view groups</li>
+          <li><a id="a_dashboard_Setting" routerLink="/settings">Settings</a></li>
+          <li><a id="a_dashboard_wishlist" routerLink="/group_contents/{{userID}}/{{wishlist}}">View Wishlist</a></li>
+          <li><a id="a_dashboard_groups" routerLink="/groups/{{userID}}">View Groups</a></li>
+          <li><a id="a_dashboard_editGroups" routerLink="/editgroups">Edit Groups</a></li>
+          <li><a id="a_dashboard_previousorders" routerLink="/previousOrders">Previous Orders</a></li>
         </ul>
       </nav>
   </div>
 
 
   <div class="content">
-           <h1>Welcome, User</h1>
+           <h1>Welcome, {{uName}}</h1>
            <p>Your dashboard enables you to access your wishlist and the groups shared with you.</p>
            <p>You can also edit your personal information for future purchases. Use the side navigation to browse.</p>
 

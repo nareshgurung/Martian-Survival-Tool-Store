@@ -31,5 +31,11 @@ public class GroupsRepository {
 		list = this.entityManager.createQuery("From Groups where user_id=" + userID, Groups.class).getResultList();
 		return list;
 	}
+	
+	public Groups getWishlistFromUserID(int userID) {
+		Groups group;
+		group = this.entityManager.createQuery("From Groups where user_id=" + userID + " and group_name='Wishlist'", Groups.class).getSingleResult();
+		return group;
+	}
 
 }

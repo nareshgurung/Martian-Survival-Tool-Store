@@ -1,8 +1,3 @@
-import { Component, Input, OnDestroy, OnInit, ElementRef } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
-import { Login } from 'src/app/service/login';
-import { LoginService } from 'src/app/service/login.service';
-
 @Component({
 	selector: 'app-navbar',
 	templateUrl: './navbar.component.html',
@@ -10,9 +5,11 @@ import { LoginService } from 'src/app/service/login.service';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
 
-	isLoggedin = false;
+  static userInfo:Users = new Users(-1,1," "," "," "," "," ",1," "," "," ","");
+  isLoggedin = false;
+  fname:string="";
 	private userSub: Subscription = new Subscription;
-	constructor(private loginServ:LoginService, private elementRef:ElementRef) {
+	constructor(private loginServ:LoginService, private elementRef:ElementRef, private router:Router) {
 	 }
 
 	ngOnDestroy(): void {
@@ -22,11 +19,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
 	fname:string="";
 
 	ngOnInit() {
-		this.userSub = this.loginServ.user.subscribe(user=>{
-			this.isLoggedin =!user ? false : true; 
-			this.fname=user.user_fname;
-		});
-	}
+    this.router.events
+    .subscribe(
+      (event: NavigationEvent) => {
+        if(event instanceof NavigationStart) {
+          this.update();
+        }
+      });
 
 	ngAfterViewInit() {
 		const navbarToggler = document.querySelector<HTMLElement>("#menuToggleID");
@@ -38,8 +37,16 @@ export class NavbarComponent implements OnInit, OnDestroy {
 			});
 		}
 	}
+  update(){
+    this.fname = NavbarComponent.userInfo.user_fname;
+    if(NavbarComponent.userInfo.user_id>0)
+      this.isLoggedin=true;
+    else
+      this.isLoggedin=false;
+  }
 
 	onlogout(){
 		this.loginServ.logout();
 	}
 }
+
