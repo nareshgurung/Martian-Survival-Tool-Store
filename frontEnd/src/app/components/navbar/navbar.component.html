@@ -7,11 +7,10 @@
 			<span class="barMM"></span>
 		</div>
 		<ul class="navMenuMM">
-			<li><a routerLink="" class="navLinksMM">Categories</a></li>
-			<li><a routerLink="" class="navLinksMM">Log In</a></li>
-			<li><a routerLink="" class="navLinksMM">Dashboard</a></li>
-			<li><a routerLink="" class="navLinksMM">Signup</a></li>
-			<li><a routerLink="" class="navLinksMM">Comments</a></li>
+			<li><a routerLink="categories" class="navLinksMM">Categories</a></li>
+			<li><a routerLink="" *ngIf="!isLoggedin" class="navLinksMM">Log In</a></li>
+			<li><a routerLink="dashboard" *ngIf="isLoggedin" class="navLinksMM">Dashboard</a></li>
+			<li><a routerLink="logout" *ngIf="isLoggedin" class="navLinksMM" (click)="logout()">Log Out</a></li>
 		</ul>
 	</nav>
 </div>

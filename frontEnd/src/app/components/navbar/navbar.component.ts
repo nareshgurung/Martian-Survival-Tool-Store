@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   isLoggedin = false;
   fname:string="";
 	private userSub: Subscription = new Subscription;
-	constructor(private loginServ:LoginService, private elementRef:ElementRef, private router:Router) {
+	constructor(private router:Router) {
 	 }
 
 	ngOnDestroy(): void {
@@ -50,8 +50,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
       this.isLoggedin=false;
   }
 
-	onlogout(){
-		this.loginServ.logout();
+	logout(){
+		NavbarComponent.userInfo = new Users(-1,1," "," "," "," "," ",1," "," "," ","");
+		this.router.navigateByUrl("login");
 	}
 }
 

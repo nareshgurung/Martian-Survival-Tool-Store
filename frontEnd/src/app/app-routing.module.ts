@@ -22,7 +22,6 @@ const routes: Routes = [
   {path: 'dashboard', component: UserDashboardComponent},
   { path: 'cart', component: CartComponent },
   { path: 'shipping', component: ShippingComponent },
-
   {path: 'products/all/:id', component: ProductsbycategoryComponent},
   {path: 'comments', component: CommentsComponent},
   {path: 'groups/:userID', component: GroupsComponent},
