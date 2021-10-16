@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import net.revature.daos.GroupContentsRepository;
 import net.revature.models.GroupContentsAsProducts;
+import net.revature.models.Group_contents;
 
 @Service("gcService")
 public class Group_contentsService {
@@ -31,5 +32,14 @@ public class Group_contentsService {
 			gcaps.add(gcap);
 		}
 		return gcaps;
+	}
+	
+	public void addProductToGroup(int groupID, int productID, int amount) {
+		Group_contents groupContents = new Group_contents();
+		groupContents.setGroup_id(groupID);
+		groupContents.setProduct_id(productID);
+		groupContents.setGroup_contents_amount(amount);
+		this.groupContentsRepository.addProductToGroup(groupContents);
+
 	}
 }
