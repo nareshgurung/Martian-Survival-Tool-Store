@@ -32,9 +32,8 @@ public class GroupsRepository {
 		return list;
 	}
 	
-	public Groups getWishlistFromUserID(String userID) {
+	public Groups getWishlistFromUserID(int userID) {
 		Groups group;
-		System.out.println("userID:" + userID);
 		group = this.entityManager.createQuery("From Groups where user_id=" + userID + " and group_name='Wishlist'", Groups.class).getSingleResult();
 		return group;
 	}

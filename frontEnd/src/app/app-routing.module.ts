@@ -12,6 +12,7 @@ import { ErrorMessageComponent } from './components/error-message/error-message.
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ShippingComponent } from './components/shipping/shipping.component';
+import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 
 const routes: Routes = [
   {path: 'categories',component: CategoriesComponent},
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path: 'group_contents/:userID/:groupID', component: GroupContentsComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'error', component: ErrorMessageComponent},
-  {path: 'products/id/:id', component: ProductPageComponent}
+  {path: 'products/id/:id', component: ProductPageComponent},
+  {path: 'settings', component: UserSettingsComponent}
 ];
 
 @NgModule({

@@ -20,6 +20,8 @@ import { ProductPageComponent } from './components/product-page/product-page.com
 import { CartComponent } from './components/cart/cart.component';
 import { ShippingComponent } from './components/shipping/shipping.component';
 import { UserSettingsComponent } from './components/user-settings/user-settings.component';
+import { EditGroupsComponent } from './components/edit-groups/edit-groups.component';
+import { PreviousOrdersComponent } from './components/previous-orders/previous-orders.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { UserSettingsComponent } from './components/user-settings/user-settings.
     CartComponent,
     ShippingComponent,
     UserSettingsComponent,
+    EditGroupsComponent,
+    PreviousOrdersComponent,
   ],
   imports: [
     BrowserModule,
