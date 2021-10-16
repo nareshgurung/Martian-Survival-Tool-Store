@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Card } from 'src/app/models/card';
 import { GroupContents } from 'src/app/models/group_contents';
-import { Product } from 'src/app/models/product';
 import { GroupContentsService } from 'src/app/service/group_contents/group-contents.service';
 
 @Component({

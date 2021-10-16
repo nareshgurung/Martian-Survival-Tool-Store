@@ -3,17 +3,20 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { Users } from 'src/app/models/Users';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
-	private url = 'http://localhost:8080/';
+	private url = 'http://localhost:8080/SpringCore/users/';
 
   constructor(private http: HttpClient, private router:Router) { }
 
-  getGroupedItemsForUser(userID: number, groupID: number): Observable<boolean>{
-    return this.http.post<boolean>(this.url + userID + "/" + groupID, null)
+  update(user:object): Observable<boolean>{
+    console.log("user Email:" + (<Users>user).user_email);
+    console.log("URL:" + (`${this.url}update/${(<Users>user).user_id}`))
+    return this.http.post<boolean>(`${this.url}update/${(<Users>user).user_id}`, user)
     .pipe(
       catchError(this.handleError<boolean>('getCards')));
   }

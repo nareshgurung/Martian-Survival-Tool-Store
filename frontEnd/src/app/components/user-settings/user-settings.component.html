@@ -1,35 +1,47 @@
 <div class="container">
     <div>
-        <label for="*role">Role: {{this.role}}</label>
+        Role: {{this.role}}
     </div>
     <div>
-        <label for="*email">Email: {{user.user_email}}</label><i><a (click)="update('email')">update</a></i>
+        <i><a (click)="updateEmail()">update</a></i>
+        <b>Email:</b> {{user.user_email}}
     </div>
     <div>
-        <label for="*fname">First Name: {{user.user_fname}}</label>
+        <i><a (click)="updatefName()">update</a></i>
+        <b>First Name:</b> {{user.user_fname}}
     </div>
     <div>
-        <label for="*midInnitial">Middle Initial: {{user.user_midinnitial}}</label>
+        <i><a (click)="updateMI()">update</a></i>
+        <b>Middle Initial:</b> {{user.user_midinnitial}}
     </div>
     <div>
-        <label for="*lname">Last Name: {{user.user_lname}}</label>
+        <i><a (click)="updatelName()">update</a></i>
+        <b>Last Name:</b> {{user.user_lname}}
     </div>
     <div>
-        <label for="*street">Street Address: {{user.user_street}}</label>
+        <i><a (click)="updateStreet()">update</a></i>
+        <b>Street Address:</b> {{user.user_street}}
     </div>
     <div>
-        <label for="*zip">ZipCode: {{user.user_zip}}</label>
+        <i><a (click)="updateZip()">update</a></i>
+        <b>ZipCode:</b> {{user.user_zip}}
     </div>
     <div>
-        <label for="*city">City: {{user.user_city}}</label>
+        <i><a (click)="updateCity()">update</a></i>
+        <b>City:</b> {{user.user_city}}
     </div>
     <div>
-        <label for="*state">State: {{user.user_state}}</label>
+        <i><a (click)="updateState()">update</a></i>
+        <b>State:</b> {{user.user_state}}
     </div>
     <div>
-        <label for="*username">Username: {{user.user_username}}</label>
+        <i><a (click)="updateUsername()">update</a></i>
+        <b>Username:</b> {{user.user_username}}
     </div>
     <div>
-        <label for="*password">Password: ***************</label>
+        <i><a (click)="updatePassword()">update</a></i>
+        <b>Password:</b> ***************
     </div>
+    <button (click)="sendOff()" id="button_user_settings_submitChanges">Save Changes</button>
+    <button (click)="Cancel()" id="button_user_settings_submitChanges">Cancel All Changes</button>
 </div>

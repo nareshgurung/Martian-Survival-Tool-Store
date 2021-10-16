@@ -11,7 +11,6 @@ import { GroupContents } from 'src/app/models/group_contents';
 export class GroupContentsService {
 	private url = 'http://localhost:8080/SpringCore/group_contents/';
 
-
   constructor(private http: HttpClient, private router:Router) { }
 
 
