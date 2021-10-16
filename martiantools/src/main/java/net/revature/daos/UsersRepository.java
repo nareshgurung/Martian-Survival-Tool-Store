@@ -28,7 +28,6 @@ public class UsersRepository {
 		TypedQuery<Users> query = this.entityManager.createQuery("From Users where user_username=:username", Users.class);
 		query.setParameter("username", username);
 		Users user = query.getSingleResult();
-		System.out.println("user:" + user.toString());
 		return user;
 		
 	}

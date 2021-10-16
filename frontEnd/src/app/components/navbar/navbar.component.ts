@@ -1,7 +1,6 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
-import { Login } from 'src/app/service/login';
-import { LoginService } from 'src/app/service/login.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Users } from 'src/app/models/Users';
+import { Router, NavigationStart, Event as NavigationEvent } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -10,32 +9,31 @@ import { LoginService } from 'src/app/service/login.service';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
 
+  static userInfo:Users = new Users(-1,1," "," "," "," "," ",1," "," "," ","");
   isLoggedin = false;
-  private userSub: Subscription = new Subscription;
- 
-  constructor(private loginServ:LoginService) {
-   }
-
-
-
-  ngOnDestroy(): void {
-   this.userSub.unsubscribe();
-  }
-
-fname:string="";
-userId:number=0;
-userPassword:string="";
-
+  fname:string="";
+   
+  constructor(private router:Router) {}
+  ngOnDestroy(): void {}
   ngOnInit() {
-   this.userSub = this.loginServ.user.subscribe(user=>{
-    this.isLoggedin =!user ? false : true; 
-    this.fname=user.user_fname;
-    this.userId=user.user_id;
-    this.userPassword=user.user_password;
-   });
+
+    this.router.events
+    .subscribe(
+      (event: NavigationEvent) => {
+        if(event instanceof NavigationStart) {
+          this.update();
+        }
+      });
+
   }
+
+  update(){
+    this.fname = NavbarComponent.userInfo.user_fname;
+    if(NavbarComponent.userInfo.user_id>0)
+      this.isLoggedin=true;
+    else
+      this.isLoggedin=false;
+  }
+
   
-  onlogout(){
-    this.loginServ.logout();
-  }
 }

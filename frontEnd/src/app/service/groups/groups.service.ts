@@ -19,6 +19,12 @@ export class GroupsService {
       catchError(this.handleError<Groups[]>('getCards', [])));
   }
 
+  getWishlistForUser(userID: number): Observable<number> {
+    return this.http.get<number>(this.url + "wishlist/" + userID)
+    .pipe(
+      catchError(this.handleError<number>('getCards')));
+  }
+
     /**
  * Handle Http operation that failed.
  * Let the app continue.

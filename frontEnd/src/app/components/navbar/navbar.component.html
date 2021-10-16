@@ -12,9 +12,7 @@
 
   <li>
     <a *ngIf="isLoggedin">Welcome {{fname}}</a>
-    <a class="logout" *ngIf="isLoggedin">
-
-    <input type="submit" value="logout" (click)="onlogout()"></a></li>
+    <!-- <a class="logout" *ngIf="isLoggedin"><input type="submit" value="logout" (click)="onlogout()"></a></li> -->
 
     <li><a routerLink="/cart" class="button cart-button"><i class="material-icons">shopping_cart</i></a></li>
 
