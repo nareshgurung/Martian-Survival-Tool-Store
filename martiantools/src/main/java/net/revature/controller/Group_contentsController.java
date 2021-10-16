@@ -29,13 +29,11 @@ public class Group_contentsController {
 	
 	@GetMapping(path="/{userID}/{groupID}", produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<GroupContentsAsProducts>> getSpecificGroup(@PathVariable String userID, @PathVariable String groupID){
-		System.out.println("userID:" + userID);
-		System.out.println("groupID:" + groupID);
 		return new ResponseEntity<List<GroupContentsAsProducts>>(this.gcService.findUserGroupByUserIDAndGroupID(groupID, userID), HttpStatus.OK);
 	}
 	
-	@PostMapping(path="/{groupID}/{productID}/{amount}")
-	public void addItemsToGroup(int groupID, int productID, int amount) {
+	@PostMapping(path="/addToGroup/{groupID}/{productID}/{amount}")
+	public void addItemsToGroup(@PathVariable int groupID,@PathVariable int productID,@PathVariable int amount) {
 		this.gcService.addProductToGroup(groupID, productID, amount);
 	}
 }

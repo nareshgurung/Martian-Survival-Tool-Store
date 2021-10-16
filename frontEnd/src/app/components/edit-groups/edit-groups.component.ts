@@ -28,7 +28,7 @@ export class EditGroupsComponent implements OnInit {
 
   promptGroupName():void {
     let newGroupName = window.prompt("Please enter a name for the new group");
-    console.log("new group name:" + newGroupName);
+    
   }
 
 }
