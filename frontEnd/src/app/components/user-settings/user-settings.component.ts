@@ -32,8 +32,7 @@ export class UserSettingsComponent implements OnInit {
 
   sendOff(): void {
     var tf = false;
-    console.log(this.userService.update(this.user).subscribe(item => tf = item));
-    console.log("tf:" + tf)
+    this.userService.update(this.user).subscribe(item => tf = item);
 
     if(tf) {
       this.router.navigateByUrl('/error').then(
