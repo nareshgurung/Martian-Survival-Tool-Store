@@ -1,3 +1,9 @@
+import { Component, ElementRef, OnDestroy, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { Subscription } from "rxjs";
+import { Users } from "src/app/models/Users";
+import { LoginService } from "src/app/service/login.service";
+
 @Component({
 	selector: 'app-navbar',
 	templateUrl: './navbar.component.html',
