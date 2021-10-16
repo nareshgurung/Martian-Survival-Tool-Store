@@ -6,12 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-import net.revature.signingIn.MarLogin;
 import net.revature.signingIn.SignUp;
 
-public class SeleniumRunner {
+public class SignupRunner {
 
-	private static WebDriver driver;
+private static WebDriver driver;
 	
 	@BeforeClass
 	public static void setUp() {
@@ -19,18 +18,16 @@ public class SeleniumRunner {
 		System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
 		
 		driver = new ChromeDriver();
-    
-		driver.get("http://localhost:4200");
+		driver.get("http://localhost:4200/signup");
 		
 	}
 	
 	@Test
-	public void login() {
-		MarLogin loginpage = new MarLogin(driver);
+	public void signup() {
+		SignUp signupPage = new SignUp(driver);
 		
-		loginpage.login("paktt", "Powerful");
-		
-		Assert.assertEquals("http://localhost:4200/login", driver.getCurrentUrl(), "error message");
+		signupPage.signUp(1, "Wil@gmail.com", "William", "k", "Smith", "walker", 1289, "Atlanta", "GA", "wilsm", "password");
 		System.out.println(driver.getCurrentUrl());
+		Assert.assertEquals("http://localhost:4200/signup", driver.getCurrentUrl(), "error message");
 	}
 }

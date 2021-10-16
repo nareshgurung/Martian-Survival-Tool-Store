@@ -22,7 +22,7 @@ public class MarLogin {
 		
 		PageFactory.initElements(driver, this);
 		
-		WebDriverWait wait = new WebDriverWait(driver, 200);
+		WebDriverWait wait = new WebDriverWait(driver, 5);
 		wait.until(ExpectedConditions.elementToBeClickable(usernameBox));
 	}
 	
