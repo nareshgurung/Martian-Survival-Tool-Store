@@ -1,4 +1,5 @@
 import { Component, OnInit, ResolvedReflectiveFactory } from '@angular/core';
+import { Router } from '@angular/router';
 import { Users } from 'src/app/models/Users';
 import { SignupService } from './signup.service';
 
@@ -13,7 +14,7 @@ export class SignupComponent implements OnInit {
   error:string="";
   signedup= false;
 
-  constructor(private signUpServ:SignupService) { }
+  constructor(private signUpServ:SignupService, private router:Router) { }
 
 
   ngOnInit(): void {
@@ -32,6 +33,7 @@ export class SignupComponent implements OnInit {
     if(resData == null){
       this.error = "you are succesfully signed up now click on login button to login.";
       this.signedup=true;
+      this.router.navigate(['/login']);
     }
   }, error =>{
     this.error = "Something is wrong! Try again"

@@ -11,6 +11,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { CartComponent } from './components/cart/cart.component';
+import { ShippingComponent } from './components/shipping/shipping.component';
 
 const routes: Routes = [
   {path: 'categories',component: CategoriesComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'login',component: LoginComponent},
   {path: 'dashboard', component: UserDashboardComponent},
   { path: 'cart', component: CartComponent },
+  { path: 'shipping', component: ShippingComponent },
 
   {path: 'products/all/:id', component: ProductsbycategoryComponent},
   {path: 'comments', component: CommentsComponent},

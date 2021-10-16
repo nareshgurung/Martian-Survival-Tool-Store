@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   isLoggedin = false;
   private userSub: Subscription = new Subscription;
+ 
   constructor(private loginServ:LoginService) {
    }
 
@@ -22,12 +23,18 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
 fname:string="";
+userId:number=0;
+userPassword:string="";
+
   ngOnInit() {
    this.userSub = this.loginServ.user.subscribe(user=>{
     this.isLoggedin =!user ? false : true; 
     this.fname=user.user_fname;
+    this.userId=user.user_id;
+    this.userPassword=user.user_password;
    });
   }
+  
   onlogout(){
     this.loginServ.logout();
   }
