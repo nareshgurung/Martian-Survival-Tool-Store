@@ -2,6 +2,8 @@ package net.revature.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,8 +37,25 @@ public class GroupsService {
 	}
 
 	public boolean deleteGroup(int userID, int groupID) {
-		//TODO make sure that the user owns this group. AND that its not a wishlist
 		Groups group = this.groupsRepository.getByGroupID(groupID);
-		return this.groupsRepository.removeGroup(group);
+		if(group.getGroup_name().equals("Wishlist"))
+			return false;
+		if(group.getUser_id()==userID)
+			return this.groupsRepository.removeGroup(group);
+		else
+			return false;
+	}
+
+	@Transactional
+	public boolean renameGroup(int userID, int groupID, String newName) {
+		//TODO make sure that the user owns this group.
+		Groups group = this.groupsRepository.getByGroupID(groupID);
+		if(group.getGroup_name().equals("Wishlist"))
+			return false;
+		if(group.getUser_id()==userID) {
+			group.setGroup_name(newName);
+			return true;
+		} else
+		return false;
 	}
 }

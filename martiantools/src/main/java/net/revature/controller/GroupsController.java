@@ -44,17 +44,25 @@ public class GroupsController {
 	@PostMapping(path="/addNewGroup/{userID}/{groupName}")
 	public ResponseEntity<Boolean> addNewGroup(@PathVariable int userID, @PathVariable String groupName) {
 		if(this.gService.addNewGroup(userID, groupName))
-			return new ResponseEntity<Boolean>(HttpStatus.ACCEPTED);
+			return new ResponseEntity<Boolean>(true, HttpStatus.ACCEPTED);
 		else
-			return new ResponseEntity<Boolean>(HttpStatus.CONFLICT);
+			return new ResponseEntity<Boolean>(false, HttpStatus.CONFLICT);
 	}
 
 	@PostMapping(path="/deletegroup/{userID}/{groupID}")
 	public ResponseEntity<Boolean> deleteGroup(@PathVariable int userID, @PathVariable int groupID) {
 		if(this.gService.deleteGroup(userID, groupID))
-			return new ResponseEntity<Boolean>(HttpStatus.ACCEPTED);
+			return new ResponseEntity<Boolean>(true, HttpStatus.ACCEPTED);
 		else
-			return new ResponseEntity<Boolean>(HttpStatus.CONFLICT);
+			return new ResponseEntity<Boolean>(false, HttpStatus.CONFLICT);
+	}
+	
+	@PostMapping(path="/renameGroup/{userID}/{groupID}/{newName}")
+	public ResponseEntity<Boolean> renameGroup(@PathVariable int userID, @PathVariable int groupID, @PathVariable String newName){
+	if(this.gService.renameGroup(userID, groupID, newName))
+		return new ResponseEntity<Boolean>(true, HttpStatus.ACCEPTED);
+	else
+		return new ResponseEntity<Boolean>(false, HttpStatus.CONFLICT);
 	}
 
 }
