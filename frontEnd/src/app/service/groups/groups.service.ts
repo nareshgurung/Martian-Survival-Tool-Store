@@ -31,6 +31,18 @@ export class GroupsService {
       catchError(this.handleError<boolean>('getCards')));
   }
 
+  deleteGroup(userID: number, groupID: number): Observable<boolean> {
+    return this.http.post<boolean>(`${this.url}deletegroup/${userID}/${groupID}`, null)
+    .pipe(
+      catchError(this.handleError<boolean>('getCards')));
+  }
+
+  renameGroup(userID:number, groupID:number, groupName:string): Observable<boolean> {
+    return this.http.post<boolean>(`${this.url}renameGroup/${userID}/${groupID}/${groupName}`, null)
+    .pipe(
+      catchError(this.handleError<boolean>('getCards')));
+  }
+
     /**
  * Handle Http operation that failed.
  * Let the app continue.
