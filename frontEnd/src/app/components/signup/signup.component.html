@@ -51,7 +51,6 @@
             <label for="*password">Password: </label>
             <input type="text" id=password name="password" [(ngModel)]="user.user_password" required>
         </div>
-
         <input class="signup_btn" type="submit" value="Sign Up" id="signup" (click)="signup()" [disabled]="!signupFrom.valid">
     </form>
 </div>

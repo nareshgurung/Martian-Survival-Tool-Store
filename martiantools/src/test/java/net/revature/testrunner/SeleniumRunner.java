@@ -19,10 +19,10 @@ public class SeleniumRunner {
 		System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
 		
 		driver = new ChromeDriver();
+    
 		driver.get("http://localhost:4200");
 		
 	}
-	
 	
 	@Test
 	public void login() {
@@ -33,6 +33,4 @@ public class SeleniumRunner {
 		Assert.assertEquals("http://localhost:4200/login", driver.getCurrentUrl(), "error message");
 		System.out.println(driver.getCurrentUrl());
 	}
-	
-	
 }
