@@ -7,8 +7,9 @@
 			<span class="barMM"></span>
 		</div>
 		<ul class="navMenuMM">
+			<li><a routerLink="cart" class="navLinksMM">Shopping Cart</a></li>
 			<li><a routerLink="categories" class="navLinksMM">Categories</a></li>
-			<li><a routerLink="" *ngIf="!isLoggedin" class="navLinksMM">Log In</a></li>
+			<li><a routerLink="login" *ngIf="!isLoggedin" class="navLinksMM">Log In</a></li>
 			<li><a routerLink="dashboard" *ngIf="isLoggedin" class="navLinksMM">Dashboard</a></li>
 			<li><a routerLink="logout" *ngIf="isLoggedin" class="navLinksMM" (click)="logout()">Log Out</a></li>
 		</ul>

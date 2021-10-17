@@ -36,4 +36,11 @@ public class Group_contentsController {
 	public void addItemsToGroup(@PathVariable int groupID,@PathVariable int productID,@PathVariable int amount) {
 		this.gcService.addProductToGroup(groupID, productID, amount);
 	}
+	
+	@PostMapping(path="/removeItem/{groupID}/{productID}")
+	public ResponseEntity<Boolean> removeItemsFromGroup(@PathVariable int groupID,@PathVariable int productID) {
+		System.out.println("just hitting the endpoint");
+		return new ResponseEntity<Boolean>(this.gcService.removeProductFromGroup(groupID, productID), HttpStatus.OK);
+	}
+	
 }
