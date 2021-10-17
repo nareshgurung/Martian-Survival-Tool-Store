@@ -44,7 +44,9 @@ img {
   max-width: 200px;
 }
 
-
+.material-icons {
+  font-size: inherit;
+}
 /* Input */
 
 input {

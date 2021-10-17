@@ -20,18 +20,11 @@ export class LoginComponent implements OnInit {
 
   constructor(private loginServ:LoginService, private router:Router) { }
 
-
-
   ngOnInit(): void {
 
   }
 
-
   checkLogin(){
-
-
-
-
 
  let authObs: Observable<Users>;
     authObs = this.loginServ.login(this.username, this.password)
