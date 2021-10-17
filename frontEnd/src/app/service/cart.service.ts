@@ -1,28 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Product } from '../models/product';
-import { ProductsService } from 'src/app/service/products/products.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  items: Product[] =[];
+  static items: Product[] =[];
 
-  constructor(private http: HttpClient,
-    private productsService: ProductsService) { }
+  constructor() { }
 
     addToCart(product: Product) {
-      this.items.push(product);
+      CartService.items.push(product);
     }
 
-    getItems() {
-      return this.items;
+    getItems():Product[] {
+      return CartService.items;
     }
 
     clearCart() {
-      this.items = [];
-      return this.items;
+      console.log("inside clear cart")
+      CartService.items = [];
+      return CartService.items;
     }
 }

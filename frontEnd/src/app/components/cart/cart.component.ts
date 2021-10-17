@@ -11,13 +11,18 @@ import { Product } from 'src/app/models/product';
 export class CartComponent {
 @Input() product? : Product;
 
-items = this.cartService.getItems();
+items:Product[] = [];
 
 
   constructor(
     private cartService: CartService,
-    private formBuilder: FormBuilder,
+    private formBuilder: FormBuilder
   ) {}
+
+  ngOnInit() {
+    this.items = this.cartService.getItems();
+  }
+
 
   checkoutForm = this.formBuilder.group({
     email: '',

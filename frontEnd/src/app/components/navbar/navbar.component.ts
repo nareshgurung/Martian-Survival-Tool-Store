@@ -1,8 +1,9 @@
-import { Component, ElementRef, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
 import { Users } from "src/app/models/Users";
-import { LoginService } from "src/app/service/login.service";
 import { Router, NavigationStart, Event as NavigationEvent } from '@angular/router';
+import { CartService } from "src/app/service/cart.service";
+import { Product } from "src/app/models/product";
 
 @Component({
 	selector: 'app-navbar',
@@ -15,7 +16,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   isLoggedin = false;
   fname:string="";
 	private userSub: Subscription = new Subscription;
-	constructor(private router:Router) {
+	constructor(private router:Router, private heldService:CartService) {
 	 }
 
 	ngOnDestroy(): void {

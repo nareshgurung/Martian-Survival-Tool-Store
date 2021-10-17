@@ -11,8 +11,8 @@
       <h3>Cart</h3>
 
 <div class="cart-item" *ngFor = "let item of items">
-  <span [(ngModel)]="item.product_name">{{ item.product_name }}</span>
-  <span [(ngModel)]="item.product_price">{{ item.product_price | currency }}</span>
+  <span [(ngModel)]="item.product_name" ngDefaultControl>{{ item.product_name }}</span>
+  <span [(ngModel)]="item.product_price" ngDefaultControl>{{ item.product_price | currency }}</span>
 </div>
 
   </div>
@@ -57,7 +57,7 @@
       <h3>Billing Information</h3>
       <div>
         <label for="credi_card"> Credit Card Number</label>
-        <input id="credi_card" type="number" formControlName="credi_card">
+        <!-- <input id="credi_card" type="number" formControlName="credit_card"> -->
       </div>
 
       <div>
