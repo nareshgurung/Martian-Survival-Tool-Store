@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import net.revature.models.Categories;
 
-@Repository("categoryRepository")
+@Repository("categoriesRepository")
 public class CategoryRepository {
 
 
