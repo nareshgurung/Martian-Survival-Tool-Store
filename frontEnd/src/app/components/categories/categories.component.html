@@ -4,59 +4,42 @@
 
   <div class="row">
     <div class="col-2">
-        <h1 class="title">Find all Essentials <br>for living in Mars!</h1>
+        <h1 class="title">Find all Essentials <br>for living on Mars!</h1>
 
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br>Illum, unde nam consequuntur labore repellat iste laborum cum sapiente placeat aut.</p>
+        <p>Extra-planetary exploration used to be the future. Now it's here. <br>And we'll help you get ready to enjoy it!</p>
 
-
-        <a routerLink="/signup"class="button">Create an Account &#8594;</a>
+        <div class="cat_card" *ngFor="let card of cards" id="div_{{card.category_id}}">
+          <h3> <a routerLink="/products/all/{{card.category_id}}" id="a_{{card.category_id}}">{{card.category_name}}</a></h3>
+        </div>
     </div>
+
+
     <div class="col-2"><img src="../../../assets/undraw_launch_day_4e04.svg" alt=""></div>
 </div>
 </div>
 
+<!-- featured products-->
+<div class="small-container">
+  <h2 class="title">featured products</h2>
 
-<!-- categories -->
-<h2 class="title">Browse by Category</h2>
- <div class="row_cat">
+  <div class="row">
+      <div class="col-4">
+        <a href="products/id/9032"><h4>Holy Stone 1080P</h4></a>
+          <img src="https://m.media-amazon.com/images/I/712-lVMgXnL._AC_SY450_.jpg" alt="Holy Stone 1080P">
+      </div>
 
+      <div class="col-4">
+        <a href="products/id/84123"><h4>Drager Panorama Nova</h4></a>
+          <img src="https://m.media-amazon.com/images/I/81zIOJquieL._AC_SY450_.jpg" alt="Drager Panorama Nova">
+      </div>
 
-  <div *ngFor="let card of cards" id="div_{{card.category_id}}">
-     <div class="col-3">
-        <h3> <a routerLink="/products/all/{{card.category_id}}" class="cat" id="a_{{card.category_id}}">{{card.category_name}}</a></h3>
-      <p>short category description</p>
-
-  </div>
-</div>
-</div>
+      <div class="col-4">
+        <a href="products/id/112200"><h4>Airborne Cargo MiniDrone</h4></a>
+          <img src="https://m.media-amazon.com/images/I/61Ne9wV9HGL._AC_SY450_.jpg" alt="Airborne Cargo MiniDrone">
 
 <!-- footer -->
 <footer>
-  <div class="container">
-      <div class="row">
-          <div class="footer-col-1">
-              <h3>Find us</h3>
-              <ul class="social-media">
-                  <li><a href="#">YouTube</a></li>
-                  <li><a href="#">Instagram</a></li>
-                  <li><a href="#">Twitter</a></li>
-              </ul>
-          </div>
-
-          <div class="footer-col-2">
-
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi dicta officiis reiciendis.</p>
-          </div>
-
-          <div class="footer-col-3">
-              <h3>Useful Links</h3>
-              <ul>
-                  <li>nasa</li>
-                  <li>blog</li>
-                  <li>return policy</li>
-                  <li>join as a vendor</li>
-              </ul>
-          </div>
-      </div>
+  <div class="footer">
+    <p>all rights reserved Martian Store &copy; 2021</p>
   </div>
   </footer>

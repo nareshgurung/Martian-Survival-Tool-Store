@@ -1,5 +1,11 @@
-<div class="container">
+<div *ngIf="selectedProduct" class="alert alert-success" role="alert">
+ <span class="added-ok"> Product added successfully. <a href="cart" class="alert-link">Go to cart?</a></span>
+  <input hidden id="hero-name" [(ngModel)]="selectedProduct.product_name" placeholder="name">
+</div>
 
+<app-cart hidden [product]="selectedProduct"></app-cart>
+
+<div class="container">
 <div id="product" *ngFor="let prod of products">
     <h2>{{prod.product_name}}</h2>
 
@@ -9,14 +15,14 @@
 
     <img id="img_{{prod.product_id}}" src="{{prod.product_url}}">
 
-    <button class="btn btn-warning" (click)="addToCart(prod)" id="button_addtoCart_{{prod.product_id}}" value="addToCart">Add to Cart</button>
+    <button class="btn btn-warning" (click)="addToCart(prod); onSelect(prod)" id="button_addtoCart_{{prod.product_id}}" value="addToCart">Add to Cart</button>
 
     <button class="btn btn-warning" id="button_addtoWishlist_{{prod.product_id}}" value="addToWishlist">Add to Wishlist</button>
 
     <button class="btn btn-warning" id="button_addtoGroup_{{prod.product_id}}" value="addToGroup">Add to other Group</button>
 </div>
-
 </div>
+
 
 <div class="container-fluid">
   <h3>What Other Customers are Saying</h3>
