@@ -35,23 +35,9 @@ public class CommentsController {
 	public ResponseEntity<List<Comments>> getAllForProduct(@PathVariable int productID){
 		return new ResponseEntity<List<Comments>>(this.commentService.getAllForProduct(productID), HttpStatus.OK);
 	}
-
-	// @GetMapping(path="", produces = MediaType.APPLICATION_JSON_VALUE)
-	// getCommentByUserID
-
-	// @PostMapping(path="", produces = MediaType.APPLICATION_JSON_VALUE)
-	// postComment
 	
 	@PostMapping(path="/newComment", produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Boolean> saveComment(@RequestBody Comments comment) {
-		final String WHITE_TEXT = "\u001B[37m";
-		final String BLUE_BACKGROUND = "\u001B[44m";
-		final String TEXT_COLOR_RESET = "\u001B[0m";
-		final String BG_COLOR_RESET = "\u001B[47m"; 
-		System.out.println(WHITE_TEXT + BLUE_BACKGROUND);
-		System.out.println("Endpoint kicked. comment.toString():" + comment.toString());
-		System.out.println(TEXT_COLOR_RESET + BG_COLOR_RESET);
-		
 		return new ResponseEntity<Boolean>(this.commentService.saveComment(comment), HttpStatus.OK);
 	}
 }
