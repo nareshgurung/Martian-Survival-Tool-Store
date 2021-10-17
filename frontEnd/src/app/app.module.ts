@@ -18,7 +18,6 @@ import { GroupContentsComponent } from './components/group-contents/group-conten
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { CartComponent } from './components/cart/cart.component';
-import { ShippingComponent } from './components/shipping/shipping.component';
 import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 import { EditGroupsComponent } from './components/edit-groups/edit-groups.component';
 import { PreviousOrdersComponent } from './components/previous-orders/previous-orders.component';
@@ -40,7 +39,7 @@ import { OrderInventoryComponent } from './components/order-inventory/order-inve
     ErrorMessageComponent,
     ProductPageComponent,
     CartComponent,
-    ShippingComponent,
+    // ShippingComponent,
     UserSettingsComponent,
     EditGroupsComponent,
     PreviousOrdersComponent,
