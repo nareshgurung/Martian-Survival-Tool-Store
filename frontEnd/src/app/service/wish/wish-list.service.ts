@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class WishListService {
-	private url = 'http://localhost:8080/SpringCore/wishlist/';
+	private url = 'http://localhost:8080/martiantools/wishlist/';
 
   constructor(private http: HttpClient, private router:Router) { }
 

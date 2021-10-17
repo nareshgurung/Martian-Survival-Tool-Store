@@ -8,7 +8,7 @@ import {catchError, map, tap} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductsService {
-  private url = 'http://localhost:8080/SpringCore/products/';
+  private url = 'http://localhost:8080/martiantools/products/';
 
   constructor(private http: HttpClient) { }
 

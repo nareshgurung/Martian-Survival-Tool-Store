@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 	providedIn: 'root'
 })
 export class CommentsService {
-	private url = 'http://localhost:8080/SpringCore/comments/all';
+	private url = 'http://localhost:8080/martiantools/comments/all';
 
 	constructor(private http: HttpClient, private router:Router) { }
 
