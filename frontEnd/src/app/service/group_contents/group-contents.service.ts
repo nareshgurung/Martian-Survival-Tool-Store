@@ -2,9 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import {catchError, map, tap} from 'rxjs/operators';
-import { Card } from 'src/app/models/card';
-import { Groups } from 'src/app/models/groups';
+import {catchError} from 'rxjs/operators';
 import { GroupContents } from 'src/app/models/group_contents';
 
 @Injectable({
@@ -12,7 +10,6 @@ import { GroupContents } from 'src/app/models/group_contents';
 })
 export class GroupContentsService {
 	private url = 'http://localhost:8080/SpringCore/group_contents/';
-
 
   constructor(private http: HttpClient, private router:Router) { }
 

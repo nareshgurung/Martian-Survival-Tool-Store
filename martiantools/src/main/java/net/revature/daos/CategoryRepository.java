@@ -1,4 +1,4 @@
-package net.revature.repository;
+package net.revature.daos;
 
 import java.util.List;
 

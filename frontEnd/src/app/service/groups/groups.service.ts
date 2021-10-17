@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import {catchError, map, tap} from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { Groups } from 'src/app/models/groups';
 
 @Injectable({
@@ -23,6 +23,24 @@ export class GroupsService {
     return this.http.get<number>(this.url + "wishlist/" + userID)
     .pipe(
       catchError(this.handleError<number>('getCards')));
+  }
+
+  addGroup(userID: number, groupName: string): Observable<boolean> {
+    return this.http.post<boolean>(`${this.url}addNewGroup/${userID}/${groupName}`, null)
+    .pipe(
+      catchError(this.handleError<boolean>('getCards')));
+  }
+
+  deleteGroup(userID: number, groupID: number): Observable<boolean> {
+    return this.http.post<boolean>(`${this.url}deletegroup/${userID}/${groupID}`, null)
+    .pipe(
+      catchError(this.handleError<boolean>('getCards')));
+  }
+
+  renameGroup(userID:number, groupID:number, groupName:string): Observable<boolean> {
+    return this.http.post<boolean>(`${this.url}renameGroup/${userID}/${groupID}/${groupName}`, null)
+    .pipe(
+      catchError(this.handleError<boolean>('getCards')));
   }
 
     /**

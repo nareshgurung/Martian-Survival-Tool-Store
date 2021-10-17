@@ -1,1 +1,10 @@
 <p>edit-groups works!</p>
+<table>
+    <tr *ngFor="let group of groups" id="tr_edit_group_{{group.group_id}}">
+        <td id="td_edid_group_{{group.group_id}}">{{group.group_name}}</td>
+        <td><a id="a_edit_group_rename_{{group.group_id}}" (click)="changeGroupName(group.group_id)"> Rename </a></td>
+        <td><a id="a_edid_group_delete_{{group.group_id}}" (click)="deleteGroup(group.group_id)">Delete</a></td>
+    </tr>
+</table>
+
+<button id="button_edit_group_addgroup" (click)="promptGroupName()">Create New Group</button>

@@ -1,0 +1,28 @@
+h1 {
+  text-align: center;
+  font-weight: bold;
+  margin: 3rem;
+}
+
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  font-size: 18px;
+}
+
+.row {
+  align-items: flex-start;
+  background-color: #f8f8f8;
+}
+
+.row > * {
+  text-align: center;
+}
+
+
+@media only screen and (max-width:768px) {
+  .row > * {
+    border-bottom: 1px rgb(195, 195, 195) solid;
+  }
+}

@@ -14,11 +14,15 @@ export class ProductsService {
 
   getProducts(id: number): Observable<Product[]>{
     return this.http.get<Product[]>(this.url + "all/" + id)
-  }
+    .pipe(
+      catchError(this.handleError<Product[]>('getCards')));
+}
 
   getProductsByID(productID: number): Observable<Product[]>{
     return this.http.get<Product[]>(this.url + "id/" + productID)
-  }
+    .pipe(
+      catchError(this.handleError<Product[]>('getCards')));
+}
 
   /**
  * Handle Http operation that failed.

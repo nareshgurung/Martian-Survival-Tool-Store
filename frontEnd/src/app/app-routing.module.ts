@@ -13,6 +13,8 @@ import { ProductPageComponent } from './components/product-page/product-page.com
 import { CartComponent } from './components/cart/cart.component';
 import { ShippingComponent } from './components/shipping/shipping.component';
 import { UserSettingsComponent } from './components/user-settings/user-settings.component';
+import { EditGroupsComponent } from './components/edit-groups/edit-groups.component';
+import { PreviousOrdersComponent } from './components/previous-orders/previous-orders.component';
 
 const routes: Routes = [
   {path: 'categories',component: CategoriesComponent},
@@ -21,7 +23,6 @@ const routes: Routes = [
   {path: 'dashboard', component: UserDashboardComponent},
   { path: 'cart', component: CartComponent },
   { path: 'shipping', component: ShippingComponent },
-
   {path: 'products/all/:id', component: ProductsbycategoryComponent},
   {path: 'comments', component: CommentsComponent},
   {path: 'groups/:userID', component: GroupsComponent},
@@ -29,7 +30,9 @@ const routes: Routes = [
   {path: 'signup', component: SignupComponent},
   {path: 'error', component: ErrorMessageComponent},
   {path: 'products/id/:id', component: ProductPageComponent},
-  {path: 'settings', component: UserSettingsComponent}
+  {path: 'settings', component: UserSettingsComponent},
+  {path: 'editgroups', component: EditGroupsComponent},
+  {path: 'previousOrders', component: PreviousOrdersComponent}
 ];
 
 @NgModule({

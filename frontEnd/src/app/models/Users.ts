@@ -19,6 +19,20 @@ export class Users{
     this.user_password = user_password;
 
 }
+setUserWithUsers(user:Users):void{
+    this.user_id = user.user_id;
+    this.user_role = user.user_role;
+    this.user_email = user.user_email;
+    this.user_fname = user.user_fname;
+    this.user_midinnitial = user.user_midinnitial;
+    this.user_lname = user.user_lname;
+    this.user_street = user.user_street;
+    this.user_zip = user.user_zip;
+    this.user_city = user.user_city;
+    this.user_state = user.user_state;
+    this.user_username = user.user_username;
+    this.user_password = user.user_password;
+}
 getUserId():number{
     return this.user_id;
 }

@@ -31,10 +31,13 @@ public class UsersRepository {
 		return user;
 		
 	}
+	public Users getByUserID(int userID) {
+		TypedQuery<Users> query = this.entityManager.createQuery("From Users where user_id=:userid", Users.class);
+		query.setParameter("userid", userID);
+		Users user = query.getSingleResult();
+		return user;
+	}
 	public void save(Users obj) {
 		this.entityManager.persist(obj);
 	}
-
-	
-	
 }
