@@ -54,9 +54,10 @@ h3 {
 
 .col-2:last-child {
   background-color: #f8f8f8;
+  border-radius: 1rem;
   text-align: center;
   padding: 2rem;
-  border-radius: 1rem;
+
 }
 
 .col-2:last-child h3 {

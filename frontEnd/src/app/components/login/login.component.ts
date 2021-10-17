@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
     username:string="";
     password:string="";
     invalidLogin = false;
+    invalidMsg:boolean = false;
 
 
   constructor(private loginServ:LoginService, private router:Router) { }
@@ -26,8 +27,12 @@ export class LoginComponent implements OnInit {
   }
 
 
-  checkLogin(){ 
-      
+  checkLogin(){
+
+
+
+
+
  let authObs: Observable<Users>;
     authObs = this.loginServ.login(this.username, this.password)
 
@@ -37,14 +42,17 @@ export class LoginComponent implements OnInit {
           NavbarComponent.userInfo = resData;
           this.router.navigate(['/dashboard'])
         }else if(resData == null){
-          this.error="Invalid Credentials"
+
+          this.invalidMsg = !this.invalidMsg;
+          // this.error="Invalid Credentials"
         }
       },
       errorMessage=>{
-         this.error="invalid Credentials"
+        //  this.error="invalid Credentials"
+        this.invalidMsg = !this.invalidMsg;
       }
     );
-    
+
   }
 
   cheaterButton() {
@@ -61,7 +69,7 @@ export class LoginComponent implements OnInit {
       this.error="invalid Credentials"
    }
  );
- 
+
 
   }
 
