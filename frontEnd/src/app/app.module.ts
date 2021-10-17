@@ -39,7 +39,6 @@ import { OrderInventoryComponent } from './components/order-inventory/order-inve
     ErrorMessageComponent,
     ProductPageComponent,
     CartComponent,
-    // ShippingComponent,
     UserSettingsComponent,
     EditGroupsComponent,
     PreviousOrdersComponent,
