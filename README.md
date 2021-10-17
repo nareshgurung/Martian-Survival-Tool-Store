@@ -18,18 +18,19 @@ An Online Store for selling products & supplies for people on Earth who are prep
 * Update username/password/email address
 * Allows user to edit groups (crud)
 
+✓✔
 ## User Stories:
 *(As a < type of user >, I want < some goal > so that < some reason >.)*
 * ✔ As a {user} I want to {add items to} my shopping cart
 * As a {user} I want to {purchase my items} and {have them delivered}
 * ✔ As a {user} I want to {be able to view previous orders} - Complete. Just need tests
-* As a {user} I want to {save items to a Wishlist}
-* ✓ As a {user} I want to {create groups of items} and {add items to those groups} - Mostly Complete. Can create groups, the endpoints for adding to a group are set.
-* As a {user} I want to {buy individual items from a group} or {buy the entire group}
+* ✔ As a {user} I want to {save items to a Wishlist}
+* ✔ As a {user} I want to {create groups of items} and {add items to those groups} - Mostly Complete. Can create groups, the endpoints for adding to a group are set.
+* ✔ As a {user} I want to {buy individual items from a group} or {buy the entire group}
 * ✔ As a {user} I want to {edit my address, preferred shipping method, my username, my password, my email address} - Complete, Just need tests
 * As a {user} I want to {know what is bought most frequently in each category and overall}
-* As a {user} I want to {be able to share my Wishlist with others}
-* As a {user} I want {my groups to be shareable}
+* ✔ As a {user} I want to {be able to share my Wishlist with others}
+* ✔ As a {user} I want {my groups to be shareable}
 * As a {user} I want to {be notified (or not) when items in my Wishlist/groups are on sale}
 * As a {user} I want to {be able to leave comments on items that I have purchased, and see others comments}
 * As a {user} I want to {be able to ask questions about items}
