@@ -9,14 +9,14 @@ import { PurchasedItems } from 'src/app/models/purchased-items';
   providedIn: 'root'
 })
 export class OrderInventoryService {
-	private url = 'http://localhost:8080/SpringCore/pItems/';
+	private url = 'http://localhost:8080/SpringCore/pItem/';
 
   constructor(private http: HttpClient, private router: Router) { }
 
   getItemsWithGroupID(groupID:number):Observable<PurchasedItems[]> {
     return this.http.get<PurchasedItems[]>(this.url + groupID)
     .pipe(
-      catchError(this.handleError<PurchasedItems[]>('getCards')));
+      catchError(this.handleError<PurchasedItems[]>('getCards', [])));
   }
 
       /**

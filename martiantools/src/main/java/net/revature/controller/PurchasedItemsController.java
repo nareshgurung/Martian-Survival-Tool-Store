@@ -16,7 +16,7 @@ import net.revature.service.PurchasedItemsService;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController("purchasedItemsController")
-@RequestMapping("/pItems")
+@RequestMapping("/pItem")
 public class PurchasedItemsController {
 	private PurchasedItemsService piService;
 
@@ -26,11 +26,9 @@ public class PurchasedItemsController {
 		this.piService = piService;
 	}
 	
-	@GetMapping(path="/{groupID")
+	@GetMapping(path="/{groupID}")
 	public ResponseEntity<List<Purchased_items>> getItemsUsingGroupID(@PathVariable int groupID) {
 		System.out.println(groupID);
 		return new ResponseEntity<List<Purchased_items>>(this.piService.getItemsUsingGroupID(groupID), HttpStatus.OK);
 	}
-	
-
 }
