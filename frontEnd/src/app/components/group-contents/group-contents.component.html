@@ -2,7 +2,16 @@
 
 <div class="group_contentsList">
     <div *ngFor="let gc of groupContents" id="div_{{gc.product_name}}">
-        Product: {{gc.product_name}}<br>
-        Amount: {{gc.group_contents_amount}}
+        (<a (click)="addItemToCart(gc.product_id)" id="a_groups_add_item_to_cart_{{gc.product_id}}">Add to Cart</a>) 
+        (<a (click)="removeFromGroup(gc.product_id)" *ngIf="loggedIn" id="a_groups_remove_item_from_group_{{gc.product_id}}">Remove from Wishlist</a>):
+        <b><a routerLink="../../../products/id/{{gc.product_id}}">{{gc.product_name}}</a></b>
+        <!-- <br>Amount: {{gc.group_contents_amount}} -->
     </div>
+</div>
+<div><h3>
+    Share this page with others! just copy and paste <a href="{{currentPage}}">this</a> link:<br>
+    <a href="{{currentPage}}">{{currentPage}}</a>
+</h3></div>
+<div>
+    <button (click)="addAllToCart()" id="button_groups_Cart">Add to Cart</button>
 </div>

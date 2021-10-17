@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { ProductsService } from 'src/app/service/products/products.service';
 import { CartService } from 'src/app/service/cart.service';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { WishListService } from 'src/app/service/wish/wish-list.service';
 
 @Component({
   selector: 'app-product-page',
@@ -10,10 +12,19 @@ import { CartService } from 'src/app/service/cart.service';
   styleUrls: ['./product-page.component.css']
 })
 export class ProductPageComponent implements OnInit {
-  products: Product[] = [];
+  prod: Product = {
+    product_id: -1,
+    product_name: "",
+    product_description: "",
+    product_price: -1,
+    product_quantity: -1,
+    product_url: "",
+    user_id: -1,
+    category_id: -1
+  }
 
-  constructor(private rout: ActivatedRoute, private prodService: ProductsService,
-    private cartService: CartService) { }
+  constructor(private rout: ActivatedRoute, private prodService:ProductsService,
+    private cartService:CartService, private wish:WishListService) { }
 
   ngOnInit(): void {
     this.getProductByID();
@@ -21,16 +32,21 @@ export class ProductPageComponent implements OnInit {
 
   getProductByID(): void {
     const id = Number(this.rout.snapshot.paramMap.get('id'));
-    this.prodService.getProductsByID(id).subscribe((products: Product[]) => this.products = products);
+    this.prodService.getProductsByID(id).subscribe((products: Product) => this.prod = products);
   }
 
-  addToCart(product: Product) {
-    this.cartService.addToCart(product);
+  addToCart() {
+    this.cartService.addToCart(this.prod);
   }
 
-selectedProduct? : Product;
-onSelect(product: Product): void {
-  this.selectedProduct = product;
-}
+  addToWishlist() {
+    this.wish.addToWishlist(this.prod.product_id, NavbarComponent.userInfo.user_id).subscribe();
+    window.alert("Added to your Wishlist!");
+  }
+
+  selectedProduct? : Product;
+  onSelect(product: Product): void {
+    this.selectedProduct = product;
+  }
 
 }

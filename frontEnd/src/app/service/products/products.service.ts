@@ -18,10 +18,10 @@ export class ProductsService {
       catchError(this.handleError<Product[]>('getCards')));
 }
 
-  getProductsByID(productID: number): Observable<Product[]>{
-    return this.http.get<Product[]>(this.url + "id/" + productID)
+  getProductsByID(productID: number): Observable<Product>{
+    return this.http.get<Product>(this.url + "id/" + productID)
     .pipe(
-      catchError(this.handleError<Product[]>('getCards')));
+      catchError(this.handleError<Product>('getCards')));
 }
 
   /**

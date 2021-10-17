@@ -28,7 +28,8 @@ public class Group_contentsService {
 		for(Object[] objarr : list) {
 			GroupContentsAsProducts gcap = new GroupContentsAsProducts(
 					((String)objarr[0]), 
-					(int)objarr[1]);
+					(int)objarr[1],
+					(int)objarr[2]);
 			gcaps.add(gcap);
 		}
 		return gcaps;
@@ -41,5 +42,11 @@ public class Group_contentsService {
 		groupContents.setGroup_contents_amount(amount);
 		this.groupContentsRepository.addProductToGroup(groupContents);
 
+	}
+
+	public boolean removeProductFromGroup(int groupID, int productID) {
+		return this.groupContentsRepository.removeProductFromGroup(groupID, productID);
+		// TODO Auto-generated method stub
+		
 	}
 }
