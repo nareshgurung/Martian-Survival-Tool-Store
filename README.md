@@ -31,7 +31,6 @@ An Online Store for selling products & supplies for people on Earth who are prep
 * As a {user} I want to {know what is bought most frequently in each category and overall}
 * ✔ As a {user} I want to {be able to share my Wishlist with others}
 * ✔ As a {user} I want {my groups to be shareable}
-* As a {user} I want to {be notified (or not) when items in my Wishlist/groups are on sale}
 * As a {user} I want to {be able to leave comments on items that I have purchased, and see others comments}
 * As a {user} I want to {be able to ask questions about items}
 * As a {user} I want to {be able to get emergency shipments if I am already on mars}
@@ -40,6 +39,7 @@ An Online Store for selling products & supplies for people on Earth who are prep
 * let vendors put their stuff on sale
 * add more categories and items to each category
 * Make shipping prices dynamic based on users location 
+* Notify users when items in their Wishlist/groups are on sale
 
 ## Angular Build
   10/15/2021 Video
