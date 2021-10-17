@@ -31,6 +31,6 @@ public class SeleniumRunner {
 		loginpage.login("paktt", "Powerful");
 		
 		Assert.assertEquals("http://localhost:4200/login", driver.getCurrentUrl(), "error message");
-		System.out.println(driver.getCurrentUrl());
+//		System.out.println(driver.getCurrentUrl());
 	}
 }

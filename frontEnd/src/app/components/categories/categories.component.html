@@ -23,7 +23,7 @@
 
   <div *ngFor="let card of cards" id="div_{{card.category_id}}">
      <div class="col-3">
-        <h3> <a routerLink="/products/all/{{card.category_id}}" id="a_{{card.category_id}}">{{card.category_name}}</a></h3>
+        <h3> <a routerLink="/products/all/{{card.category_id}}" class="cat" id="a_{{card.category_id}}">{{card.category_name}}</a></h3>
       <p>short category description</p>
 
   </div>
