@@ -2,8 +2,8 @@
   <h1>All Products</h1>
   <div class="row">
 
-  <div class="col-xs-12 col-sm-6 col-md-3"  *ngFor="let prod of products">
-    <a routerLink="/products/id/{{prod.product_id}}">
+  <div  class="col-xs-12 col-sm-6 col-md-3"  *ngFor="let prod of products">
+    <a routerLink="/products/id/{{prod.product_id}}" id="prdt">
       <h3>{{prod.product_name}}</h3>
       <img id="img_{{prod.product_id}}" src="{{prod.product_url}}"></a>
 
