@@ -1,0 +1,18 @@
+<table id="table_{{productID}}">
+    <tr>
+        <td>Question</td>
+        <td>Answer</td>
+    </tr>
+    <tr *ngFor="let quest of questions">
+        <td>{{quest.qa_question}}</td>
+        <td *ngIf="quest.qa_answer">{{quest.qa_answer}}</td>
+        <td *ngIf="!quest.qa_answer"><input id="input_qa_newAnswer_{{quest.qa_id}}" [(ngModel)]='newAnswer'><button *ngIf="newAnswer" id="button_qa_newAnswer_{{quest.qa_id}}" (click)="submitAnswer(quest.qa_question, quest.qa_id)">Submit This Answer</button></td>
+    </tr>
+    <tr>
+        <td *ngIf="newQuestion"><br><b>New Question:</b> {{newQuestion}}<br></td>
+        <td></td>
+    </tr>
+</table>
+
+<textarea [(ngModel)]='newQuestion' id="textarea_new_question" rows="3" cols="90"></textarea><br>
+<button id="button_submit_new_question" (click)="submitQuestion()">Submit New Question</button>

@@ -15,12 +15,12 @@ import net.revature.service.UserService;
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController("usersController")
 @RequestMapping("/users")
-public class userController {
+public class UserController {
 
 	private UserService uService;
 
 	@Autowired
-	public userController(UserService usersService){
+	public UserController(UserService usersService){
 		this.uService=usersService;
 	}
 

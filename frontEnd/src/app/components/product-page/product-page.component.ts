@@ -22,6 +22,10 @@ export class ProductPageComponent implements OnInit {
     user_id: -1,
     category_id: -1
   }
+  commentsArea:boolean = false;
+  commentsButtonText = "Comments ↓";
+  qna:boolean = false;
+  qnaButtonText = "Q & A ↓";
 
   constructor(private rout: ActivatedRoute, private prodService:ProductsService,
     private cartService:CartService, private wish:WishListService) { }
@@ -47,6 +51,25 @@ export class ProductPageComponent implements OnInit {
   selectedProduct? : Product;
   onSelect(product: Product): void {
     this.selectedProduct = product;
+  }
+
+  showComments(){
+    if(this.commentsArea) {
+      this.commentsArea = false;
+      this.commentsButtonText = "Comments ↓";
+    } else {
+      this.commentsArea = true;
+      this.commentsButtonText="Comments ↑";
+    }
+  }
+  showQna(){
+    if(this.qna) {
+      this.qna = false;
+      this.qnaButtonText = "Q & A ↓"
+    } else {
+      this.qna = true;
+      this.qnaButtonText = "Q & A ↑"
+    }
   }
 
 }
