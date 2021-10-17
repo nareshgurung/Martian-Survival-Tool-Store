@@ -1,6 +1,6 @@
 <div *ngIf="selectedProduct" class="alert alert-success" role="alert" ngDefaultControl>
  <span class="added-ok"> Product added successfully. <a routerLink="../../../cart" class="alert-link">Go to cart?</a></span>
-  <input hidden id="hero-name" [(ngModel)]="selectedProduct.product_name" ngDefaultControl placeholder="name">
+  <input hidden [(ngModel)]="selectedProduct.product_name" ngDefaultControl placeholder="name">
 </div>
 
 <app-cart hidden [product]="selectedProduct" ngDefaultControl></app-cart>

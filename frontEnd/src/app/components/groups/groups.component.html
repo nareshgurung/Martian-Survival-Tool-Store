@@ -1,5 +1,13 @@
-<div class="group_contentsList">
+<div class="container">
+
+  <h2> <span class="material-icons">
+    list</span> Your Groups</h2>
+
+    <div class="group_contentsList">
     <div *ngFor="let group of groups" id="div_{{group.group_id}}">
-        <a routerLink="/group_contents/{{group.user_id}}/{{group.group_id}}" id="a_{{group.group_id}}">{{group.group_name}}</a>
+        <a routerLink="/group_contents/{{group.user_id}}/{{group.group_id}}" id="a_{{group.group_id}}"><span class="material-icons">
+          arrow_forward
+          </span> {{group.group_name}}</a>
     </div>
+</div>
 </div>
