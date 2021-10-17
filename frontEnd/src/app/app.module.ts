@@ -22,6 +22,7 @@ import { ShippingComponent } from './components/shipping/shipping.component';
 import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 import { EditGroupsComponent } from './components/edit-groups/edit-groups.component';
 import { PreviousOrdersComponent } from './components/previous-orders/previous-orders.component';
+import { OrderInventoryComponent } from './components/order-inventory/order-inventory.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { PreviousOrdersComponent } from './components/previous-orders/previous-o
     UserSettingsComponent,
     EditGroupsComponent,
     PreviousOrdersComponent,
+    OrderInventoryComponent,
   ],
   imports: [
     BrowserModule,

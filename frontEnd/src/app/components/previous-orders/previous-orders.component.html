@@ -1,1 +1,5 @@
-<p>previous-orders works!</p>
+<div *ngFor="let group of groups" id="div_previous_orders_{{group.purchase_group_id}}">
+    Order Date: {{group.purchase_group_date}}
+    <!-- good enough for now, should be able to change it to readable though -->
+    <app-order-inventory [groupID]="group.purchase_group_id"></app-order-inventory>
+</div>
