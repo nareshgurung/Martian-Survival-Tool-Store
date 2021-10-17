@@ -9,7 +9,7 @@ import { Groups } from 'src/app/models/groups';
   providedIn: 'root'
 })
 export class GroupsService {
-	private url = 'http://localhost:8080/SpringCore/groups/';
+	private url = 'http://localhost:8080/martiantools/groups/';
 
   constructor(private http: HttpClient, private router: Router) { }
 

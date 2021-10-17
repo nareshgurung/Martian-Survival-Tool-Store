@@ -9,7 +9,7 @@ import { Users } from 'src/app/models/Users';
   providedIn: 'root'
 })
 export class UsersService {
-	private url = 'http://localhost:8080/SpringCore/users/';
+	private url = 'http://localhost:8080/martiantools/users/';
 
   constructor(private http: HttpClient, private router:Router) { }
 
