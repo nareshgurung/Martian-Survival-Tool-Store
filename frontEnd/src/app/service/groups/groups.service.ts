@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import {catchError, map, tap} from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { Groups } from 'src/app/models/groups';
 
 @Injectable({

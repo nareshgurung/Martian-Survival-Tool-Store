@@ -35,7 +35,6 @@ public class GroupsController {
 	@GetMapping(path="/wishlist/{userID}", produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Integer> getWishlistID(@PathVariable int userID){
 		if(userID<0) {
-			System.out.println("GroupsRepository_getWishlistFromUserID: it was less than 0");
 			return new ResponseEntity<Integer>(HttpStatus.BAD_REQUEST);
 		}
 		return new ResponseEntity<Integer>(this.gService.findUsersWishlist(userID), HttpStatus.OK);
@@ -56,13 +55,13 @@ public class GroupsController {
 		else
 			return new ResponseEntity<Boolean>(false, HttpStatus.CONFLICT);
 	}
-	
+
 	@PostMapping(path="/renameGroup/{userID}/{groupID}/{newName}")
 	public ResponseEntity<Boolean> renameGroup(@PathVariable int userID, @PathVariable int groupID, @PathVariable String newName){
-	if(this.gService.renameGroup(userID, groupID, newName))
-		return new ResponseEntity<Boolean>(true, HttpStatus.ACCEPTED);
-	else
-		return new ResponseEntity<Boolean>(false, HttpStatus.CONFLICT);
+		if(this.gService.renameGroup(userID, groupID, newName))
+			return new ResponseEntity<Boolean>(true, HttpStatus.ACCEPTED);
+		else
+			return new ResponseEntity<Boolean>(false, HttpStatus.CONFLICT);
 	}
 
 }

@@ -14,6 +14,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { ShippingComponent } from './components/shipping/shipping.component';
 import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 import { EditGroupsComponent } from './components/edit-groups/edit-groups.component';
+import { PreviousOrdersComponent } from './components/previous-orders/previous-orders.component';
 
 const routes: Routes = [
   {path: 'categories',component: CategoriesComponent},
@@ -30,7 +31,8 @@ const routes: Routes = [
   {path: 'error', component: ErrorMessageComponent},
   {path: 'products/id/:id', component: ProductPageComponent},
   {path: 'settings', component: UserSettingsComponent},
-  {path: 'editgroups', component: EditGroupsComponent}
+  {path: 'editgroups', component: EditGroupsComponent},
+  {path: 'previousOrders', component: PreviousOrdersComponent}
 ];
 
 @NgModule({

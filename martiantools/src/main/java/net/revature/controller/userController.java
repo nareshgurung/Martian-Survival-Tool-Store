@@ -1,9 +1,7 @@
 package net.revature.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,10 +33,10 @@ public class userController {
 		this.uService.save(user);
 	}
 	@PostMapping(path="/update/{userID}")
-	public ResponseEntity<Boolean> updateUserInfo(@PathVariable int userID, @RequestBody Users user){
+	public boolean updateUserInfo(@PathVariable int userID, @RequestBody Users user){
 		if(this.uService.updateUserInfo(user))
-			return new ResponseEntity<Boolean>(true, HttpStatus.ACCEPTED);
+			return true;
 		else
-			return new ResponseEntity<Boolean>(false, HttpStatus.CONFLICT);
+			return false;
 	}
 }
