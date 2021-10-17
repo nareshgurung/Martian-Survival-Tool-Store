@@ -47,4 +47,21 @@ public class UserService {
 	Groups gp = new Groups("Wishlist", usr.getUser_id());
 	this.groupRepository.saveGroup(gp);
 	}
+
+	@Transactional
+	public boolean updateUserInfo(Users user) {
+		//TODO this is dumb, there should be a better way. I just couldnt find it and stopped looking after a while
+		Users oldInfo = usersRepository.getByUserID(user.getUser_id());
+		oldInfo.setUser_city(user.getUser_city());
+		oldInfo.setUser_email(user.getUser_email());
+		oldInfo.setUser_fname(user.getUser_fname());
+		oldInfo.setUser_lname(user.getUser_lname());
+		oldInfo.setUser_midinnitial(user.getUser_midinnitial());
+		oldInfo.setUser_password(user.getUser_password());
+		oldInfo.setUser_state(user.getUser_state());
+		oldInfo.setUser_street(user.getUser_street());
+		oldInfo.setUser_username(user.getUser_username());
+		oldInfo.setUser_zip(user.getUser_zip());
+		return true;
+	}
 }

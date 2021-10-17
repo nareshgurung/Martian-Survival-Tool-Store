@@ -1,8 +1,9 @@
 package net.revature.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +17,6 @@ import net.revature.service.UserService;
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController("usersController")
 @RequestMapping("/users")
-@EnableTransactionManagement 
 public class userController {
 
 	private UserService uService;
@@ -33,5 +33,12 @@ public class userController {
 	@PostMapping(path="/signup", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public void saveUsers(@RequestBody Users user) {
 		this.uService.save(user);
+	}
+	@PostMapping(path="/update/{userID}")
+	public ResponseEntity<Boolean> updateUserInfo(@PathVariable int userID, @RequestBody Users user){
+		if(this.uService.updateUserInfo(user))
+			return new ResponseEntity<Boolean>(true, HttpStatus.ACCEPTED);
+		else
+			return new ResponseEntity<Boolean>(false, HttpStatus.CONFLICT);
 	}
 }
