@@ -1,0 +1,17 @@
+.group_contentsList {
+  font-size: 18px;
+  padding-left: 3rem;
+  line-height: 2;
+}
+
+a {
+  color: #c1440e;
+  padding: .25rem .5rem;
+  border-radius: .5rem;
+}
+
+a:hover {
+  background-color: hsl(30, 100%, 88%);
+  color: #451804;
+
+}

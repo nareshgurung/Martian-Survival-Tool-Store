@@ -1,17 +1,42 @@
-<p>group-contents works!</p>
+ <div *ngIf="AddedMsg" class="alert alert-success" role="alert">
+  <span class="added-ok"> Product(s) added successfully. <a routerLink="../../../cart" class="alert-link">Go to cart?</a></span>
+ </div>
 
+
+ <div class="container">
+
+  <h2> <span class="material-icons">
+    star_border</span> Your WishList</h2>
 <div class="group_contentsList">
+
     <div *ngFor="let gc of groupContents" id="div_{{gc.product_name}}">
-        (<a (click)="addItemToCart(gc.product_id)" id="a_groups_add_item_to_cart_{{gc.product_id}}">Add to Cart</a>) 
-        (<a (click)="removeFromGroup(gc.product_id)" *ngIf="loggedIn" id="a_groups_remove_item_from_group_{{gc.product_id}}">Remove from Wishlist</a>):
-        <b><a routerLink="../../../products/id/{{gc.product_id}}">{{gc.product_name}}</a></b>
+
+      <b><a routerLink="../../../products/id/{{gc.product_id}}">{{gc.product_name}}</a></b>
+
+
+        <a class="item-action" (click)="addItemToCart(gc.product_id)" id="a_groups_add_item_to_cart_{{gc.product_id}}"><span title="Add to Cart" class="material-icons"> shopping_cart</span> Add to Cart</a>
+
+
+        <a class="item-action" (click)="removeFromGroup(gc.product_id)" *ngIf="loggedIn" id="a_groups_remove_item_from_group_{{gc.product_id}}"><span alt="Remove from Wishlist" class="material-icons"> remove_circle_outline </span> Remove from List</a>
+
+          <hr>
         <!-- <br>Amount: {{gc.group_contents_amount}} -->
     </div>
 </div>
-<div><h3>
-    Share this page with others! just copy and paste <a href="{{currentPage}}">this</a> link:<br>
-    <a href="{{currentPage}}">{{currentPage}}</a>
-</h3></div>
+
+<!-- share block -->
 <div>
-    <button (click)="addAllToCart()" id="button_groups_Cart">Add to Cart</button>
+  <h3>
+  <span class="material-icons">
+    link
+    </span> Share this page with others! <p>Just copy and paste <a href="{{currentPage}}">this</a> link:</h3>
+
+    <p class="share"><a href="{{currentPage}}">{{currentPage}}</a></p>
+
+</div>
+
+<div>
+    <button class="btn btn-danger btn-lg" (click)="addAllToCart()" id="button_groups_Cart">Add List to Cart</button>
+</div>
+
 </div>

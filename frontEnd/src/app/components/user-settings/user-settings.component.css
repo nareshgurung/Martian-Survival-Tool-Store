@@ -1,0 +1,38 @@
+.container {
+  padding-left: 5rem;
+  padding-top: 5rem;
+}
+
+.button {
+  cursor: pointer;
+  display: inline-block;
+  background-color: #e77d11;
+  color: #f8f8f8;
+  font-weight: bold;
+  border: 0;
+  padding: .5rem .75rem;
+  font-size: 18px;
+  width: fit-content;
+  border-radius: .75rem;
+  margin-right: 10px;
+  margin-top: 16px;
+}
+
+.button:hover {
+  opacity: .7;
+}
+
+a {
+  color: #c1440e;
+  font-size: 18px;
+  line-height: 2;
+  padding: .25rem .5rem;
+  border-radius: .5rem;
+
+}
+
+a:hover {
+  background-color: hsl(30, 100%, 88%);
+  color: #451804;
+
+}
