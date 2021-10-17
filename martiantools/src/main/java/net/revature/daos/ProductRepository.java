@@ -25,9 +25,9 @@ public class ProductRepository {
 		return list;
 	}
 
-	public List<Products> getByProductID(String catID) {
-		List<Products> list;
-		list = this.entityManager.createQuery("From Products where product_id=" + catID, Products.class).getResultList();
+	public Products getByProductID(String catID) {
+		Products list;
+		list = this.entityManager.createQuery("From Products where product_id=" + catID, Products.class).getSingleResult();
 		return list;
 	}
 

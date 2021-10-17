@@ -1,12 +1,12 @@
-<div *ngIf="selectedProduct" class="alert alert-success" role="alert">
- <span class="added-ok"> Product added successfully. <a href="cart" class="alert-link">Go to cart?</a></span>
-  <input hidden id="hero-name" [(ngModel)]="selectedProduct.product_name" placeholder="name">
+<div *ngIf="selectedProduct" class="alert alert-success" role="alert" ngDefaultControl>
+ <span class="added-ok"> Product added successfully. <a routerLink="../../../cart" class="alert-link">Go to cart?</a></span>
+  <input hidden id="hero-name" [(ngModel)]="selectedProduct.product_name" ngDefaultControl placeholder="name">
 </div>
 
-<app-cart hidden [product]="selectedProduct"></app-cart>
+<app-cart hidden [product]="selectedProduct" ngDefaultControl></app-cart>
 
 <div class="container">
-<div id="product" *ngFor="let prod of products">
+  <div id="product">
     <h2>{{prod.product_name}}</h2>
 
     <p>Description: {{prod.product_description}}</p>
@@ -15,12 +15,12 @@
 
     <img id="img_{{prod.product_id}}" src="{{prod.product_url}}">
 
-    <button class="btn btn-warning" (click)="addToCart(prod); onSelect(prod)" id="button_addtoCart_{{prod.product_id}}" value="addToCart">Add to Cart</button>
+    <button class="btn btn-warning" (click)="addToCart(); onSelect(prod)" id="button_addtoCart_{{prod.product_id}}" value="addToCart">Add to Cart</button>
 
-    <button class="btn btn-warning" id="button_addtoWishlist_{{prod.product_id}}" value="addToWishlist">Add to Wishlist</button>
+    <button class="btn btn-warning" (click)="addToWishlist()" id="button_addtoWishlist_{{prod.product_id}}" value="addToWishlist">Add to Wishlist</button>
 
     <button class="btn btn-warning" id="button_addtoGroup_{{prod.product_id}}" value="addToGroup">Add to other Group</button>
-</div>
+  </div>
 </div>
 
 

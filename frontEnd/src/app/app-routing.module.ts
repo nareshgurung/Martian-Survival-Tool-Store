@@ -17,7 +17,7 @@ import { PreviousOrdersComponent } from './components/previous-orders/previous-o
 
 const routes: Routes = [
   {path: 'categories',component: CategoriesComponent},
-  {path: '',redirectTo: '/login', pathMatch: 'full'},
+  {path: '',redirectTo: '/categories', pathMatch: 'full'},
   {path: 'login',component: LoginComponent},
   {path: 'dashboard', component: UserDashboardComponent},
   { path: 'cart', component: CartComponent },

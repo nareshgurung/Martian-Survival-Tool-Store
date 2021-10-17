@@ -20,6 +20,13 @@ export class GroupContentsService {
       catchError(this.handleError<GroupContents[]>('getCards', [])));
   }
 
+  removeItemFromGroup(groupID:number,productID:number):Observable<boolean> {
+    console.log("attempting to remove " + productID + " from " + groupID)
+    return this.http.post<boolean>(`${this.url}removeItem/${groupID}/${productID}`, [])
+    .pipe(
+      catchError(this.handleError<boolean>('getCards')));
+  }
+
     /**
  * Handle Http operation that failed.
  * Let the app continue.
