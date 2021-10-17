@@ -3,6 +3,8 @@ package net.revature.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +18,6 @@ import net.revature.service.PurchaseGroupsService;
 @RestController("purchaseGroupController")
 @RequestMapping("/pGroup")
 public class PurchaseGroupController {
-// 	private UserService uService;
 	private PurchaseGroupsService pgService;
 	
 	@Autowired
@@ -26,8 +27,7 @@ public class PurchaseGroupController {
 	}
 	
 	@GetMapping(path="/{userID}")
-	public List<Purchase_group> getUsersGroups(@PathVariable int userID) {
-		return this.pgService.getUsersGroups(userID);
+	public ResponseEntity<List<Purchase_group>> getUsersGroups(@PathVariable int userID) {
+		return new ResponseEntity<List<Purchase_group>>(this.pgService.getUsersGroups(userID), HttpStatus.OK);
 	}
-
 }
