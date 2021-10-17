@@ -20,7 +20,7 @@ An Online Store for selling products & supplies for people on Earth who are prep
 
 ## User Stories:
 *(As a < type of user >, I want < some goal > so that < some reason >.)*
-* As a {user} I want to {add items to} my shopping cart
+* ✔ As a {user} I want to {add items to} my shopping cart
 * As a {user} I want to {purchase my items} and {have them delivered}
 * ✔ As a {user} I want to {be able to view previous orders} - Complete. Just need tests
 * As a {user} I want to {save items to a Wishlist}
