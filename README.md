@@ -31,7 +31,7 @@ An Online Store for selling products & supplies for people on Earth who are prep
 * As a {user} I want to {know what is bought most frequently in each category and overall}
 * ✔ As a {user} I want to {be able to share my Wishlist with others}
 * ✔ As a {user} I want {my groups to be shareable}
-* As a {user} I want to {be able to leave comments on items that I have purchased, and see others comments}
+* ✔ As a {user} I want to {be able to leave comments on items that I have purchased, and see others comments}
 * As a {user} I want to {be able to ask questions about items}
 * As a {user} I want to {be able to get emergency shipments if I am already on mars}
 
