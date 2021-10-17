@@ -4,6 +4,7 @@ import { Product } from 'src/app/models/product';
 import { ProductsService } from 'src/app/service/products/products.service';
 import { CartService } from 'src/app/service/cart.service';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { WishListService } from 'src/app/service/wish/wish-list.service';
 
 @Component({
   selector: 'app-product-page',
@@ -23,7 +24,7 @@ export class ProductPageComponent implements OnInit {
   }
 
   constructor(private rout: ActivatedRoute, private prodService:ProductsService,
-    private cartService:CartService) { }
+    private cartService:CartService, private wish:WishListService) { }
 
   ngOnInit(): void {
     this.getProductByID();
@@ -36,6 +37,11 @@ export class ProductPageComponent implements OnInit {
 
   addToCart() {
     this.cartService.addToCart(this.prod);
+  }
+
+  addToWishlist() {
+    this.wish.addToWishlist(this.prod.product_id, NavbarComponent.userInfo.user_id).subscribe();
+    window.alert("Added to your Wishlist!");
   }
 
   selectedProduct? : Product;

@@ -17,7 +17,7 @@
 
     <button class="btn btn-warning" (click)="addToCart(); onSelect(prod)" id="button_addtoCart_{{prod.product_id}}" value="addToCart">Add to Cart</button>
 
-    <button class="btn btn-warning" id="button_addtoWishlist_{{prod.product_id}}" value="addToWishlist">Add to Wishlist</button>
+    <button class="btn btn-warning" (click)="addToWishlist()" id="button_addtoWishlist_{{prod.product_id}}" value="addToWishlist">Add to Wishlist</button>
 
     <button class="btn btn-warning" id="button_addtoGroup_{{prod.product_id}}" value="addToGroup">Add to other Group</button>
   </div>

@@ -14,8 +14,6 @@ export class UsersService {
   constructor(private http: HttpClient, private router:Router) { }
 
   update(user:object): Observable<boolean>{
-    console.log("user Email:" + (<Users>user).user_email);
-    console.log("URL:" + (`${this.url}update/${(<Users>user).user_id}`))
     return this.http.post<boolean>(`${this.url}update/${(<Users>user).user_id}`, user)
     .pipe(
       catchError(this.handleError<boolean>('getCards')));
