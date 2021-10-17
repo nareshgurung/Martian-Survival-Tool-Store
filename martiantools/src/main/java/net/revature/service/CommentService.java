@@ -18,11 +18,12 @@ public class CommentService {
 		this.commentRepository = repository;
 	}
 
-	public List<Comments> findAll(){
-		return this.commentRepository.getAll();
+	public List<Comments> getAllForProduct(int productID){
+		return this.commentRepository.getAllForProduct(productID);
 	}
-	public void saveComment(Comments obj) {
-		this.commentRepository.saveComment(obj);
+	public boolean saveComment(Comments obj) {
+		obj.setComment_id(0);
+		return this.commentRepository.saveComment(obj);
 	}
 	
 }
