@@ -1,12 +1,18 @@
-<div class="container">
+<div *ngIf="confirmationMsg" class="alert alert-success" role="alert">
+  <p class="order-ok"> Thank you for your purchase!<p>
+ </div>
+
+
+
+ <div class="container">
   <div class="row">
     <div class="col-2">
 
       <h3>Cart</h3>
 
 <div class="cart-item" *ngFor = "let item of items">
-  <span>{{ item.product_name }}</span>
-  <span>{{ item.product_price | currency }}</span>
+  <span [(ngModel)]="item.product_name">{{ item.product_name }}</span>
+  <span [(ngModel)]="item.product_price">{{ item.product_price | currency }}</span>
 </div>
 
   </div>
@@ -15,37 +21,57 @@
     <h3>Shipping Information</h3>
     <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
 
-  <div>
-    <label for="*fname">First Name:</label>
-    <input type="text" id=fname name="fname"
-    >
-</div>
-<div>
-    <label for="*midInnitial">Middle Initial: </label>
-    <input type="text" id=Midinnitial name="Midinnitial" >
-</div>
-<div>
-    <label for="*lname">Last Name:</label>
-    <input type="text" id=lname name="lname" >
-</div>
-<div>
-    <label for="*street">Street : </label>
-    <input type="text" id=street name="street" >
-</div>
-<div>
-    <label for="*zip">ZipCode:</label>
-    <input type="number" id="zip" name="zip" >
-</div>
-<div>
-    <label for="*city">City:</label>
-    <input type="text" id="city" name="city" >
-</div>
-<div>
-    <label for="*state">State:</label>
-    <input type="text" id="state" name="state" >
-</div>
+      <div>
+        <label for="email"> Email </label>
+        <input id="email" type="text" formControlName="email">
+      </div>
 
-  <button class="button btn btn-danger" type="submit">Purchase</button>
+      <div>
+        <label for="name"> Name </label>
+        <input id="name" type="text" formControlName="name">
+      </div>
+
+      <div>
+        <label for="address">
+          Address
+        </label>
+        <input id="address" type="text" formControlName="address">
+      </div>
+
+      <div>
+        <label for="zip"> Zip </label>
+        <input id="zip" type="text" formControlName="zip">
+      </div>
+
+      <div>
+        <label for="city"> City </label>
+        <input id="city" type="text" formControlName="city">
+      </div>
+
+      <div>
+        <label for="state"> State </label>
+        <input id="state" type="text" formControlName="state">
+      </div>
+
+
+      <h3>Billing Information</h3>
+      <div>
+        <label for="credi_card"> Credit Card Number</label>
+        <input id="credi_card" type="number" formControlName="credi_card">
+      </div>
+
+      <div>
+        <label for="exp"> Expiration </label>
+        <input id="exp" type="date" formControlName="exp">
+      </div>
+
+      <div>
+        <label for="code"> Security Code</label>
+        <input id="code" type="number" formControlName="code">
+      </div>
+
+
+  <button (click)="showMessage()" class="button btn btn-danger" type="submit">Purchase</button>
 
 </form>
     </div>
