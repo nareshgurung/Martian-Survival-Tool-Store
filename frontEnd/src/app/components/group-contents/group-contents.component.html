@@ -9,19 +9,19 @@
     star_border</span> Your WishList</h2>
 <div class="group_contentsList">
 
-    <div *ngFor="let gc of groupContents" id="div_{{gc.product_name}}">
-
-      <b><a routerLink="../../../products/id/{{gc.product_id}}">{{gc.product_name}}</a></b>
 
 
-        <a class="item-action" (click)="addItemToCart(gc.product_id)" id="a_groups_add_item_to_cart_{{gc.product_id}}"><span title="Add to Cart" class="material-icons"> shopping_cart</span> Add to Cart</a>
-
-
-        <a class="item-action" (click)="removeFromGroup(gc.product_id)" *ngIf="loggedIn" id="a_groups_remove_item_from_group_{{gc.product_id}}"><span alt="Remove from Wishlist" class="material-icons"> remove_circle_outline </span> Remove from List</a>
-
+<table>
+    <tr *ngFor="let gc of groupContents" id="div_{{gc.product_name}}">
+      <td><b><a routerLink="../../../products/id/{{gc.product_id}}">{{gc.product_name}}</a></b></td>
+      <td><a class="item-action" (click)="addItemToCart(gc.product_id)" id="a_groups_add_item_to_cart_{{gc.product_id}}"><span title="Add to Cart" class="material-icons"> shopping_cart</span> Add to Cart</a></td>
+      <td><a class="item-action" (click)="removeFromGroup(gc.product_id)" *ngIf="loggedIn" id="a_groups_remove_item_from_group_{{gc.product_id}}"><span alt="Remove from Wishlist" class="material-icons"> remove_circle_outline </span> Remove from List</a></td>
           <hr>
-        <!-- <br>Amount: {{gc.group_contents_amount}} -->
-    </div>
+    </tr>
+  </table>
+
+
+
 </div>
 
 <!-- share block -->
