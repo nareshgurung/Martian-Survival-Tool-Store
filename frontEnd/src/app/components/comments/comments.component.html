@@ -1,6 +1,14 @@
 <h2>Comments</h2>
+ProductID: {{productID}}
 <div>
-	<div *ngFor="let comment of comments" id="{{comment.comment_id}}">
-		<a routerLink="/">{{comment.comment}}</a>
+	<div *ngFor="let comment of comments" id="div_comment_{{comment.comment_id}}">
+		{{comment.comment}}
 	</div>
 </div>
+<div *ngIf="commentBox">
+	Preview: {{newComment}}
+</div>
+
+<textarea *ngIf="commentBox" rows="3" cols="90" [(ngModel)]='newComment'></textarea><br *ngIf="commentBox">
+<button *ngIf="commentBox" id="button_submit_new_comment" (click)="submitButton()">Submit New Comment</button><br *ngIf="commentBox"><br *ngIf="commentBox">
+<button *ngIf="commentButton" (click)="showBox()" id="button_comments_new_comment">Add a comment</button>

@@ -18,11 +18,13 @@ public class CommentsRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public List<Comments> getAll() {
-		return entityManager.createQuery("FROM Comments", Comments.class).getResultList();
+	public List<Comments> getAllForProduct(int productID) {
+		List<Comments> comments = entityManager.createQuery("FROM Comments WHERE product_id=" + productID, Comments.class).getResultList();
+		return comments; 
 	}
 	
-	public void saveComment(Comments obj) {
+	public boolean saveComment(Comments obj) {
 		this.entityManager.persist(obj);
+		return true;
 	}
 }
