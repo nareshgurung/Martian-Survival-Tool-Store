@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import net.revature.models.Products;
 import net.revature.models.Purchased_items;
 import net.revature.service.PurchasedItemsService;
 
@@ -30,4 +31,10 @@ public class PurchasedItemsController {
 	public ResponseEntity<List<Purchased_items>> getItemsUsingGroupID(@PathVariable int groupID) {
 		return new ResponseEntity<List<Purchased_items>>(this.piService.getItemsUsingGroupID(groupID), HttpStatus.OK);
 	}
+
+	@GetMapping(path="/max")
+	public ResponseEntity<List<Products>> getItemMostBought() {
+		return new ResponseEntity<List<Products>>(this.piService.getItemMostBought(), HttpStatus.OK);
+	}
+	
 }
