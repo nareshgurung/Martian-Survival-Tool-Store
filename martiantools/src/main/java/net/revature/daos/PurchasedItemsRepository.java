@@ -19,5 +19,9 @@ public class PurchasedItemsRepository {
 	public List<Purchased_items> getItemsUsingGroupID(int groupID) {
 		return this.entityManager.createQuery("FROM Purchased_items WHERE purchase_group_id=" + groupID, Purchased_items.class).getResultList();
 	}
+	
+	public void addItemsToPurchasedTable(Purchased_items item) {
+		this.entityManager.persist(item);
+	}
 
 }

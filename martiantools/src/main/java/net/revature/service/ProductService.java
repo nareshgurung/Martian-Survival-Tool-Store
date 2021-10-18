@@ -30,10 +30,7 @@ public class ProductService {
 		return this.productRepository.getByCategoryID(id);
 	}
 
-	public Products findOneById(String catID) {
-		if(!CheckWrongData.canParseAsInteger(catID)) {
-			return null;
-		}
+	public Products findOneById(int catID) {
 		return this.productRepository.getByProductID(catID);
 	}
 }

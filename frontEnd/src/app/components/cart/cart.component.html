@@ -19,59 +19,59 @@
 
   <div class="col-2">
     <h3>Shipping Information</h3>
-    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <form>
 
       <div>
         <label for="email"> Email </label>
-        <input id="email" type="text" formControlName="email">
+        <input [(ngModel)]='frm.email' id="email" type="text" name="email">
       </div>
 
       <div>
         <label for="name"> Name </label>
-        <input id="name" type="text" formControlName="name">
+        <input [(ngModel)]='frm.name' id="name" type="text" name="name">
       </div>
 
       <div>
         <label for="address">
           Address
         </label>
-        <input id="address" type="text" formControlName="address">
+        <input [(ngModel)]='frm.address' id="address" type="text" name="address">
       </div>
 
       <div>
         <label for="zip"> Zip </label>
-        <input id="zip" type="text" formControlName="zip">
+        <input [(ngModel)]='frm.zip' id="zip" type="text" name="zip">
       </div>
 
       <div>
         <label for="city"> City </label>
-        <input id="city" type="text" formControlName="city">
+        <input [(ngModel)]='frm.city' id="city" type="text" name="city">
       </div>
 
       <div>
         <label for="state"> State </label>
-        <input id="state" type="text" formControlName="state">
+        <input [(ngModel)]='frm.state' id="state" type="text" name="state">
       </div>
 
 
       <h3>Billing Information</h3>
       <div>
-        <label for="credi_card"> Credit Card Number</label>
-        <!-- <input id="credi_card" type="number" formControlName="credit_card"> -->
+        <label for="card"> Credit Card Number</label>
+        <input [(ngModel)]='frm.card' id="credi_card" type="number" name="card">
       </div>
 
       <div>
         <label for="exp"> Expiration </label>
-        <input id="exp" type="date" formControlName="exp">
+        <input [(ngModel)]='frm.exp' id="exp" type="date" name="exp">
       </div>
 
       <div>
         <label for="code"> Security Code</label>
-        <input id="code" type="number" formControlName="code">
+        <input [(ngModel)]='frm.code' id="code" type="number" name="code">
       </div>
 
 
-  <button (click)="showMessage()" class="button btn btn-danger" type="submit">Purchase</button>
+  <button (click)="onSubmit()" class="button btn btn-danger" type="submit">Purchase</button>
 
 </form>
     </div>
