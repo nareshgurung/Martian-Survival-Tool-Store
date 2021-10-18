@@ -20,22 +20,14 @@
 
 <!-- featured products-->
 <div class="small-container">
-  <h2 class="title">featured products</h2>
+  <h2 class="title">Most Sold Products</h2>
 
-  <div class="row">
-      <div class="col-4">
-        <a routerLink="../products/id/9032"><h4>Holy Stone 1080P</h4></a>
-          <img src="https://m.media-amazon.com/images/I/712-lVMgXnL._AC_SY450_.jpg" alt="Holy Stone 1080P">
+    <div class="row">
+      <div *ngFor="let weirdo of mostSold" class="col-4">
+        <a routerLink="../products/id/{{weirdo.product_id}}"><h4>{{weirdo.product_name}}</h4>
+          <img src="{{weirdo.product_url}}" alt="{{weirdo.product_name}}"></a>
       </div>
-
-      <div class="col-4">
-        <a routerLink="../products/id/84123"><h4>Drager Panorama Nova</h4></a>
-          <img src="https://m.media-amazon.com/images/I/81zIOJquieL._AC_SY450_.jpg" alt="Drager Panorama Nova">
-      </div>
-
-      <div class="col-4">
-        <a routerLink="../products/id/112200"><h4>Airborne Cargo MiniDrone</h4></a>
-          <img src="https://m.media-amazon.com/images/I/61Ne9wV9HGL._AC_SY450_.jpg" alt="Airborne Cargo MiniDrone">
+    </div>
 
 <!-- footer -->
 <footer>

@@ -2,21 +2,28 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Card } from '../../models/card';
-import {catchError, map, tap} from 'rxjs/operators';
+import {catchError} from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/models/product';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardService {
-private url = 'http://localhost:8080/martiantools/categories/all';
+private url = 'http://localhost:8080/martiantools/';
 
   constructor(private http: HttpClient, private router:Router) { }
 
   getCards(): Observable<Card[]> {
-    return(this.http.get<Card[]>(this.url)
+    return(this.http.get<Card[]>(this.url + "categories/all")
     .pipe(
       catchError(this.handleError<Card[]>('getCards', []))));
+  }
+
+  getMostSold(): Observable<Product[]> {
+    return(this.http.get<Product[]>(this.url + "pItem/max")
+    .pipe(
+      catchError(this.handleError<Product[]>('getCards'))));
   }
 
 /**
