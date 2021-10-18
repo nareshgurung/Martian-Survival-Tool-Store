@@ -38,9 +38,12 @@ li {
 }
 
 .content {
-  padding-top: 2rem;
+  padding: 2rem;
   background-color: #f8f8f8;
-  font-size: 18px !important;
+}
+
+.content p {
+  font-size: 16px !important;
 }
 
 img {
