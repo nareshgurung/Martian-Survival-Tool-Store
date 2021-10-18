@@ -14,7 +14,6 @@ private url = 'http://localhost:8080/martiantools/categories/all';
   constructor(private http: HttpClient, private router:Router) { }
 
   getCards(): Observable<Card[]> {
-    console.log("this.url:" + this.url)
     return(this.http.get<Card[]>(this.url)
     .pipe(
       catchError(this.handleError<Card[]>('getCards', []))));
