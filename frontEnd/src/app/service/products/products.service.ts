@@ -8,7 +8,7 @@ import {catchError, map, tap} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductsService {
-  private url = 'http://localhost:8080/martiantools/products/';
+  private url = 'http://52.14.63.20:8088/martiantools/products/';
 
   constructor(private http: HttpClient) { }
 

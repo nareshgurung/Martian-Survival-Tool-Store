@@ -9,7 +9,7 @@ import { PurchasedItems } from 'src/app/models/purchased-items';
   providedIn: 'root'
 })
 export class OrderInventoryService {
-	private url = 'http://localhost:8080/martiantools/pItem/';
+	private url = 'http://52.14.63.20:8088/martiantools/pItem/';
 
   constructor(private http: HttpClient, private router: Router) { }
 

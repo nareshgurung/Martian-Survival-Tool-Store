@@ -47,23 +47,4 @@ export class LoginComponent implements OnInit {
     );
 
   }
-
-  cheaterButton() {
- this.loginServ.login("neain", "neainpassword").subscribe(
-   resData=>{
-     if(resData != null){
-       NavbarComponent.userInfo = resData;
-       this.router.navigate(['/dashboard'])
-     }else if(resData == null){
-       this.error="Invalid Credentials"
-     }
-   },
-   errorMessage=>{
-      this.error="invalid Credentials"
-   }
- );
-
-
-  }
-
 }

@@ -9,7 +9,7 @@ import { Groups } from 'src/app/models/groups';
   providedIn: 'root'
 })
 export class GroupsService {
-	private url = 'http://localhost:8080/martiantools/groups/';
+	private url = 'http://52.14.63.20:8088/martiantools/groups/';
 
   constructor(private http: HttpClient, private router: Router) { }
 

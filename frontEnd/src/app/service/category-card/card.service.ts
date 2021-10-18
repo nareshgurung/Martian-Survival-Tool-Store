@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class CardService {
-private url = 'http://localhost:8080/martiantools/categories/all';
+private url = 'http://52.14.63.20:8088/martiantools/categories/all';
 
   constructor(private http: HttpClient, private router:Router) { }
 

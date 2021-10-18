@@ -9,7 +9,7 @@ import { QuestionsModel } from 'src/app/models/questions';
   providedIn: 'root'
 })
 export class AnswerService {
-	private url = 'http://localhost:8080/martiantools/qa/';
+	private url = 'http://52.14.63.20:8088/martiantools/qa/';
 
 	constructor(private http: HttpClient, private router:Router) { }
 

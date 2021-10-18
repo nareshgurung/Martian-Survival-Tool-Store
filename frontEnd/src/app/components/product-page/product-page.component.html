@@ -15,11 +15,14 @@
 
     <img id="img_{{prod.product_id}}" src="{{prod.product_url}}">
 
+    <button class="btn btn-warning" (click)="addToGroup()" id="button_addtoGroup_{{prod.product_id}}" value="addToGroup" *ngIf="isLoggedIn">Add to:</button>
     <button class="btn btn-warning" (click)="addToCart(); onSelect(prod)" id="button_addtoCart_{{prod.product_id}}" value="addToCart">Add to Cart</button>
+    <!-- <button class="btn btn-warning" (click)="addToWishlist()" id="button_addtoWishlist_{{prod.product_id}}" value="addToWishlist" *ngIf="isLoggedIn">Add to Wishlist</button> -->
 
-    <button class="btn btn-warning" (click)="addToWishlist()" id="button_addtoWishlist_{{prod.product_id}}" value="addToWishlist">Add to Wishlist</button>
-
-    <button class="btn btn-warning" id="button_addtoGroup_{{prod.product_id}}" value="addToGroup">Add to other Group</button>
+    <br>
+    <select *ngIf="isLoggedIn" [(ngModel)]="selectedLevel">
+      <option *ngFor="let group of groups" [ngValue]="group.group_id">{{group.group_name}}</option>
+    </select>
   </div>
 </div>
 

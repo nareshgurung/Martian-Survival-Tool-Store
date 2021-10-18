@@ -9,10 +9,16 @@ import { GroupContents } from 'src/app/models/group_contents';
   providedIn: 'root'
 })
 export class GroupContentsService {
-	private url = 'http://localhost:8080/martiantools/group_contents/';
+	private url = 'http://52.14.63.20:8088/martiantools/group_contents/';
 
   constructor(private http: HttpClient, private router:Router) { }
 
+///addToGroup/{groupID}/{productID}/{amount}")
+  addItemToGroup(groupID:number,prodID:number): Observable<boolean>{
+    return this.http.post<boolean>(`${this.url}addToGroup/${groupID}/${prodID}/1`, [])
+    .pipe(
+      catchError(this.handleError<boolean>('getCards')));
+  }
 
   getGroupedItemsForUser(userID: number, groupID: number): Observable<GroupContents[]>{
     return this.http.get<GroupContents[]>(this.url + userID + "/" + groupID)

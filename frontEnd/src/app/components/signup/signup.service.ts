@@ -7,7 +7,7 @@ import { Users } from 'src/app/models/Users';
 })
 export class SignupService {
 
-  signUpUser ="http://localhost:8080/SpringCore/users/signup"
+  signUpUser ="http://52.14.63.20:8088/martiantools/users/signup"
 
   constructor(private http:HttpClient) { }
 

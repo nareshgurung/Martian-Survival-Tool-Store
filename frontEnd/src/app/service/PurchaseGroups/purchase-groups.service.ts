@@ -8,7 +8,7 @@ import { PurchaseGroup } from 'src/app/models/purchase-group';
   providedIn: 'root'
 })
 export class PurchaseGroupsService {
-  private url = 'http://localhost:8080/martiantools/pGroup/';
+  private url = 'http://52.14.63.20:8088/martiantools/pGroup/';
 
   constructor(private http: HttpClient) { }
 

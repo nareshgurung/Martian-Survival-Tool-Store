@@ -10,7 +10,7 @@ import { Product } from '../../models/product';
   providedIn: 'root'
 })
 export class CartService {
-  private url = 'http://localhost:8080/martiantools/cart/add';
+  private url = 'http://52.14.63.20:8088/martiantools/cart/add';
 
   static items: Product[] =[];
 
