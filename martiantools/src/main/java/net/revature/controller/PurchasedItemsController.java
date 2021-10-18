@@ -28,7 +28,6 @@ public class PurchasedItemsController {
 	
 	@GetMapping(path="/{groupID}")
 	public ResponseEntity<List<Purchased_items>> getItemsUsingGroupID(@PathVariable int groupID) {
-		System.out.println(groupID);
 		return new ResponseEntity<List<Purchased_items>>(this.piService.getItemsUsingGroupID(groupID), HttpStatus.OK);
 	}
 }

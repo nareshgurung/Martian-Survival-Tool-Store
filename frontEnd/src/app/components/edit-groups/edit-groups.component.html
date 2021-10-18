@@ -1,10 +1,17 @@
-<p>edit-groups works!</p>
+<div class="container">
+
+  <h2> <span class="material-icons">
+    edit</span> Edit Your Groups</h2>
+
 <table>
     <tr *ngFor="let group of groups" id="tr_edit_group_{{group.group_id}}">
         <td id="td_edid_group_{{group.group_id}}">{{group.group_name}}</td>
-        <td><a id="a_edit_group_rename_{{group.group_id}}" (click)="changeGroupName(group.group_id)"> Rename </a></td>
-        <td><a id="a_edid_group_delete_{{group.group_id}}" (click)="deleteGroup(group.group_id)">Delete</a></td>
+        <td><a id="a_edit_group_rename_{{group.group_id}}" (click)="changeGroupName(group.group_id)"> <span class="material-icons">
+          drive_file_rename_outline </span> Rename </a></td>
+        <td><a id="a_edid_group_delete_{{group.group_id}}" (click)="deleteGroup(group.group_id)"><span alt="Remove List" class="material-icons"> remove_circle_outline </span> Delete</a></td>
     </tr>
 </table>
 
-<button id="button_edit_group_addgroup" (click)="promptGroupName()">Create New Group</button>
+<button class="btn button" id="button_edit_group_addgroup" (click)="promptGroupName()">Create New Group</button>
+
+</div>

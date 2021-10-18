@@ -8,7 +8,25 @@ h2 {
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+.error {
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+
+form {
+  margin-bottom: 2rem;
+  width: 300px;
+
+}
+input {
+  width: 100%;
+}
+
 .loginError{
   background-color: red;
   color:white;
@@ -16,9 +34,18 @@ h2 {
 
 .button {
   cursor: pointer;
-  display: inline-block;
+  display: block;
   margin: 1.5rem auto;
   background-color: #e77d11;
   color: #eee;
   font-weight: bold;
+  border: 0;
+  padding: 1rem 1.25rem;
+  text-transform: uppercase;
+  font-size: 18px;
+  width: fit-content;
+}
+
+.button:hover {
+  opacity: .8;
 }

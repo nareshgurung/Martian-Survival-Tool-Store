@@ -4,8 +4,6 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -15,7 +13,6 @@ public class Qa {
 	
 	@Id
 	@Column(name="qa_id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int qa_id;
 	
 	@Column(name="qa_question", nullable=false)

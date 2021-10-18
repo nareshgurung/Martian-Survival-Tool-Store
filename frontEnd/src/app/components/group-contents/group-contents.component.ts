@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GroupContents } from 'src/app/models/group_contents';
 import { Product } from 'src/app/models/product';
-import { CartService } from 'src/app/service/cart.service';
+import { CartService } from 'src/app/service/cart/cart.service';
 import { GroupContentsService } from 'src/app/service/group_contents/group-contents.service';
 import { ProductsService } from 'src/app/service/products/products.service';
 import { NavbarComponent } from '../navbar/navbar.component';
@@ -16,6 +16,8 @@ export class GroupContentsComponent implements OnInit {
 groupContents: GroupContents[] = [];
 currentPage:string = "";
 loggedIn:boolean = false;
+AddedMsg:boolean = false;
+
 
   constructor(private rout: ActivatedRoute, private groupContentsService: GroupContentsService, private cart:CartService, private prodService:ProductsService) { }
 
@@ -39,18 +41,20 @@ loggedIn:boolean = false;
         this.cart.addToCart(elephant);
       });
     }
-    window.alert(`You added the entire list to your cart!`)
+    this.AddedMsg = !this.AddedMsg;
   }
+
   addItemToCart(productID:number){
     this.prodService.getProductsByID(productID).subscribe(elephant => {
       this.cart.addToCart(elephant);
-      window.alert(`You added a ${elephant.product_name} to your cart!`)
-    });
+      this.AddedMsg = !this.AddedMsg;
+    })
   }
 
   removeFromGroup(productID:number){
     const groupID = Number(this.rout.snapshot.paramMap.get('groupID'));
     this.groupContentsService.removeItemFromGroup(groupID,productID).subscribe()
   }
+
 
 }

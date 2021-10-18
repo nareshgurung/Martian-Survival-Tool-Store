@@ -1,6 +1,6 @@
 <div *ngIf="selectedProduct" class="alert alert-success" role="alert" ngDefaultControl>
  <span class="added-ok"> Product added successfully. <a routerLink="../../../cart" class="alert-link">Go to cart?</a></span>
-  <input hidden id="hero-name" [(ngModel)]="selectedProduct.product_name" ngDefaultControl placeholder="name">
+  <input hidden [(ngModel)]="selectedProduct.product_name" ngDefaultControl placeholder="name">
 </div>
 
 <app-cart hidden [product]="selectedProduct" ngDefaultControl></app-cart>
@@ -23,8 +23,13 @@
   </div>
 </div>
 
-
-<div class="container-fluid">
+<button id="button_show_hide_comments" (click)=showComments()>{{commentsButtonText}}</button><button id="button_show_hide_qna" (click)=showQna()>{{qnaButtonText}}</button>
+<div class="container-fluid" *ngIf="commentsArea">
   <h3>What Other Customers are Saying</h3>
+  <app-comments [productID]="prod.product_id"></app-comments>
+</div>
+<div class="container-fluid" *ngIf="qna">
+  <h3>Questions and Answers</h3>
+  <app-questions [productID]="prod.product_id"></app-questions>
 </div>
 
