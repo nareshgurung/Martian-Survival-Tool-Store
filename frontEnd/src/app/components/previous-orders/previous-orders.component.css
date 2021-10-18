@@ -1,0 +1,21 @@
+h2 {
+  margin-bottom: 2rem;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+.container div {
+  font-size: 18px;
+  line-height: 1.6;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media screen and (max-width:768px) {
+  .container {
+    width: 100%;
+    text-align: center;
+  }
+}

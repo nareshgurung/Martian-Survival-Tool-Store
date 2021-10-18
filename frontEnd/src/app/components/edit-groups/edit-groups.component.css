@@ -2,6 +2,10 @@
   padding-left: 3rem;
 }
 
+table {
+  width: 100%;
+}
+
 .button {
   cursor: pointer;
   display: block;
