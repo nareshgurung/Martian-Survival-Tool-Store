@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GroupContents } from 'src/app/models/group_contents';
 import { Product } from 'src/app/models/product';
-import { CartService } from 'src/app/service/cart.service';
+import { CartService } from 'src/app/service/cart/cart.service';
 import { GroupContentsService } from 'src/app/service/group_contents/group-contents.service';
 import { ProductsService } from 'src/app/service/products/products.service';
 import { NavbarComponent } from '../navbar/navbar.component';

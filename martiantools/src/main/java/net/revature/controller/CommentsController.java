@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,19 +31,13 @@ public class CommentsController {
 		this.commentService = service;
 	}
 
-	@GetMapping(path="/all", produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Comments>> getAll(){
-		return new ResponseEntity<List<Comments>>(this.commentService.findAll(), HttpStatus.OK);
+	@GetMapping(path="/{productID}", produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<Comments>> getAllForProduct(@PathVariable int productID){
+		return new ResponseEntity<List<Comments>>(this.commentService.getAllForProduct(productID), HttpStatus.OK);
 	}
-
-	// @GetMapping(path="", produces = MediaType.APPLICATION_JSON_VALUE)
-	// getCommentByUserID
-
-	// @PostMapping(path="", produces = MediaType.APPLICATION_JSON_VALUE)
-	// postComment
 	
-	@PostMapping(path="/usercomment")
-	public void saveComment(@RequestBody Comments comment) {
-		this.commentService.saveComment(comment);
+	@PostMapping(path="/newComment", produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Boolean> saveComment(@RequestBody Comments comment) {
+		return new ResponseEntity<Boolean>(this.commentService.saveComment(comment), HttpStatus.OK);
 	}
 }

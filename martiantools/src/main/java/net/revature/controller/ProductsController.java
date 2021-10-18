@@ -39,7 +39,7 @@ public class ProductsController {
 	}
 
 	@GetMapping(path="/id/{catID}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Products> getProductByID(@PathVariable String catID) {
+	public ResponseEntity<Products> getProductByID(@PathVariable int catID) {
 		return new ResponseEntity<Products>(this.pService.findOneById(catID), HttpStatus.OK); 
 	}
 }

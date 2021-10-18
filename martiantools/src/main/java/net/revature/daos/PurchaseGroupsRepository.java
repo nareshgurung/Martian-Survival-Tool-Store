@@ -19,5 +19,13 @@ public class PurchaseGroupsRepository {
 	public List<Purchase_group> getUsersGroups(int userID) {
 		return entityManager.createQuery("FROM Purchase_group WHERE user_id=" + userID, Purchase_group.class).getResultList();
 	}
+	
+	public void save(Purchase_group pGrp) {
+		entityManager.persist(pGrp);
+	}
+
+	public int getMostRecentID() {
+		return this.entityManager.createQuery("Select MAX(purchase_group_id) FROM Purchase_group", Integer.class).getSingleResult();
+	}
 
 }

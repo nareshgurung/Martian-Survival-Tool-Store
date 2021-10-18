@@ -2,22 +2,29 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Comment } from '../../models/comment';
-import {catchError, map, tap} from 'rxjs/operators';
+import {catchError} from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class CommentsService {
-	private url = 'http://localhost:8080/martiantools/comments/all';
+	private url = 'http://localhost:8080/martiantools/comments/';
 
 	constructor(private http: HttpClient, private router:Router) { }
 
-	getAllComments(): Observable<Comment[]> {
-    console.log("CommentsService > getAllComments +++++++++++++++++++++");
-		return this.http.get<Comment[]>(this.url)
+	getCommentsForProduct(productID:number): Observable<Comment[]> {
+		return this.http.get<Comment[]>(this.url + productID)
 		.pipe(
 			catchError(this.handleError<Comment[]>('getAllComments', []))
+		);
+	}
+
+	setNewComment(comment:Comment): Observable<boolean>{
+		console.log("comment:" + comment.comment)
+		return this.http.post<boolean>(this.url+"/newComment", comment)
+		.pipe(
+			catchError(this.handleError<boolean>('getAllComments'))
 		);
 	}
 

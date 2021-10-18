@@ -23,8 +23,13 @@
   </div>
 </div>
 
-
-<div class="container-fluid">
+<button id="button_show_hide_comments" (click)=showComments()>{{commentsButtonText}}</button><button id="button_show_hide_qna" (click)=showQna()>{{qnaButtonText}}</button>
+<div class="container-fluid" *ngIf="commentsArea">
   <h3>What Other Customers are Saying</h3>
+  <app-comments [productID]="prod.product_id"></app-comments>
+</div>
+<div class="container-fluid" *ngIf="qna">
+  <h3>Questions and Answers</h3>
+  <app-questions [productID]="prod.product_id"></app-questions>
 </div>
 
