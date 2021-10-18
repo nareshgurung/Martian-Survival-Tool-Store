@@ -5,10 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.NoArgsConstructor;
 import net.revature.checkData.CheckWrongData;
 import net.revature.daos.ProductRepository;
 import net.revature.models.Products;
 
+@NoArgsConstructor
 @Service("pService")
 public class ProductService {
 

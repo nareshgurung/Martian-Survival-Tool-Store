@@ -5,9 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.NoArgsConstructor;
 import net.revature.daos.CommentsRepository;
 import net.revature.models.Comments;
 
+
+@NoArgsConstructor
 @Service("commentService")
 public class CommentService {
 

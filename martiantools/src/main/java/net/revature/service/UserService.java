@@ -20,6 +20,11 @@ public class UserService {
 	private UsersRepository usersRepository; 
 	private GroupsRepository groupRepository;
 	
+	
+	public UserService() {
+		
+	}
+	
 	@Autowired
 	public UserService(UsersRepository usersRepository, GroupsRepository groupRepository) {
 
