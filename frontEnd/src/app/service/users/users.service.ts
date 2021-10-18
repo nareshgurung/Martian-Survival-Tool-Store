@@ -9,7 +9,7 @@ import { Users } from 'src/app/models/Users';
   providedIn: 'root'
 })
 export class UsersService {
-	private url = 'http://localhost:8080/martiantools/users/';
+	private url = 'http://52.14.63.20:8088/martiantools/users/';
 
   constructor(private http: HttpClient, private router:Router) { }
 

@@ -5,6 +5,9 @@ import { ProductsService } from 'src/app/service/products/products.service';
 import { CartService } from 'src/app/service/cart/cart.service';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { WishListService } from 'src/app/service/wish/wish-list.service';
+import { Groups } from 'src/app/models/groups';
+import { GroupsService } from 'src/app/service/groups/groups.service';
+import { GroupContentsService } from 'src/app/service/group_contents/group-contents.service';
 
 @Component({
   selector: 'app-product-page',
@@ -12,6 +15,9 @@ import { WishListService } from 'src/app/service/wish/wish-list.service';
   styleUrls: ['./product-page.component.css']
 })
 export class ProductPageComponent implements OnInit {
+  groups: Groups[] = [];
+  isLoggedIn = false;
+  selectedLevel:any;
   prod: Product = {
     product_id: -1,
     product_name: "",
@@ -28,9 +34,14 @@ export class ProductPageComponent implements OnInit {
   qnaButtonText = "Q & A ↓";
 
   constructor(private rout: ActivatedRoute, private prodService:ProductsService,
-    private cartService:CartService, private wish:WishListService) { }
+    private cartService:CartService, private wish:WishListService,private groupServ:GroupsService,
+    private groupContent:GroupContentsService) {
+      this.getGroups();
+     }
 
   ngOnInit(): void {
+    this.getGroups();
+    this.logSomeoneIn();
     this.getProductByID();
   }
 
@@ -69,6 +80,26 @@ export class ProductPageComponent implements OnInit {
     } else {
       this.qna = true;
       this.qnaButtonText = "Q & A ↑"
+    }
+  }
+
+  getGroups(): void {
+    const id = NavbarComponent.userInfo.user_id;
+    console.log("passing id of:" + id);
+    this.groupServ.getGroupsForUser(id).subscribe(groups => this.groups = groups);
+    for(let g of this.groups){
+      console.log("group name:" + g.group_name)
+    }
+  }
+
+  addToGroup(){
+    this.groupContent.addItemToGroup(<number>this.selectedLevel, this.prod.product_id).subscribe();
+    window.alert("Item has been added to your group");
+  }
+
+  logSomeoneIn():void{
+    if(NavbarComponent.userInfo.user_id>0){
+      this.isLoggedIn=true;
     }
   }
 

@@ -10,7 +10,8 @@ import { Product } from 'src/app/models/product';
   providedIn: 'root'
 })
 export class CardService {
-private url = 'http://localhost:8080/martiantools/';
+
+private url = 'http://52.14.63.20:8088/martiantools/categories/all';
 
   constructor(private http: HttpClient, private router:Router) { }
 

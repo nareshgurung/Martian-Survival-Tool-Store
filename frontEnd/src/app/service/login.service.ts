@@ -18,7 +18,7 @@ export class LoginService {
   constructor(private httpClient:HttpClient) { }
 
   login(username:string, password:string){
-   return this.httpClient.post<Users>(`http://localhost:8080/martiantools/users/login/${username}/${password}`, []);
+   return this.httpClient.post<Users>(`http://52.14.63.20:8088/martiantools/users/login/${username}/${password}`, []);
   }
 
   logout(){

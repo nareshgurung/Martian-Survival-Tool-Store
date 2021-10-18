@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 	providedIn: 'root'
 })
 export class CommentsService {
-	private url = 'http://localhost:8080/martiantools/comments/';
+	private url = 'http://52.14.63.20:8088/martiantools/comments/';
 
 	constructor(private http: HttpClient, private router:Router) { }
 
