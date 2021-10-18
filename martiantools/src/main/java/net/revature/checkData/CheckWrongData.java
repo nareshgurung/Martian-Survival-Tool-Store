@@ -27,6 +27,15 @@ public class CheckWrongData {
 				e.printStackTrace();
 				return false;
 			}
+		final String WHITE_TEXT = "\u001B[37m";
+		final String BLUE_BACKGROUND = "\u001B[44m";
+		final String TEXT_COLOR_RESET = "\u001B[0m";
+		final String BG_COLOR_RESET = "\u001B[47m"; 
+
+		System.out.print(WHITE_TEXT + BLUE_BACKGROUND);
+		System.out.println("extra color");
+		System.out.print(TEXT_COLOR_RESET + BG_COLOR_RESET);
+
 		return true;
 	}
 

@@ -24,4 +24,8 @@ public class PurchasedItemsRepository {
 		this.entityManager.persist(item);
 	}
 
+	public List<Object[]> getItemMostBought() {
+		return this.entityManager.createQuery("SELECT product_id,SUM(amount) as amount FROM Purchased_items GROUP BY product_id").getResultList();
+	}
+
 }
