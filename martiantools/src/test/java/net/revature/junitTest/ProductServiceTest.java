@@ -57,9 +57,9 @@ public class ProductServiceTest {
 	
 	@Test
 	public void testFindOneById() {
-		Mockito.when(pService.findOneById("2")).thenReturn(new Products(1, "breather", 500, 5, "www.breather.com", 1, 2));
+		Mockito.when(pService.findOneById(2)).thenReturn(new Products(1, "breather", 500, 5, "www.breather.com", 1, 2));
 		
-		Products pdt = pService.findOneById("2");
+		Products pdt = pService.findOneById(2);
 		Assert.assertEquals(pdt.getCategory_id(), 2, "category id");
 	}
 	

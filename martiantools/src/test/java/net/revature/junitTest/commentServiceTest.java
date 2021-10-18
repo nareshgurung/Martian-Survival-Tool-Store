@@ -37,12 +37,12 @@ public class commentServiceTest {
 	
 	@Test
 	public void testCommentFindAll() {
-		Mockito.when(cmtServ.findAll()).thenReturn(Arrays.asList(
+		Mockito.when(cmtServ.getAllForProduct(1)).thenReturn(Arrays.asList(
 				new Comments(1, 1, 1, "comment"), 
 				new Comments(2, 1, 1, "commment2")
 				));
 	
-	List<Comments> cmtList = cmtServ.findAll();
+	List<Comments> cmtList = cmtServ.getAllForProduct(1);
 	Assert.assertEquals(cmtList.size(), 2, "list comments");
 	}
 	
