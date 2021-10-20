@@ -50,6 +50,6 @@ An Online Store for selling products & supplies for people on Earth who are prep
   Tour of Heroes - https://angular.io/tutorial
   
 ## Resources used for styling and responsiveness:
-Google Fonts https://fonts.google.com
-Google Material Icons https://fonts.google.com/icons
-Bootstrap CSS https://getbootstrap.com/docs/3.3/getting-started/
+  Google Fonts https://fonts.google.com
+  Google Material Icons https://fonts.google.com/icons
+  Bootstrap CSS https://getbootstrap.com/docs/3.3/getting-started/
