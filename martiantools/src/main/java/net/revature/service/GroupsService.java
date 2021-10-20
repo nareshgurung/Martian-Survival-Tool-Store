@@ -7,9 +7,17 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import net.revature.daos.GroupsRepository;
 import net.revature.models.Groups;
+import net.revature.models.Users;
 
+
+@NoArgsConstructor
 @Service("gService")
 public class GroupsService {
 	private GroupsRepository groupsRepository;

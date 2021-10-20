@@ -5,9 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.NoArgsConstructor;
 import net.revature.daos.PurchaseGroupsRepository;
 import net.revature.models.Purchase_group;
 
+
+@NoArgsConstructor
 @Service("pgService")
 public class PurchaseGroupsService {
 	private PurchaseGroupsRepository pgRepo;
