@@ -39,6 +39,10 @@ An Online Store for selling products & supplies for people on Earth who are prep
 * Notify users when items in their Wishlist/groups are on sale
 
 ## Technologies Used
--Java, Spring Framework, AWS's RDS, MariaDB, AWS's ec2, Jenkins, AWS's S3, Angular, Junit, Mockito, Selenium  Git
+-Java, Spring Framework, AWS's RDS, MariaDB, AWS's ec2, Jenkins, AWS's S3, Angular, Junit, Mockito, Selenium/Webdriver,  Git
 
 ## Contributors
+-Norman-Brumm-IV Norman Brumm
+-Carolina Ferraz
+-Naresh Gurung
+-Alex Smith
