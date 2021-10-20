@@ -42,7 +42,7 @@ An Online Store for selling products & supplies for people on Earth who are prep
 -Java, Spring Framework, AWS's RDS, MariaDB, AWS's ec2, Jenkins, AWS's S3, Angular, Junit, Mockito, Selenium/Webdriver,  Git
 
 ## Contributors
--Norman-Brumm-IV Norman Brumm
--Carolina Ferraz
--Naresh Gurung
--Alex Smith
+* Norman-Brumm-IV Norman Brumm
+* Carolina Ferraz
+* Naresh Gurung
+* Alex Smith
